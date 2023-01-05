@@ -20,14 +20,14 @@ import { default as assert } from 'assert'
 import * as assert from 'assert'
 ```
 
-| type    | module   | import x from 'x'                                                        | import { default as x } from 'x' | import * as x from 'x'       |
-| ------- | -------- | ------------------------------------------------------------------------ | -------------------------------- | ---------------------------- |
-| compile | CommonJS | ⚠️ `TS1259: esModuleInterop`                                              | ⚠️ same                           | ✅ compile success            |
-|         | ES*      | ⚠️ `TS1259: allowSyntheticDefaultImports`                                 | ⚠️ same                           | ✅ compile success            |
-|         | Node*    | ❌ compile to CJS incorrectly `TS1259: allowSyntheticDefaultImport`       | ❌ same                           | ❌ compile to CJS incorrectly |
-| test    | CommonJS | ⚠️ `TypeError: not a function`                                            | ⚠️ same                           | ✔️ test success               |
-|         | ES*      | ⚠️ `TypeError: not a function`                                            | ⚠️ same                           | ⚠️ same                       |
-|         | Node*    | ❌ test fail: `ReferenceError: exports is not defined in ES module scope` | ❌ same                           | ❌ same                       |
+| type    | module   | import x from 'x'                                                  | import { default as x } from 'x' | import * as x from 'x'       |
+| ------- | -------- | ------------------------------------------------------------------ | -------------------------------- | ---------------------------- |
+| compile | CommonJS | ⚠️ `TS1259: esModuleInterop`                                        | ⚠️ same                           | ✅ compile success            |
+|         | ES*      | ⚠️ `TS1259: allowSyntheticDefaultImports`                           | ⚠️ same                           | ✅ compile success            |
+|         | Node*    | ❌ compile to CJS incorrectly `TS1259: allowSyntheticDefaultImport` | ❌ same                           | ❌ compile to CJS incorrectly |
+| runtime | CommonJS | ⚠️ `TypeError: not a function`                                      | ⚠️ same                           | ✔️ test success               |
+|         | ES*      | ⚠️ `TypeError: not a function`                                      | ⚠️ same                           | ⚠️ same                       |
+|         | Node*    | ❌  `ReferenceError: exports is not defined in ES module scope`     | ❌ same                           | ❌ same                       |
 
 take-aways:
 
@@ -43,14 +43,14 @@ import { default as paramCase } from 'param-case'
 import * as paramCase from 'param-case'
 ```
 
-| type    | module   | import x from 'x'                                                        | import { default as x } from 'x' | import * as x from 'x' |
-| ------- | -------- | ------------------------------------------------------------------------ | -------------------------------- | ---------------------- |
-| compile | CommonJS | ⚠️ `TS1259: esModuleInterop`                                              | ⚠️ same                           | ⚠️ same                 |
-|         | ES*      | ⚠️ `TS1259: allowSyntheticDefaultImports`                                 | ⚠️ same                           | ⚠️ same                 |
-|         | Node*    | ⚠️ `TS1259: allowSyntheticDefaultImport`                                  | ⚠️ same                           | ⚠️ same                 |
-| test    | CommonJS | ⚠️ `TypeError: not a function`                                            | ⚠️ same                           | ⚠️ same                 |
-|         | ES*      | ⚠️ `TypeError: not a function`                                            | ⚠️ same                           | ⚠️ same                 |
-|         | Node*    | ❌ test fail: `ReferenceError: exports is not defined in ES module scope` | ❌ same                           | ❌ same                 |
+| type    | module   | import x from 'x'                                             | import { default as x } from 'x' | import * as x from 'x' |
+| ------- | -------- | ------------------------------------------------------------- | -------------------------------- | ---------------------- |
+| compile | CommonJS | ⚠️ `TS1259: esModuleInterop`                                   | ⚠️ same                           | ⚠️ same                 |
+|         | ES*      | ⚠️ `TS1259: allowSyntheticDefaultImports`                      | ⚠️ same                           | ⚠️ same                 |
+|         | Node*    | ⚠️ `TS1259: allowSyntheticDefaultImport`                       | ⚠️ same                           | ⚠️ same                 |
+| runtime | CommonJS | ⚠️ `TypeError: not a function`                                 | ⚠️ same                           | ⚠️ same                 |
+|         | ES*      | ⚠️ `TypeError: not a function`                                 | ⚠️ same                           | ⚠️ same                 |
+|         | Node*    | ❌ `ReferenceError: exports is not defined in ES module scope` | ❌ same                           | ❌ same                 |
 
 take-aways:
 
@@ -79,13 +79,12 @@ assertron.default.truthy(1)
 |         | Node16   | ⚠️ transient `TS1259: allowSyntheticDefaultImport`  (on `assertion-error`: `export =`) | ⚠️ same                           | ⚠️ same                 |
 |         |          | ⚠️ transient `TS1479: The current file is a CommonJS module`                           | ⚠️ same                           | ⚠️ same                 |
 |         | NodeNext | ⚠️ transient `TS1259: allowSyntheticDefaultImports` (on `assertion-error`: `export =`) | ⚠️ same                           | ⚠️ same                 |
-| test    | CommonJS | ✅                                                                                     | ✅ same                           | ✅ same                 |
+| runtime | CommonJS | ✅                                                                                     | ✅ same                           | ✅ same                 |
 |         | ES*      | ❌ `TypeError: not a function`                                                         | ❌ same                           | ❌ same                 |
-|         | Node16   | ❌ `TypeError: not a function`                                                         | ❌ same                           | ❌ same                 |
-|         | NodeNext | ❌  exports not defined                                                                | ❌ same                           | ❌ same                 |
+|         | Node16   | ❌ `exports not defined`                                                               | ❌ same                           | ❌ same                 |
+|         | NodeNext | ❌ `exports not defined`                                                               | ❌ same                           | ❌ same                 |
 
 take-aways:
 
 - `Node*` compiles to CJS is wrong
 - The transient errors can be suppressed by `skipLibCheck`, but the result is not usable.
-- Others are expected
