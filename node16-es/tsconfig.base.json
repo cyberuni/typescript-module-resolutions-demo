@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "module": "Node16",
+    "declaration": true,
+    "esModuleInterop": true,
     "moduleResolution": "Node16",
-    "outDir": "dist",
     "strict": true,
     "target": "ES2019"
   },

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "target": "ES2019"
+  },
+  "include": [
+    "ts",
+    "types"
+  ]
+}

@@ -1,20 +1,33 @@
 {
-  "name": "ts-issue-template",
-  "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "build": "tsc"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "react-use-websocket": "^3"
+    "build": "turbo run build",
+    "build:cjs": "turbo run build:cjs",
+    "build:es2015": "turbo run build:es2015",
+    "build:es2020": "turbo run build:es2020",
+    "build:es2022": "turbo run build:es2022",
+    "build:node16": "turbo run build:node16",
+    "build:nodenext": "turbo run build:nodenext",
+    "clean": "turbo run clean",
+    "node": "pnpm --filter node",
+    "node16": "pnpm --filter node16",
+    "nodenext": "pnpm --filter nodenext",
+    "node-es": "pnpm --filter node-es",
+    "node16-es": "pnpm --filter node16-es",
+    "nodenext-es": "pnpm --filter nodenext-es",
+    "node-syn": "pnpm --filter node-syn",
+    "node16-syn": "pnpm --filter node16-syn",
+    "nodenext-syn": "pnpm --filter nodenext-syn",
+    "test": "turbo run test",
+    "test:cjs": "turbo run test:cjs",
+    "test:es2015": "turbo run test:es2015",
+    "test:es2020": "turbo run test:es2020",
+    "test:es2022": "turbo run test:es2022",
+    "test:node16": "turbo run test:node16",
+    "test:nodenext": "turbo run test:nodenext"
   },
   "devDependencies": {
+    "turbo": "^1.6.3",
     "typescript": "5.0.0-dev.20230103"
-  },
-  "packageManager": "pnpm@7.22.0"
+  }
 }
