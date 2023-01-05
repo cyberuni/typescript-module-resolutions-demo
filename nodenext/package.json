@@ -2,6 +2,9 @@
   "name": "nodenext",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "type": "module",
   "exports": {
     "types": "./node16/index.d.ts",
@@ -11,39 +14,38 @@
   "main": "./cjs/index.js",
   "types": "./cjs/index.d.ts",
   "scripts": {
-    "build": "run-p --print-label build:*",
-    "build:cjs": "tsc -p tsconfig.cjs.json && ncp ../package.cjs.json cjs/package.json",
-    "build:es2015": "tsc -p tsconfig.es2015.json && ncp ../package.cjs.json cjs/package.json",
-    "build:es2020": "tsc -p tsconfig.es2020.json && ncp ../package.cjs.json cjs/package.json",
-    "build:es2022": "tsc -p tsconfig.es2022.json && ncp ../package.cjs.json cjs/package.json",
+    "build": "run-p --aggregate-output -c --print-label build:cjs build:es2015 build:es2020 build:es2022 build:node16 build:nodenext",
+    "build:cjs": "tsc -p tsconfig.cjs.json || ncp ../package.cjs.json cjs/package.json",
+    "build:es2015": "tsc -p tsconfig.es2015.json || ncp ../package.cjs.json cjs/package.json",
+    "build:es2020": "tsc -p tsconfig.es2020.json || ncp ../package.cjs.json cjs/package.json",
+    "build:es2022": "tsc -p tsconfig.es2022.json || ncp ../package.cjs.json cjs/package.json",
     "build:node16": "tsc -p tsconfig.node16.json",
     "build:nodenext": "tsc -p tsconfig.nodenext.json",
     "clean": "rimraf cjs es* node16 nodenext",
-    "test": "run-p --print-label test:*",
-    "test:cjs": "node ./cjs/index.js",
-    "test:es2015": "node ./es2015/index.js",
-    "test:es2020": "node ./es2020/index.js",
-    "test:es2022": "node ./es2022/index.js",
-    "test:node16": "node ./node16/index.js",
-    "test:nodenext": "node ./nodenext/index.js"
+    "test": "ava"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "ava": {
+    "files": [
+      "cjs/*.js",
+      "es2015/*.js",
+      "es2020/*.js",
+      "es2022/*.js",
+      "node16/*.js",
+      "nodenext/*.js"
+    ]
+  },
   "dependencies": {
-    "param-case": "1",
-    "react-use-websocket": "^3"
+    "assertron": "^7",
+    "color-map": "^1",
+    "param-case": "1"
   },
   "devDependencies": {
-    "@types/node": "^16",
+    "@types/node": "^14",
     "@types/react": "^17",
     "ava": "^5.1.0",
     "ncp": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "react": "^17.0.2",
-    "react-dom": "^17",
     "rimraf": "^3.0.2",
     "typescript": "5.0.0-dev.20230103"
-  },
-  "packageManager": "pnpm@7.22.0"
+  }
 }

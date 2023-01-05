@@ -9,15 +9,15 @@
     "build:node16": "turbo run build:node16",
     "build:nodenext": "turbo run build:nodenext",
     "clean": "turbo run clean",
-    "node": "pnpm --filter node",
-    "node16": "pnpm --filter node16",
-    "nodenext": "pnpm --filter nodenext",
     "node-es": "pnpm --filter node-es",
-    "node16-es": "pnpm --filter node16-es",
-    "nodenext-es": "pnpm --filter nodenext-es",
     "node-syn": "pnpm --filter node-syn",
+    "node": "pnpm --filter node",
+    "node16-es": "pnpm --filter node16-es",
     "node16-syn": "pnpm --filter node16-syn",
+    "node16": "pnpm --filter node16",
+    "nodenext-es": "pnpm --filter nodenext-es",
     "nodenext-syn": "pnpm --filter nodenext-syn",
+    "nodenext": "pnpm --filter nodenext",
     "test": "turbo run test",
     "test:cjs": "turbo run test:cjs",
     "test:es2015": "turbo run test:es2015",
@@ -29,5 +29,6 @@
   "devDependencies": {
     "turbo": "^1.6.3",
     "typescript": "5.0.0-dev.20230103"
-  }
+  },
+  "packageManager": "pnpm@7.22.0"
 }
