@@ -1,0 +1,26 @@
+lockfileVersion: 5.4
+
+specifiers:
+  react-use-websocket: ^3
+  typescript: 5.0.0-dev.20230103
+
+dependencies:
+  react-use-websocket: 3.0.0
+
+devDependencies:
+  typescript: 5.0.0-dev.20230103
+
+packages:
+
+  /react-use-websocket/3.0.0:
+    resolution: {integrity: sha512-BInlbhXYrODBPKIplDAmI0J1VPM+1KhCLN09o+dzgQ8qMyrYs4t5kEYmCrTqyRuMTmpahylHFZWQXpfYyDkqOw==}
+    peerDependencies:
+      react: '>= 16.8.0'
+      react-dom: '>= 16.8.0'
+    dev: false
+
+  /typescript/5.0.0-dev.20230103:
+    resolution: {integrity: sha512-vHf8Y8+op6MsFIDgvNmZhAIAUGVmzFzYCUBysMS6hlxlhSWIh1h5AXAW7WKs4GYr325jwTF/L72NKUYZHSD6Mw==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true

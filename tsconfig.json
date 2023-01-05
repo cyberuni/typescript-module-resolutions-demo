@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "outDir": "dist",
+    "strict": true,
+    "target": "ES2019"
+  },
+  "include": [
+    "ts",
+    "types"
+  ]
+}
