@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": false,
+    "esModuleInterop": false,
     "declaration": true,
     "moduleResolution": "Node",
     "strict": true,
+    "skipLibCheck": true,
     "target": "ES2019"
   },
   "include": [

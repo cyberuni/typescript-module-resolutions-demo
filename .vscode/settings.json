@@ -1,3 +1,6 @@
 {
+  "markdownlint.config": {
+    "first-line-heading": false
+  },
   "typescript.tsdk": "node_modules/typescript/lib"
 }
