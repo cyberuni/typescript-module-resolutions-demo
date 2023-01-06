@@ -6,6 +6,7 @@
     "build:es2015": "turbo run build:es2015",
     "build:es2020": "turbo run build:es2020",
     "build:es2022": "turbo run build:es2022",
+    "build:esnext": "turbo run build:esnext",
     "build:node16": "turbo run build:node16",
     "build:nodenext": "turbo run build:nodenext",
     "clean": "turbo run clean",
@@ -23,6 +24,7 @@
     "test:es2015": "turbo run test:es2015",
     "test:es2020": "turbo run test:es2020",
     "test:es2022": "turbo run test:es2022",
+    "test:esnext": "turbo run test:esnext",
     "test:node16": "turbo run test:node16",
     "test:nodenext": "turbo run test:nodenext"
   },
