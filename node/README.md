@@ -36,24 +36,20 @@ Import Syntax:
 import assert from 'assert'
 import { default as assert } from 'assert'
 import * as assert from 'assert'
-
 assert(true)
 
 // export default
 import assertron from 'assertron'
 import { default as assertron } from 'assertron'
-
 assertron.truthy(1)
 
 import * as assertron from 'assertron'
-
 assertron.default.truthy(1)
 
 // export =
 import paramCase from 'param-case'
 import { default as paramCase } from 'param-case'
 import * as paramCase from 'param-case'
-
 paramCase('hello world')
 ```
 
@@ -91,6 +87,6 @@ paramCase('hello world')
 
 ## Conclusion
 
-- `module: CommonJS` is the only "usable" one.
+- `module: CommonJS` is the only "barely usable" one.
   - Cannot support `export =` type definition
 - `module: Node*` compiled to CJS incorrectly
