@@ -1,0 +1,28 @@
+
+> esm-cjs@1.0.0 build /home/homa/code/cyberuni/ts-esm-interop/packages/esm-cjs
+> run-p --aggregate-output -c --print-label build:cjs build:es2015 build:es2020 build:es2022 build:node16 build:nodenext
+
+[build:node16  ] 
+[build:node16  ] > esm-cjs@1.0.0 build:node16 /home/homa/code/cyberuni/ts-esm-interop/packages/esm-cjs
+[build:node16  ] > tsc -p tsconfig.node16.json
+[build:node16  ] 
+[build:es2015  ] 
+[build:es2015  ] > esm-cjs@1.0.0 build:es2015 /home/homa/code/cyberuni/ts-esm-interop/packages/esm-cjs
+[build:es2015  ] > tsc -p tsconfig.es2015.json || ncp ../package.cjs.json cjs/package.json
+[build:es2015  ] 
+[build:cjs     ] 
+[build:cjs     ] > esm-cjs@1.0.0 build:cjs /home/homa/code/cyberuni/ts-esm-interop/packages/esm-cjs
+[build:cjs     ] > tsc -p tsconfig.cjs.json || ncp ../package.cjs.json cjs/package.json
+[build:cjs     ] 
+[build:es2020  ] 
+[build:es2020  ] > esm-cjs@1.0.0 build:es2020 /home/homa/code/cyberuni/ts-esm-interop/packages/esm-cjs
+[build:es2020  ] > tsc -p tsconfig.es2020.json || ncp ../package.cjs.json cjs/package.json
+[build:es2020  ] 
+[build:es2022  ] 
+[build:es2022  ] > esm-cjs@1.0.0 build:es2022 /home/homa/code/cyberuni/ts-esm-interop/packages/esm-cjs
+[build:es2022  ] > tsc -p tsconfig.es2022.json || ncp ../package.cjs.json cjs/package.json
+[build:es2022  ] 
+[build:nodenext] 
+[build:nodenext] > esm-cjs@1.0.0 build:nodenext /home/homa/code/cyberuni/ts-esm-interop/packages/esm-cjs
+[build:nodenext] > tsc -p tsconfig.nodenext.json
+[build:nodenext] 

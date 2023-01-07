@@ -1,6 +1,6 @@
 import test from 'ava'
 import * as assert from 'assert'
 
-test('* as assert', t => {
+test('assert star', t => {
   t.notThrows(() => assert(true))
 })

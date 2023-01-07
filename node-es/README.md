@@ -61,13 +61,13 @@ paramCase.default('hello world')
 | ------- | -------- | ---------- | --------------- | ------------------ | ------------ |
 | compile | CommonJS | assert     | ✅               | ✅                  | ✅            |
 |         | CommonJS | assertron  | ✅               | ✅                  | ✅            |
-|         | CommonJS | param-case | ✅               | ✅                  | ⚠️ c6         |
+|         | CommonJS | param-case | ✅               | ✅                  | ⚠️ c2 c7      |
 |         | ES*      | assert     | ✅               | ✅                  | ✅            |
 |         | ES*      | assertron  | ✅               | ✅                  | ✅            |
-|         | ES*      | param-case | ✅               | ✅                  | ⚠️ c6         |
+|         | ES*      | param-case | ✅               | ✅                  | ⚠️ c6 c7      |
 |         | Node*    | assert     | ✅               | ✅                  | ✅            |
 |         | Node*    | assertron  | ✅               | ✅                  | ✅            |
-|         | Node*    | param-case | ✅               | ✅                  | ⚠️ c6         |
+|         | Node*    | param-case | ✅               | ✅                  | ⚠️ c2 c7      |
 | ------- | -------- | ---------- | --------------- | ------------------ | ------------ |
 | runtime | CommonJS | assert     | ✔️               | ✔️                  | ✔️            |
 |         | CommonJS | assertron  | ✔️               | ✔️                  | ✔️            |
@@ -80,14 +80,14 @@ paramCase.default('hello world')
 |         | Node*    | param-case | ❌ r2            | ❌ r2               | ❌ r2         |
 
 - c1: `TS1259: needs esModuleInterop`
-- c2: `TS2497: needs esModuleInterop and referencing its default export`
 - c3: `TS1259: needs allowSyntheticDefaultImports`
+- c2: `TS2497: needs esModuleInterop and referencing its default export`
+- c4: `TS2497: needs allowSyntheticDefaultImports and referencing its default export`
 - c4: Code are compiled to CJS incorrectly
 - c5: `TS1259: ...node_modules/assertion-error can only be default-imported using the 'allowSyntheticDefaultImports' flag`\
   `export = AssertionError`\
   `This module is declared with 'export =', and can only be used with a default import when using the 'allowSyntheticDefaultImports' flag.`
-- c6: `TS2497: needs allowSyntheticDefaultImports and referencing its default export`\
-  `Property 'default' does not exist on type '(value: string, locale?: string | undefined) => string'`
+- c6: `TS2339: Property 'default' does not exist on type '(value: string, locale?: string | undefined) => string'`
 - r1: `TypeError: not a function`
 - r2: `ReferenceError: exports is not defined in ES module scope` (due to c4)
 

@@ -63,3 +63,7 @@ Each project will be compiled with `tsc` (`build`), and tested with `ava` (`test
   e.g. `test:node16` to build all projects with `Node16`
 - `pnpm <project> <command>`: run command in specific project.\
   e.g. `pnpm node16-syn build` to build the `node16-syn` project.
+
+## TODO
+
+- need to clean up the c* error list one more time

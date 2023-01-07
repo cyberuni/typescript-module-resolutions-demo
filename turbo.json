@@ -1,13 +1,41 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
-    "build": {},
-    "build:cjs": {},
-    "build:es2015": {},
-    "build:es2020": {},
-    "build:es2022": {},
-    "build:node16": {},
-    "build:nodenext": {},
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build:cjs": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build:es2015": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build:es2020": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build:es2022": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build:node16": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build:nodenext": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
     "clean": {
       "cache": false
     },

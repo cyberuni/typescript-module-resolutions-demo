@@ -1,6 +1,6 @@
 import test from 'ava'
 import assertron from 'assertron'
 
-test('assertron', t => {
+test('assertron default', t => {
   t.notThrows(() => assertron.truthy(true))
 })

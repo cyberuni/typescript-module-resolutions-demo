@@ -1,6 +1,6 @@
 import test from 'ava'
 import { default as assert } from 'assert'
 
-test('default as assert', t => {
+test('assert default as', t => {
   t.notThrows(() => assert(true))
 })

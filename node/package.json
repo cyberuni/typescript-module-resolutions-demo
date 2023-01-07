@@ -44,7 +44,11 @@
   },
   "dependencies": {
     "assertron": "^7",
+    "cjs": "workspace:*",
     "color-map": "^1",
+    "es-cjs": "workspace:*",
+    "esm": "workspace:*",
+    "esm-cjs": "workspace:*",
     "param-case": "1"
   },
   "devDependencies": {

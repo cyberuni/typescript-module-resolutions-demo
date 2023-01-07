@@ -1,4 +1,4 @@
 .turbo
-cjs
-es*
-node*
+/cjs
+/es*
+/node*

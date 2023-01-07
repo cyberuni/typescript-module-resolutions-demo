@@ -1,6 +1,6 @@
 import test from 'ava'
 import { default as paramCase } from 'param-case'
 
-test('default as paramCase', t => {
+test('param-case default as', t => {
   t.notThrows(() => paramCase('hello world'))
 })
