@@ -3,19 +3,13 @@
 ```js
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": false,
-    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node"
   }
 }
 ```
 
-This is the very basic configuration for TypeScript when it comes to `module` and `moduleResolution`.
-
-It is served as the baseline for other configurations.
-
-Configurations like `allowSyntheticDefaultImports` and `esModuleInterop` were added later,
-trying to solve some of the problem seen here.
+`allowSyntheticDefaultImports` tries to fix the `export =` only at the type-level.
 
 ## Test Subjects
 
@@ -23,7 +17,7 @@ Depends on the test configuration, the way to consume a module are different.
 
 In this section we describe each module and how they are consumed within this configuration.
 
-## [assert](../README.md#assert)
+`assert`: `module declaration` with `export =` as in DefinitelyTyped
 
 ```ts
 import assert from 'assert'
@@ -32,7 +26,11 @@ import * as assert from 'assert'
 assert(true)
 ```
 
-## [assertron@7](../README.md#assertron7)
+`assertron@7`: Written in TypeScript, compile to CJS.
+The type definition uses `export default` as performed by `tsc`.
+It also has a transient dependency on `assertion-error` which uses `export =` in the type definition.
+
+It also expose `module` field in `package.json`, but that should not affect the test.
 
 ```ts
 import assertron from 'assertron'
@@ -43,7 +41,7 @@ import * as assertron from 'assertron'
 assertron.default.truthy(1)
 ```
 
-## [param-case@1](../README.md#param-case1)
+`param-case@1`: is a CJS with `export =` in the typing file. It does not use `declare module`.
 
 ```ts
 // export =
@@ -55,7 +53,7 @@ import * as paramCase from 'param-case'
 paramCase.default('hello world')
 ```
 
-## [cjs](../README.md#cjs)
+`cjs`: is a local package that expose `main` in CJS format. It does not contain `module` field.
 
 ```ts
 import m from 'cjs'
@@ -66,7 +64,8 @@ import * as m from 'cjs'
 m.default(1)
 ```
 
-## [es-cjs](../README.md#es-cjs)
+`es-cjs`: is a local package that expose `main` in CJS and `module` in `ES*` format.
+It should behaves identical to `cjs`. Adding just for reference.
 
 ```ts
 import m from 'es-cjs'
@@ -77,7 +76,12 @@ import * as m from 'es-cjs'
 m.default(1)
 ```
 
-## [esm-cjs](../README.md#esm-cjs)
+`esm`: is a local package that expose `ESM` with `exports` field. It does not contain `main` field.
+
+It is not supported in this test configuration as `moduleResolution` set to `Node16` or `NodeNext` is required.
+
+`esm-cjs`: is a local package that expose `ESM` with `exports` field and `main` in CJS format.
+It should behaves identical to `cjs` in this configuration. Adding just for reference.
 
 ```ts
 import m from 'esm-cjs'

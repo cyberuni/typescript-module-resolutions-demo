@@ -1,6 +1,13 @@
-# TypeScirpt Module Behavior Test
+# TypeScirpt Module Behavior Demo
 
 This repository demostrate the behavior of TypeScript module system.
+
+There are may issues about the module system in TypeScript:
+
+- <https://github.com/microsoft/TypeScript/issues/50501>
+- <https://github.com/microsoft/TypeScript/issues/50152>
+- <https://github.com/microsoft/TypeScript/issues/50058>
+- and so on...
 
 ## Objectives
 
@@ -13,26 +20,27 @@ This repository tries to answer the following questions:
 
 It is currently tests against TypeScript 5.0.0-dev.20230103
 
-## Design
+## Test Configurations
 
-This repository is organized as a monorepo.
-Each project contains a specific `tsconfig.json` setting:
+This demo contains multiple test configurations.
 
-| project                                  | `moduleResolution` | `esModuleInterop` | `allowSyntheticDefaultImports` |
-| ---------------------------------------- | ------------------ | ----------------- | ------------------------------ |
-| [node](./node/README.md)                 | `Node`             | `false`           | `false`                        |
-| [node-es](./node-es/README.md)           | `Node`             | `true`            | `(true)`                       |
-| [node-syn](./node-syn/README.md)         | `Node`             | `false`           | `true`                         |
-| [node16](./node16/README.md)             | `Node16`           | `false`           | `false`                        |
-| [node16-es](./node16-es/README.md)       | `Node16`           | `true`            | `(true)`                       |
-| [node16-syn](./node16-syn/README.md)     | `Node16`           | `false`           | `true`                         |
-| [nodenext](./nodenext/README.md)         | `NodeNext`         | `false`           | `false`                        |
-| [nodenext-es](./nodenext-es/README.md)   | `NodeNext`         | `true`            | `(true)`                       |
-| [nodenext-syn](./nodenext-syn/README.md) | `NodeNext`         | `false`           | `true`                         |
+Each test configuration contains a specific `tsconfig.json` setting:
+
+| Test Configuration                           | `moduleResolution` | `allowSyntheticDefaultImports` | `esModuleInterop` |
+| -------------------------------------------- | ------------------ | ------------------------------ | ----------------- |
+| [node](./node/README.md)                     | `Node`             | `false`                        | `false`           |
+| [node-allow](./node-allow/README.md)         | `Node`             | `true`                         | `false`           |
+| [node-es](./node-es/README.md)               | `Node`             | `(true)`                       | `true`            |
+| [node16](./node16/README.md)                 | `Node16`           | `false`                        | `false`           |
+| [node16-allow](./node16-allow/README.md)     | `Node16`           | `true`                         | `false`           |
+| [node16-es](./node16-es/README.md)           | `Node16`           | `(true)`                       | `true`            |
+| [nodenext](./nodenext/README.md)             | `NodeNext`         | `false`                        | `false`           |
+| [nodenext-allow](./nodenext-allow/README.md) | `NodeNext`         | `true`                         | `false`           |
+| [nodenext-es](./nodenext-es/README.md)       | `NodeNext`         | `(true)`                       | `true`            |
 
 Note that when `esModuleInterop` is `true`, `allowSyntheticDefaultImports` will automatically be `true`.
 
-Within each project, there are `tsconfig.*.json` for different `module` setting:
+Within each test configuration, there are multiple `tsconfig.*.json`. One for each `module` values as follow:
 
 - `CommonJS`
 - `ES2015`
@@ -44,15 +52,70 @@ Within each project, there are `tsconfig.*.json` for different `module` setting:
 
 The other `module` values are not tested.
 
-Every project references 3 packages:
+Each test project imports mulitple packages.
+Each of the package represents certain scenario.
 
-- `assert`: represents a module with `declare module` + `export =` declaration
-- `param-case`: represents a package with `export =` declaration
-- `assertron`: represents a package compiled by `tsc` to CJS with `export default` declaration
+Within each test configuration,
+the way to consume each package might be different.
 
-Each project will be compiled with `tsc` (`build`), and tested with `ava` (`test`).
+They are adjusted to fit the configuration as much as possible.
+
+When either or both compile and runtime fails,
+the code is adjusted to make compile pass if possible.
+This helps to identify any hidden issue what TypeScript says the code is good,
+but it is not.
+
+If different `module` setting produces requires different code,
+the code is adjusted towards the code that is most compatible to the test configuration.
+
+### assert
+
+`assert` is a module within Node.js itself.
+The type definition comes from `@types/node` from DefinitelyTyped.
+
+It utilise module declaration (i.e. `declare module`).
+The module is exported with `export =` declaration.
+
+### assertron@7
+
+`assertron@7` is written in TypeScript, and compiled to CommonJS.
+Its type definition uses `export default` declaration, generated by `tsc`.
+It also expose `module` field in `package.json`, but that should not affect the test.
+
+It also has a transient dependency on `assertion-error` which uses `export =` in the type definition.
+
+### param-case@1
+
+`param-case@1` is written in TypeScript, and compiled to CommonJS.
+`param-case@1` expose CJS with `export =` in the type definition.
+It does not use `declare module`.
+
+### cjs
+
+`cjs` is a local package that expose CJS.
+Its type definition uses `export default` declaration, generated by `tsc`.
+It does not contain `module` field in `package.json`.
+
+### es-cjs
+
+`es-cjs` is a local package that expose `main` in CJS and `module` in `ES*` format.
+It should behaves identical to `cjs` for these tests.
+It is added for reference.
+
+### esm-cjs
+
+`esm-cjs` is a local package that expose `main` in CJS and `exports` in `Node*` format.
+
+### esm
+
+`esm` is a local package that expose `exports` in `Node*` format.
+It does not contain `main` field.
+
+This package does not apply to test configurations that uses `moduleResolution: Node`.
 
 ## Running the tests
+
+Each project will be compiled with `tsc` (`build`), and tested with `ava` (`test`).
 
 - `pnpm build`: build all projects
 - `pnpm test`: test all projects (after build)
@@ -64,6 +127,7 @@ Each project will be compiled with `tsc` (`build`), and tested with `ava` (`test
 - `pnpm <project> <command>`: run command in specific project.\
   e.g. `pnpm node16-syn build` to build the `node16-syn` project.
 
-## TODO
+## Other test cases to cover
 
-- need to clean up the c* error list one more time
+- referencing a `esm` package which depends on `cjs` with `export default`
+- referencing a `esm` package which depends on `cjs` with `export =`

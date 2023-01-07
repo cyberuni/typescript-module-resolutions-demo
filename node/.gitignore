@@ -1,4 +1,4 @@
 .turbo
-/cjs
+/commonjs
 /es*
 /node*
