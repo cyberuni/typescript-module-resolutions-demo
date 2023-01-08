@@ -52,6 +52,11 @@ Within each test configuration, there are multiple `tsconfig.*.json`. One for ea
 
 The other `module` values are not tested.
 
+The `ES*` code are tested with `type: module` under Node.js.
+Theoritically, it should be run under browser or use a bundler to bundle them first.
+We can improve that in the future.
+For now, running them under Node.js with `type: module` should be suffice.
+
 Each test project imports multiple packages.
 Each of the package represents certain scenario.
 
