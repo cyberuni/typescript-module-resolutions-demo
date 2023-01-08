@@ -1,0 +1,431 @@
+  ✘ [fail]: commonjs › assert-default-as.all › assert default as
+  ✘ [fail]: commonjs › assert-default.all › assert default
+  ✘ [fail]: commonjs › assert-star.all › assert star
+
+  ✘ [fail]: commonjs › assertron-default-as.all › assertron default as
+  ✘ [fail]: commonjs › assertron-default.all › assertron default
+  ✘ [fail]: commonjs › assertron-star.all › assertron star
+
+  ✘ [fail]: commonjs › param-case-default-as.all › param-case default as
+  ✘ [fail]: commonjs › param-case-default.all › param-case default
+  ✘ [fail]: commonjs › param-case-star.all › param-case star
+
+  ✘ [fail]: commonjs › cjs-default-as.all › cjs default as
+  ✘ [fail]: commonjs › cjs-default.all › cjs default
+  ✘ [fail]: commonjs › cjs-star.all › cjs star
+
+  ✘ [fail]: commonjs › es-cjs-default-as.all › es-cjs default as
+  ✘ [fail]: commonjs › es-cjs-default.all › es-cjs default
+  ✘ [fail]: commonjs › es-cjs-star.all › es-cjs star
+
+  ✔ commonjs › esm-cjs-default-as.all › esm-cjs default as
+  ✔ commonjs › esm-cjs-default.all › esm-cjs default
+  ✔ commonjs › esm-cjs-star.all › esm-cjs star
+
+
+  ✔ es2015 › assert-default-as.all › assert default as
+  ✔ es2015 › assert-default.all › assert default
+  ✔ es2015 › assert-star.all › assert star
+
+  ✔ es2015 › assertron-default-as.all › assertron default as
+  ✔ es2015 › assertron-default.all › assertron default
+  ✔ es2015 › assertron-star.all › assertron star
+
+  ✔ es2015 › param-case-default.all › param-case default
+  ✔ es2015 › param-case-default-as.all › param-case default as
+  ✔ es2015 › param-case-star.all › param-case star
+
+  ✔ es2015 › cjs-default-as.all › cjs default as
+  ✔ es2015 › cjs-default.all › cjs default
+  ✔ es2015 › cjs-star.all › cjs star
+
+  ✔ es2015 › es-cjs-default-as.all › es-cjs default as
+  ✔ es2015 › es-cjs-default.all › es-cjs default
+  ✔ es2015 › es-cjs-star.all › es-cjs star
+
+  ✔ es2015 › esm-cjs-default-as.all › esm-cjs default as
+  ✔ es2015 › esm-cjs-default.all › esm-cjs default
+  ✔ es2015 › esm-cjs-star.all › esm-cjs star
+
+  ✔ es2015 › esm-default-as.all › esm default as
+  ✔ es2015 › esm-default.all › esm default
+  ✔ es2015 › esm-star.all › esm star
+
+  ✔ es2020 › assert-default-as.all › assert default as
+  ✔ es2020 › assert-star.all › assert star
+  ✔ es2020 › assert-default.all › assert default
+  ✔ es2020 › assertron-default.all › assertron default
+  ✔ es2020 › assertron-default-as.all › assertron default as
+  ✔ es2020 › assertron-star.all › assertron star
+  ✔ es2020 › cjs-default-as.all › cjs default as
+  ✔ es2020 › cjs-default.all › cjs default
+  ✔ es2020 › cjs-star.all › cjs star
+  ✔ es2020 › es-cjs-default-as.all › es-cjs default as
+  ✔ es2020 › es-cjs-default.all › es-cjs default
+  ✔ es2020 › esm-default-as.all › esm default as
+  ✔ es2020 › esm-cjs-default-as.all › esm-cjs default as
+  ✔ es2020 › es-cjs-star.all › es-cjs star
+  ✔ es2020 › esm-star.all › esm star
+  ✔ es2020 › esm-default.all › esm default
+  ✔ es2020 › esm-cjs-default.all › esm-cjs default
+  ✔ es2020 › esm-cjs-star.all › esm-cjs star
+  ✔ es2020 › param-case-default-as.all › param-case default as
+  ✔ es2020 › param-case-default.all › param-case default
+  ✔ es2022 › assert-default-as.all › assert default as
+  ✔ es2020 › param-case-star.all › param-case star
+  ✔ es2022 › assert-default.all › assert default
+  ✔ es2022 › assert-star.all › assert star
+  ✔ es2022 › cjs-default-as.all › cjs default as
+  ✔ es2022 › es-cjs-star.all › es-cjs star
+  ✔ es2022 › es-cjs-default.all › es-cjs default
+  ✔ es2022 › cjs-default.all › cjs default
+  ✔ es2022 › cjs-star.all › cjs star
+  ✔ es2022 › es-cjs-default-as.all › es-cjs default as
+  ✔ es2022 › esm-cjs-default-as.all › esm-cjs default as
+  ✔ es2022 › esm-cjs-default.all › esm-cjs default
+  ✔ es2022 › assertron-default.all › assertron default
+  ✔ es2022 › assertron-default-as.all › assertron default as
+  ✔ es2022 › assertron-star.all › assertron star
+  ✔ es2022 › esm-cjs-star.all › esm-cjs star
+  ✔ es2022 › esm-default.all › esm default
+  ✔ es2022 › esm-default-as.all › esm default as
+  ✔ es2022 › esm-star.all › esm star
+  ✔ es2022 › param-case-default-as.all › param-case default as
+  ✔ node16 › assert-default-as.all › assert default as
+  ✔ es2022 › param-case-default.all › param-case default
+  ✔ node16 › assert-star.all › assert star
+  ✔ node16 › assert-default.all › assert default
+  ✔ node16 › cjs-default-as.all › cjs default as
+  ✔ node16 › cjs-star.all › cjs star
+  ✔ es2022 › param-case-star.all › param-case star
+  ✔ node16 › assertron-default-as.all › assertron default as
+  ✔ node16 › cjs-default.all › cjs default
+  ✔ node16 › assertron-default.all › assertron default
+  ✔ node16 › assertron-star.all › assertron star
+  ✔ node16 › es-cjs-star.all › es-cjs star
+  ✔ node16 › es-cjs-default-as.all › es-cjs default as
+  ✔ node16 › es-cjs-default.all › es-cjs default
+  ✔ node16 › esm-cjs-default-as.all › esm-cjs default as
+  ✔ node16 › esm-cjs-default.all › esm-cjs default
+  ✔ node16 › esm-cjs-star.all › esm-cjs star
+  ✔ node16 › esm-default-as.all › esm default as
+  ✔ node16 › param-case-default.all › param-case default
+  ✔ node16 › param-case-default-as.all › param-case default as
+  ✔ node16 › esm-star.all › esm star
+  ✔ node16 › esm-default.all › esm default
+  ✔ nodenext › assert-default.all › assert default
+  ✔ nodenext › assert-default-as.all › assert default as
+  ✔ node16 › param-case-star.all › param-case star
+  ✔ nodenext › assert-star.all › assert star
+  ✔ nodenext › assertron-default-as.all › assertron default as
+  ✔ nodenext › cjs-default-as.all › cjs default as
+  ✔ nodenext › assertron-default.all › assertron default
+  ✔ nodenext › assertron-star.all › assertron star
+  ✔ nodenext › cjs-default.all › cjs default
+  ✔ nodenext › cjs-star.all › cjs star
+  ✔ nodenext › es-cjs-default-as.all › es-cjs default as
+  ✔ nodenext › es-cjs-default.all › es-cjs default
+  ✔ nodenext › esm-cjs-default-as.all › esm-cjs default as
+  ✔ nodenext › es-cjs-star.all › es-cjs star
+  ✔ nodenext › esm-cjs-default.all › esm-cjs default
+  ✔ nodenext › esm-default-as.all › esm default as
+  ✔ nodenext › esm-cjs-star.all › esm-cjs star
+  ✔ nodenext › esm-default.all › esm default
+  ✔ nodenext › esm-star.all › esm star
+  ✔ nodenext › param-case-star.all › param-case star
+  ✔ nodenext › param-case-default.all › param-case default
+  ✔ nodenext › param-case-default-as.all › param-case default as
+  ─
+
+  commonjs › assert-default-as.all › assert default as
+
+  commonjs/assert-default-as.all.js:6
+
+   5: (0, ava_1.default)('assert default as', t => {
+   6:     t.notThrows(() => (0, assert_1.default)(true));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: '(0 , assert_1.default) is not a function',
+  }
+
+  › commonjs/assert-default-as.all.js:6:44
+  › commonjs/assert-default-as.all.js:6:7
+
+
+
+  commonjs › assert-default.all › assert default
+
+  commonjs/assert-default.all.js:6
+
+   5: (0, ava_1.default)('assert default', t => {
+   6:     t.notThrows(() => (0, assert_1.default)(true));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: '(0 , assert_1.default) is not a function',
+  }
+
+  › commonjs/assert-default.all.js:6:44
+  › commonjs/assert-default.all.js:6:7
+
+
+
+  commonjs › assert-star.all › assert star
+
+  commonjs/assert-star.all.js:6
+
+   5: (0, ava_1.default)('assert star', t => {
+   6:     t.notThrows(() => assert.default(true));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'assert.default is not a function',
+  }
+
+  › commonjs/assert-star.all.js:6:37
+  › commonjs/assert-star.all.js:6:7
+
+
+
+  commonjs › cjs-default-as.all › cjs default as
+
+  commonjs/cjs-default-as.all.js:6
+
+   5: (0, ava_1.default)('cjs default as', t => {
+   6:     t.notThrows(() => cjs_1.default.default(1));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'cjs_1.default.default is not a function',
+  }
+
+  › commonjs/cjs-default-as.all.js:6:44
+  › commonjs/cjs-default-as.all.js:6:7
+
+
+
+  commonjs › cjs-default.all › cjs default
+
+  commonjs/cjs-default.all.js:6
+
+   5: (0, ava_1.default)('cjs default', t => {
+   6:     t.notThrows(() => cjs_1.default.default(1));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'cjs_1.default.default is not a function',
+  }
+
+  › commonjs/cjs-default.all.js:6:44
+  › commonjs/cjs-default.all.js:6:7
+
+
+
+  commonjs › cjs-star.all › cjs star
+
+  commonjs/cjs-star.all.js:6
+
+   5: (0, ava_1.default)('cjs star', t => {
+   6:     t.notThrows(() => m.default.default(1));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'm.default.default is not a function',
+  }
+
+  › commonjs/cjs-star.all.js:6:40
+  › commonjs/cjs-star.all.js:6:7
+
+
+
+  commonjs › es-cjs-default-as.all › es-cjs default as
+
+  commonjs/es-cjs-default-as.all.js:6
+
+   5: (0, ava_1.default)('es-cjs default as', t => {
+   6:     t.notThrows(() => es_cjs_1.default.default(1));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'es_cjs_1.default.default is not a function',
+  }
+
+  › commonjs/es-cjs-default-as.all.js:6:47
+  › commonjs/es-cjs-default-as.all.js:6:7
+
+
+
+  commonjs › es-cjs-default.all › es-cjs default
+
+  commonjs/es-cjs-default.all.js:6
+
+   5: (0, ava_1.default)('es-cjs default', t => {
+   6:     t.notThrows(() => es_cjs_1.default.default(1));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'es_cjs_1.default.default is not a function',
+  }
+
+  › commonjs/es-cjs-default.all.js:6:47
+  › commonjs/es-cjs-default.all.js:6:7
+
+
+
+  commonjs › es-cjs-star.all › es-cjs star
+
+  commonjs/es-cjs-star.all.js:6
+
+   5: (0, ava_1.default)('es-cjs star', t => {
+   6:     t.notThrows(() => m.default.default(1));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'm.default.default is not a function',
+  }
+
+  › commonjs/es-cjs-star.all.js:6:40
+  › commonjs/es-cjs-star.all.js:6:7
+
+
+
+  commonjs › assertron-default-as.all › assertron default as
+
+  commonjs/assertron-default-as.all.js:6
+
+   5: (0, ava_1.default)('assertron default as', t => {
+   6:     t.notThrows(() => assertron_1.default.default.truthy(true));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'Cannot read properties of undefined (reading \'truthy\')',
+  }
+
+  › commonjs/assertron-default-as.all.js:6:51
+  › commonjs/assertron-default-as.all.js:6:7
+
+
+
+  commonjs › assertron-default.all › assertron default
+
+  commonjs/assertron-default.all.js:6
+
+   5: (0, ava_1.default)('assertron default', t => {
+   6:     t.notThrows(() => assertron_1.default.default.truthy(true));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'Cannot read properties of undefined (reading \'truthy\')',
+  }
+
+  › commonjs/assertron-default.all.js:6:51
+  › commonjs/assertron-default.all.js:6:7
+
+
+
+  commonjs › assertron-star.all › assertron star
+
+  commonjs/assertron-star.all.js:6
+
+   5: (0, ava_1.default)('assertron star', t => {
+   6:     t.notThrows(() => assertron.default.default.truthy(true));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'Cannot read properties of undefined (reading \'truthy\')',
+  }
+
+  › commonjs/assertron-star.all.js:6:49
+  › commonjs/assertron-star.all.js:6:7
+
+
+
+  commonjs › param-case-default.all › param-case default
+
+  commonjs/param-case-default.all.js:6
+
+   5: (0, ava_1.default)('param-case default', t => {
+   6:     t.notThrows(() => (0, param_case_1.default)('hello world'));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: '(0 , param_case_1.default) is not a function',
+  }
+
+  › commonjs/param-case-default.all.js:6:48
+  › commonjs/param-case-default.all.js:6:7
+
+
+
+  commonjs › param-case-default-as.all › param-case default as
+
+  commonjs/param-case-default-as.all.js:6
+
+   5: (0, ava_1.default)('param-case default as', t => {
+   6:     t.notThrows(() => (0, param_case_1.default)('hello world'));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: '(0 , param_case_1.default) is not a function',
+  }
+
+  › commonjs/param-case-default-as.all.js:6:48
+  › commonjs/param-case-default-as.all.js:6:7
+
+
+
+  commonjs › param-case-star.all › param-case star
+
+  commonjs/param-case-star.all.js:6
+
+   5: (0, ava_1.default)('param-case star', t => {
+   6:     t.notThrows(() => paramCase.default('hello world'));
+   7: });
+
+  Function threw:
+
+  TypeError {
+    message: 'paramCase.default is not a function',
+  }
+
+  › commonjs/param-case-star.all.js:6:40
+  › commonjs/param-case-star.all.js:6:7
+
+  ─
+
+  15 tests failed
+  3 uncaught exceptions
+undefined
+/home/homa/code/cyberuni/ts-esm-interop/tests/node16:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  node16@1.0.0 test: `ava`
+Exit status 1
+ ELIFECYCLE  Command failed with exit code 1.
