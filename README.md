@@ -65,8 +65,16 @@ the code is adjusted to make compile pass if possible.
 This helps to identify any hidden issue what TypeScript says the code is good,
 but it is not.
 
-If different `module` setting produces requires different code,
-the code is adjusted towards the code that is most compatible to the test configuration.
+Every test file is named with the following format: `<package>-<import syntax>.<scope>.ts`
+
+For example:
+
+- `assert-default-as.all.ts`
+- `param-case-star.cjs.ts`
+- `param-case-star.es.ts`: for `ES*`
+- `param-case-star.es2015.ts`: for `ES2015`
+
+The convention allow us to scope test easily so that it is easier to collect test results.
 
 ### assert
 
@@ -87,7 +95,8 @@ It also has a transient dependency on `assertion-error` which uses `export =` in
 ### param-case@1
 
 `param-case@1` is written in TypeScript, and compiled to CommonJS.
-`param-case@1` expose CJS with `export =` in the type definition.
+It exposes CJS with `export =` in the type definition.
+The type definition is hand-written to match CJS behavior.
 It does not use `declare module`.
 
 ### cjs
@@ -120,12 +129,14 @@ Each project will be compiled with `tsc` (`build`), and tested with `ava` (`test
 - `pnpm build`: build all projects
 - `pnpm test`: test all projects (after build)
 - `pnpm clean`: delete all build results
-- `pnpm build:<x>`: build all project with specific `module` setting.\
-  e.g. `build:cjs` to build all projects with `CommonJS`
-- `pnpm test:<x>`: test all project with specific `module` setting.\
-  e.g. `test:node16` to build all projects with `Node16`
+- `pnpm build:<module>`: build all project with specific `module` setting.\
+  e.g. `pnpm build:cjs` to build all projects with `CommonJS`
+- `pnpm test:<module>`: test all project with specific `module` setting.\
+  e.g. `pnpm test:node16` to build all projects with `Node16`
 - `pnpm <project> <command>`: run command in specific project.\
   e.g. `pnpm node16-syn build` to build the `node16-syn` project.
+- `pnpm <project> test:<package>`: test specific project for specific `package`.\
+  e.g. `pnpm node test:assert` test `node` project for the `assert` package.
 
 ## Other test cases to cover
 
