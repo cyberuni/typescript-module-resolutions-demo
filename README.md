@@ -143,6 +143,14 @@ Each project will be compiled with `tsc` (`build`), and tested with `ava` (`test
 - `pnpm <project> test:<package>`: test specific project for specific `package`.\
   e.g. `pnpm node test:assert` test `node` project for the `assert` package.
 
+Tips: to make it a bit easier to extract the test result:
+
+```sh
+pnpm node test > test.txt
+```
+
+Then edit the `test.txt` to first organize the lines.
+
 ## Other test cases to cover
 
 - referencing a `esm` package which depends on `cjs` with `export default`
