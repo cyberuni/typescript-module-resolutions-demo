@@ -3,8 +3,6 @@
 ```js
 {
   "compilerOptions": {
-    // implicitly true
-    // "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "moduleResolution": "Node"
   }
@@ -19,7 +17,7 @@ Depends on the test configuration, the way to consume a module are different.
 
 In this section we describe each module and how they are consumed within this configuration.
 
-`assert`: `module declaration` with `export =` as in DefinitelyTyped
+## [assert](../../README.md#assert)
 
 ```ts
 import assert from 'assert'
@@ -28,11 +26,7 @@ import * as assert from 'assert'
 assert(true)
 ```
 
-`assertron@7`: Written in TypeScript, compile to CJS.
-The type definition uses `export default` as performed by `tsc`.
-It also has a transient dependency on `assertion-error` which uses `export =` in the type definition.
-
-It also expose `module` field in `package.json`, but that should not affect the test.
+## [assertron@7](../../README.md#assertron7)
 
 ```ts
 import assertron from 'assertron'
@@ -43,7 +37,7 @@ import * as assertron from 'assertron'
 assertron.default.truthy(1)
 ```
 
-`param-case@1`: is a CJS with `export =` in the typing file. It does not use `declare module`.
+## [param-case@1](../../README.md#param-case1)
 
 ```ts
 // export =
@@ -55,7 +49,7 @@ import * as paramCase from 'param-case'
 paramCase.default('hello world')
 ```
 
-`cjs`: is a local package that expose `main` in CJS format. It does not contain `module` field.
+## [cjs](../../README.md#cjs)
 
 ```ts
 import m from 'cjs'
@@ -66,8 +60,7 @@ import * as m from 'cjs'
 m.default(1)
 ```
 
-`es-cjs`: is a local package that expose `main` in CJS and `module` in `ES*` format.
-It should behaves identical to `cjs`. Adding just for reference.
+## [es-cjs](../../README.md#es-cjs)
 
 ```ts
 import m from 'es-cjs'
@@ -78,12 +71,7 @@ import * as m from 'es-cjs'
 m.default(1)
 ```
 
-`esm`: is a local package that expose `ESM` with `exports` field. It does not contain `main` field.
-
-It is not supported in this test configuration as `moduleResolution` set to `Node16` or `NodeNext` is required.
-
-`esm-cjs`: is a local package that expose `ESM` with `exports` field and `main` in CJS format.
-It should behaves identical to `cjs` in this configuration. Adding just for reference.
+## [esm-cjs](../../README.md#esm-cjs)
 
 ```ts
 import m from 'esm-cjs'
@@ -97,7 +85,7 @@ m.default(1)
 ## Legends
 
 - 🟢: both compile and runtime are working correctly
-- 🟡: for compile, it means there is an error, but can be supressed (e.g. with `skipLibCheck`)\
+- 🟡: for compile, it means there is an error, but can be suppressed (e.g. with `skipLibCheck`)\
   for runtime, it means the compile fails, but runtime is working
 - 🔴: both compile and runtime fails
 - ❌: compile success, but runtime fails. Potentially a TypeScript bug.
@@ -113,12 +101,12 @@ Import Syntax:
 
 | module   | Package    | Type      | import: default as | import: default   | import: * as      |
 | -------- | ---------- | --------- | ------------------ | ----------------- | ----------------- |
-| CommonJS | assert     | 💻 Compile | 🔴 TS1259-e         | 🔴 TS1259-e        | 🟢                 |
-|          |            | 🏃 Runtime | 🔴 not-fn           | 🔴 not-fn          | 🟢                 |
-|          | assertron  | 💻 Compile | 🟡 TS1259-t         | 🟡 TS1259-t        | 🟡 TS1259-t        |
-|          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🟡                 |
-|          | param-case | 💻 Compile | 🔴 TS1259-e         | 🔴 TS1259-e        | 🔴 TS2497-e TS2339 |
-|          |            | 🏃 Runtime | 🔴 not-fn           | 🔴 not-fn          | 🟡                 |
+| CommonJS | assert     | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 Runtime | 🟢                  | 🟢                 | ❌ not-fn          |
+|          | assertron  | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
+|          | param-case | 💻 Compile | 🟢                  | 🟢                 | 🔴 TS2497-e TS2339 |
+|          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟡                 |
 |          | cjs        | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
 |          | es-cjs     | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
@@ -127,16 +115,16 @@ Import Syntax:
 |          |            | 🏃 Runtime | ➖                  | ➖                 | ➖                 |
 |          | esm-cjs    | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
-| ES*      | assert     | 💻 Compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🟢                 |
-|          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🔴 not-fn          |
-|          | assertron  | 💻 Compile | 🟡 TS1259-t         | 🟡 TS1259-t        | 🟡 TS1259-t        |
-|          |            | 🏃 Runtime | 🔴 not-fn           | 🔴 not-fn          | 🔴 not-fn          |
-|          | param-case | 💻 Compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🔴 TS2497-a TS2339 |
-|          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🔴 not-fn          |
+| ES*      | assert     | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 Runtime | 🟢                  | 🟢                 | ❌ not-fn          |
+|          | assertron  | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 Runtime | ❌ not-fn           | ❌ not-fn          | ❌ not-fn          |
+|          | param-case | 💻 Compile | 🟢                  | 🟢                 | 🔴 TS2497-a TS2339 |
+|          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟡                 |
 |          | cjs        | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 Runtime | ❌ not-fn           | ❌ not-fn          | ❌ not-fn          |
 |          | es-cjs     | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 Runtime | ❌ not-fn           | ❌ not-fn          | ❌ not-fn          |
 |          | esm        | 💻 Compile | ➖                  | ➖                 | ➖                 |
 |          |            | 🏃 Runtime | ➖                  | ➖                 | ➖                 |
 |          | esm-cjs    | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
@@ -170,6 +158,9 @@ Import Syntax:
 
 ## Conclusion
 
-- `module: CommonJS` is the only "barely usable" one.
-  - Cannot support `export =` type definition
+- `module: CommonJS` works on most cases.
+  This is expected as that is the majority case for many years.
+  - for `* as assert` case, while `esModuleInterop` tries to solve that problem,
+    and the consumer should use the other forms. The compiler passing it is a bug IMO.
+- ❌ `module: ES*` fails with CJS is suprising, and if the test is correct, it's disturbing.
 - ❌ `module: Node*` compiled to CJS incorrectly

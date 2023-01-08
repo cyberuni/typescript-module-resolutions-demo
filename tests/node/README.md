@@ -122,9 +122,9 @@ Import Syntax:
 |          | esm-cjs    | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
 | ES*      | assert     | 💻 Compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🟢                 |
-|          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🔴 not-fn          |
+|          |            | 🏃 Runtime | 🟡                  | 🟡                 | ❌ not-fn          |
 |          | assertron  | 💻 Compile | 🟡 TS1259-t         | 🟡 TS1259-t        | 🟡 TS1259-t        |
-|          |            | 🏃 Runtime | 🔴 not-fn           | 🔴 not-fn          | 🔴 not-fn          |
+|          |            | 🏃 Runtime | ❌ not-fn           | ❌ not-fn          | ❌ not-fn          |
 |          | param-case | 💻 Compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🔴 TS2497-a TS2339 |
 |          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🟡                 |
 |          | cjs        | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
