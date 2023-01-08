@@ -91,7 +91,7 @@ m.default(1)
 ## Legends
 
 - 🟢: both compile and runtime are working correctly
-- 🟡: for compile, it means there is an error, but can be supressed (e.g. with `skipLibCheck`)\
+- 🟡: for compile, it means there is an error, but can be suppressed (e.g. with `skipLibCheck`)\
   for runtime, it means the compile fails, but runtime is working
 - 🔴: both compile and runtime fails
 - ❌: compile success, but runtime fails. Potentially a TypeScript bug.
@@ -112,7 +112,7 @@ Import Syntax:
 |          | assertron  | 💻 Compile | 🟡 TS1259-t         | 🟡 TS1259-t        | 🟡 TS1259-t        |
 |          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🟡                 |
 |          | param-case | 💻 Compile | 🔴 TS1259-e         | 🔴 TS1259-e        | 🔴 TS2497-e TS2339 |
-|          |            | 🏃 Runtime | 🔴 not-fn           | 🔴 not-fn          | 🟡                 |
+|          |            | 🏃 Runtime | 🔴 not-fn           | 🔴 not-fn          | 🔴 not-fn          |
 |          | cjs        | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
 |          | es-cjs     | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
@@ -126,11 +126,11 @@ Import Syntax:
 |          | assertron  | 💻 Compile | 🟡 TS1259-t         | 🟡 TS1259-t        | 🟡 TS1259-t        |
 |          |            | 🏃 Runtime | 🔴 not-fn           | 🔴 not-fn          | 🔴 not-fn          |
 |          | param-case | 💻 Compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🔴 TS2497-a TS2339 |
-|          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🔴 not-fn          |
+|          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🟡                 |
 |          | cjs        | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 Runtime | ❌ not-fn           | ❌ not-fn          | ❌ not-fn          |
 |          | es-cjs     | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 Runtime | ❌ not-fn           | ❌ not-fn          | ❌ not-fn          |
 |          | esm        | 💻 Compile | ➖                  | ➖                 | ➖                 |
 |          |            | 🏃 Runtime | ➖                  | ➖                 | ➖                 |
 |          | esm-cjs    | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
@@ -167,3 +167,4 @@ Import Syntax:
 - `module: CommonJS` is the only "barely usable" one.
   - Cannot support `export =` type definition
 - ❌ `module: Node*` compiled to CJS incorrectly
+- ❌ `ES*` compiled success on `cjs` and `es-cjs` but runtime error
