@@ -10,7 +10,39 @@
 }
 ```
 
-This is the configuration for creating ESM only package.
+This is the configuration for creating ESM package.
+The problem is, the support on CommonJS is broken.
+Meaning you can't really create dual packages.
+
+Note that the package must supply the `require` field when exposing dual ESM/CommonJS.
+i.e.:
+
+```json
+{
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js",
+  }
+}
+```
+
+Package only supplying `main` field does not work:
+
+```json
+{
+
+  "type": "module",
+  "exports": {
+    "types": "./node16/index.d.ts",
+    "import": "./node16/index.js"
+  },
+  "main": "./commonjs/index.js",
+  "types": "./commonjs/index.d.ts"
+}
+```
+
+This is required by Node.js
 
 ## Test Subjects
 
@@ -115,20 +147,20 @@ Import Syntax:
 
 | module   | Package    | Type      | import: default as   | import: default      | import: * as                |
 | -------- | ---------- | --------- | -------------------- | -------------------- | --------------------------- |
-| CommonJS | assert     | 💻 Compile | ➖                    | ➖                    | ➖                           |
-|          |            | 🏃 Runtime | ➖                    | ➖                    | ➖                           |
-|          | assertron  | 💻 Compile | ➖                    | ➖                    | ➖                           |
-|          |            | 🏃 Runtime | ➖                    | ➖                    | ➖                           |
-|          | param-case | 💻 Compile | ➖                    | ➖                    | ➖                           |
-|          |            | 🏃 Runtime | ➖                    | ➖                    | ➖                           |
-|          | cjs        | 💻 Compile | ➖                    | ➖                    | ➖                           |
-|          |            | 🏃 Runtime | ➖                    | ➖                    | ➖                           |
-|          | es-cjs     | 💻 Compile | ➖                    | ➖                    | ➖                           |
-|          |            | 🏃 Runtime | ➖                    | ➖                    | ➖                           |
-|          | esm        | 💻 Compile | ➖                    | ➖                    | ➖                           |
-|          |            | 🏃 Runtime | ➖                    | ➖                    | ➖                           |
-|          | esm-cjs    | 💻 Compile | ➖                    | ➖                    | ➖                           |
-|          |            | 🏃 Runtime | ➖                    | ➖                    | ➖                           |
+| CommonJS | assert     | 💻 Compile | 🔴 TS1259-e           | 🔴 TS1259-e           | 🔴 TS2339                    |
+|          |            | 🏃 Runtime | 🔴                    | 🔴                    | 🔴                           |
+|          | assertron  | 💻 Compile | 🟡 TS1259-te TS1479-t | 🟡 TS1259-te TS1479-t | 🔴 TS1259-te TS1479 TS2339   |
+|          |            | 🏃 Runtime | 🔴                    | 🔴                    | 🔴                           |
+|          | param-case | 💻 Compile | 🟢                    | 🟢                    | 🔴 TS2497-e TS2339           |
+|          |            | 🏃 Runtime | 🔴                    | 🔴                    | 🔴                           |
+|          | cjs        | 💻 Compile | 🟢                    | 🟢                    | 🔴 TS2339                    |
+|          |            | 🏃 Runtime | 🔴                    | 🔴                    | 🔴                           |
+|          | es-cjs     | 💻 Compile | 🟢                    | 🟢                    | 🔴 TS2339                    |
+|          |            | 🏃 Runtime | 🔴                    | 🔴                    | 🔴                           |
+|          | esm        | 💻 Compile | 🟢                    | 🟢                    | 🟢                           |
+|          |            | 🏃 Runtime | 🟢                    | 🟢                    | 🟢                           |
+|          | esm-cjs    | 💻 Compile | 🟢                    | 🟢                    | 🟢                           |
+|          |            | 🏃 Runtime | 🟢                    | 🟢                    | 🟢                           |
 | ES*      | assert     | 💻 Compile | 🔴 TS1259-a           | 🔴 TS1259-a           | 🔴 TS2339                    |
 |          |            | 🏃 Runtime | 🟡                    | 🟡                    | 🟡                           |
 |          | assertron  | 💻 Compile | 🟡 TS1259-ta TS1479-t | 🟡 TS1259-ta TS1479-t | 🔴 TS1259-ta TS1479-t TS2339 |
@@ -172,10 +204,13 @@ Import Syntax:
 - TS2497-e: `TS2497: needs esModuleInterop and referencing its default export`
 - not-fn: `TypeError: not a function`
 - ref-err: `ReferenceError: exports is not defined in ES module scope` (due to to-cjs)
+- no-exports
 
 ## Conclusion
 
-- `module: CommonJS` is a non-supported case, as CJS needs to use dynamic import to import ES module.
+- `module: CommonJS` can only work with package with `exports: { require: ... }`???
+  - ❌ Does not work with dual package that does not have `exports.require` field (`ava` issue?)
+  - 🔍 Unable to import CJS directly is a huge barrier for ESM adoption.
 - `module: ES*`
   - ❌ Does not support `declare module` with `export =`.
   - 💡 `import * as` should be avoided. Most cases failed with `TS2339`.

@@ -137,6 +137,44 @@
   ✔ nodenext › param-case-default-as.all › param-case default as
   ─
 
+
+  Uncaught exception in commonjs/esm-default-as.all.js
+
+  commonjs/esm-default-as.all.js:4
+
+   3: const ava_1 = require("ava");
+   4: const esm_1 = require("esm");
+   5: (0, ava_1.default)('esm default as', t => {
+
+  Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /home/homa/code/cyberuni/ts-esm-interop/tests/node16/node_modules/esm/package.json
+
+  › Object.<anonymous> (commonjs/esm-default-as.all.js:4:15)
+
+  Uncaught exception in commonjs/esm-default.all.js
+
+  commonjs/esm-default.all.js:4
+
+   3: const ava_1 = require("ava");
+   4: const esm_1 = require("esm");
+   5: (0, ava_1.default)('esm default', t => {
+
+  Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /home/homa/code/cyberuni/ts-esm-interop/tests/node16/node_modules/esm/package.json
+
+  › Object.<anonymous> (commonjs/esm-default.all.js:4:15)
+
+
+  Uncaught exception in commonjs/esm-star.all.js
+
+  commonjs/esm-star.all.js:4
+
+   3: const ava_1 = require("ava");
+   4: const m = require("esm");
+   5: (0, ava_1.default)('esm star', t => {
+
+  Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /home/homa/code/cyberuni/ts-esm-interop/tests/node16/node_modules/esm/package.json
+
+  › Object.<anonymous> (commonjs/esm-star.all.js:4:11)
+
   commonjs › assert-default-as.all › assert default as
 
   commonjs/assert-default-as.all.js:6

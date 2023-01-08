@@ -5,7 +5,8 @@
   "type": "module",
   "exports": {
     "types": "./node16/index.d.ts",
-    "import": "./node16/index.js"
+    "import": "./node16/index.js",
+    "require": "./commonjs/index.js"
   },
   "scripts": {
     "build": "run-p --aggregate-output -c --print-label build:commonjs build:es2015 build:es2020 build:es2022 build:node16 build:nodenext",
