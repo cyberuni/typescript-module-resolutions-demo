@@ -53,7 +53,7 @@ Within each test configuration, there are multiple `tsconfig.*.json`. One for ea
 The other `module` values are not tested.
 
 The `ES*` code are tested with `type: module` under Node.js.
-Theoritically, it should be run under browser or use a bundler to bundle them first.
+Theoretically, it should be run under browser or use a bundler to bundle them first.
 We can improve that in the future.
 For now, running them under Node.js with `type: module` should be suffice.
 
@@ -86,7 +86,7 @@ The convention allow us to scope test easily so that it is easier to collect tes
 `assert` is a module within Node.js itself.
 The type definition comes from `@types/node` from DefinitelyTyped.
 
-It utilises module declaration (i.e. `declare module`).
+It utilizes module declaration (i.e. `declare module`).
 The module is exported with `export =` declaration.
 
 ### assertron@7
