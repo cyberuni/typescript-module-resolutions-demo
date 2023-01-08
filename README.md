@@ -28,15 +28,15 @@ Each test configuration contains a specific `tsconfig.json` setting:
 
 | Test Configuration                           | `moduleResolution` | `allowSyntheticDefaultImports` | `esModuleInterop` |
 | -------------------------------------------- | ------------------ | ------------------------------ | ----------------- |
-| [node](./node/README.md)                     | `Node`             | `false`                        | `false`           |
-| [node-allow](./node-allow/README.md)         | `Node`             | `true`                         | `false`           |
-| [node-es](./node-es/README.md)               | `Node`             | `(true)`                       | `true`            |
-| [node16](./node16/README.md)                 | `Node16`           | `false`                        | `false`           |
-| [node16-allow](./node16-allow/README.md)     | `Node16`           | `true`                         | `false`           |
-| [node16-es](./node16-es/README.md)           | `Node16`           | `(true)`                       | `true`            |
-| [nodenext](./nodenext/README.md)             | `NodeNext`         | `false`                        | `false`           |
-| [nodenext-allow](./nodenext-allow/README.md) | `NodeNext`         | `true`                         | `false`           |
-| [nodenext-es](./nodenext-es/README.md)       | `NodeNext`         | `(true)`                       | `true`            |
+| [node](./tests/node/README.md)                     | `Node`             | `false`                        | `false`           |
+| [node-allow](./tests/node-allow/README.md)         | `Node`             | `true`                         | `false`           |
+| [node-es](./tests/node-es/README.md)               | `Node`             | `(true)`                       | `true`            |
+| [node16](./tests/node16/README.md)                 | `Node16`           | `false`                        | `false`           |
+| [node16-allow](./tests/node16-allow/README.md)     | `Node16`           | `true`                         | `false`           |
+| [node16-es](./tests/node16-es/README.md)           | `Node16`           | `(true)`                       | `true`            |
+| [nodenext](./tests/nodenext/README.md)             | `NodeNext`         | `false`                        | `false`           |
+| [nodenext-allow](./tests/nodenext-allow/README.md) | `NodeNext`         | `true`                         | `false`           |
+| [nodenext-es](./tests/nodenext-es/README.md)       | `NodeNext`         | `(true)`                       | `true`            |
 
 Note that when `esModuleInterop` is `true`, `allowSyntheticDefaultImports` will automatically be `true`.
 
@@ -126,7 +126,7 @@ This package does not apply to test configurations that uses `moduleResolution: 
 
 Each project will be compiled with `tsc` (`build`), and tested with `ava` (`test`).
 
-- `pnpm build`: build all projects
+- `pnpm build`: build all projects (you need to do this first to build all projects)
 - `pnpm test`: test all projects (after build)
 - `pnpm clean`: delete all build results
 - `pnpm build:<module>`: build all project with specific `module` setting.\

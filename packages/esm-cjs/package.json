@@ -5,16 +5,28 @@
   "type": "module",
   "exports": {
     "types": "./node16/index.d.ts",
-    "import": "./node16/index.js"
+    "import": "./node16/index.js",
+    "require": "./commonjs/index.js"
   },
   "main": "./commonjs/index.js",
   "types": "./commonjs/index.d.ts",
   "scripts": {
     "build": "run-p --aggregate-output -c --print-label build:commonjs build:es2015 build:es2020 build:es2022 build:node16 build:nodenext",
-    "build:commonjs": "tsc -p tsconfig.commonjs.json || ncp ../package.commonjs.json commonjs/package.json",
-    "build:es2015": "tsc -p tsconfig.es2015.json",
-    "build:es2020": "tsc -p tsconfig.es2020.json",
-    "build:es2022": "tsc -p tsconfig.es2022.json",
+    "build:commonjs": "run-s -c build:commonjs:tsc build:commonjs:ncp",
+    "build:commonjs:tsc": "tsc -p tsconfig.commonjs.json",
+    "build:commonjs:ncp": "ncp ../../package.commonjs.json commonjs/package.json",
+    "build:es2015": "run-s -c build:es2015:tsc build:es2015:ncp",
+    "build:es2015:tsc": "tsc -p tsconfig.es2015.json",
+    "build:es2015:ncp": "ncp ../../package.commonjs.json es2015/package.json",
+    "build:es2020": "run-s -c build:es2020:tsc build:es2020:ncp",
+    "build:es2020:tsc": "tsc -p tsconfig.es2020.json",
+    "build:es2020:ncp": "ncp ../../package.commonjs.json es2020/package.json",
+    "build:es2022": "run-s -c build:es2022:tsc build:es2022:ncp",
+    "build:es2022:tsc": "tsc -p tsconfig.es2022.json",
+    "build:es2022:ncp": "ncp ../../package.commonjs.json es2022/package.json",
+    "build:esnext": "run-s -c build:esnext:tsc build:esnext:ncp",
+    "build:esnext:tsc": "tsc -p tsconfig.esnext.json",
+    "build:esnext:ncp": "ncp ../../package.commonjs.json esnext/package.json",
     "build:node16": "tsc -p tsconfig.node16.json",
     "build:nodenext": "tsc -p tsconfig.nodenext.json",
     "clean": "rimraf commonjs es* node16 nodenext"

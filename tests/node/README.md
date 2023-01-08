@@ -23,7 +23,7 @@ Depends on the test configuration, the way to consume a module are different.
 
 In this section we describe each module and how they are consumed within this configuration.
 
-## [assert](../README.md#assert)
+## [assert](../../README.md#assert)
 
 ```ts
 import assert from 'assert'
@@ -32,7 +32,7 @@ import * as assert from 'assert'
 assert(true)
 ```
 
-## [assertron@7](../README.md#assertron7)
+## [assertron@7](../../README.md#assertron7)
 
 ```ts
 import assertron from 'assertron'
@@ -43,7 +43,7 @@ import * as assertron from 'assertron'
 assertron.default.truthy(1)
 ```
 
-## [param-case@1](../README.md#param-case1)
+## [param-case@1](../../README.md#param-case1)
 
 ```ts
 // export =
@@ -55,7 +55,7 @@ import * as paramCase from 'param-case'
 paramCase.default('hello world')
 ```
 
-## [cjs](../README.md#cjs)
+## [cjs](../../README.md#cjs)
 
 ```ts
 import m from 'cjs'
@@ -66,7 +66,7 @@ import * as m from 'cjs'
 m.default(1)
 ```
 
-## [es-cjs](../README.md#es-cjs)
+## [es-cjs](../../README.md#es-cjs)
 
 ```ts
 import m from 'es-cjs'
@@ -77,7 +77,7 @@ import * as m from 'es-cjs'
 m.default(1)
 ```
 
-## [esm-cjs](../README.md#esm-cjs)
+## [esm-cjs](../../README.md#esm-cjs)
 
 ```ts
 import m from 'esm-cjs'

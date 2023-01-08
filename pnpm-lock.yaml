@@ -10,309 +10,6 @@ importers:
       turbo: 1.6.3
       typescript: 5.0.0-dev.20230103
 
-  node:
-    specifiers:
-      '@types/node': ^14
-      '@types/react': ^17
-      assertron: ^7
-      ava: ^5.1.0
-      cjs: workspace:*
-      color-map: ^1
-      es-cjs: workspace:*
-      esm: workspace:*
-      esm-cjs: workspace:*
-      ncp: ^2.0.0
-      npm-run-all: ^4.1.5
-      param-case: '1'
-      rimraf: ^3.0.2
-      tap-min: ^2.0.0
-      tap-simple: ^0.3.1
-      tap-summary: ^4.0.0
-      typescript: 5.0.0-dev.20230103
-    dependencies:
-      assertron: 7.1.3
-      cjs: link:../packages/cjs
-      color-map: 1.1.4
-      es-cjs: link:../packages/es-cjs
-      esm: link:../packages/esm
-      esm-cjs: link:../packages/esm-cjs
-      param-case: 1.1.2
-    devDependencies:
-      '@types/node': 14.18.36
-      '@types/react': 17.0.52
-      ava: 5.1.0
-      ncp: 2.0.0
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      tap-min: 2.0.0
-      tap-simple: 0.3.1
-      tap-summary: 4.0.0
-      typescript: 5.0.0-dev.20230103
-
-  node-allow:
-    specifiers:
-      '@types/node': ^14
-      '@types/react': ^17
-      assertron: ^7
-      ava: ^5.1.0
-      cjs: workspace:*
-      color-map: ^1
-      es-cjs: workspace:*
-      esm: workspace:*
-      esm-cjs: workspace:*
-      ncp: ^2.0.0
-      npm-run-all: ^4.1.5
-      param-case: '1'
-      rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
-    dependencies:
-      assertron: 7.1.3
-      cjs: link:../packages/cjs
-      color-map: 1.1.4
-      es-cjs: link:../packages/es-cjs
-      esm: link:../packages/esm
-      esm-cjs: link:../packages/esm-cjs
-      param-case: 1.1.2
-    devDependencies:
-      '@types/node': 14.18.36
-      '@types/react': 17.0.52
-      ava: 5.1.0
-      ncp: 2.0.0
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
-
-  node-es:
-    specifiers:
-      '@types/node': ^14
-      '@types/react': ^17
-      assertron: ^7
-      ava: ^5.1.0
-      cjs: workspace:*
-      color-map: ^1
-      es-cjs: workspace:*
-      esm: workspace:*
-      esm-cjs: workspace:*
-      ncp: ^2.0.0
-      npm-run-all: ^4.1.5
-      param-case: '1'
-      rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
-    dependencies:
-      assertron: 7.1.3
-      cjs: link:../packages/cjs
-      color-map: 1.1.4
-      es-cjs: link:../packages/es-cjs
-      esm: link:../packages/esm
-      esm-cjs: link:../packages/esm-cjs
-      param-case: 1.1.2
-    devDependencies:
-      '@types/node': 14.18.36
-      '@types/react': 17.0.52
-      ava: 5.1.0
-      ncp: 2.0.0
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
-
-  node16:
-    specifiers:
-      '@types/node': ^14
-      '@types/react': ^17
-      assertron: ^7
-      ava: ^5.1.0
-      cjs: workspace:*
-      color-map: ^1
-      es-cjs: workspace:*
-      esm: workspace:*
-      esm-cjs: workspace:*
-      ncp: ^2.0.0
-      npm-run-all: ^4.1.5
-      param-case: '1'
-      rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
-    dependencies:
-      assertron: 7.1.3
-      cjs: link:../packages/cjs
-      color-map: 1.1.4
-      es-cjs: link:../packages/es-cjs
-      esm: link:../packages/esm
-      esm-cjs: link:../packages/esm-cjs
-      param-case: 1.1.2
-    devDependencies:
-      '@types/node': 14.18.36
-      '@types/react': 17.0.52
-      ava: 5.1.0
-      ncp: 2.0.0
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
-
-  node16-allow:
-    specifiers:
-      '@types/node': ^14
-      '@types/react': ^17
-      assertron: ^7
-      ava: ^5.1.0
-      cjs: workspace:*
-      color-map: ^1
-      es-cjs: workspace:*
-      esm: workspace:*
-      esm-cjs: workspace:*
-      ncp: ^2.0.0
-      npm-run-all: ^4.1.5
-      param-case: '1'
-      rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
-    dependencies:
-      assertron: 7.1.3
-      cjs: link:../packages/cjs
-      color-map: 1.1.4
-      es-cjs: link:../packages/es-cjs
-      esm: link:../packages/esm
-      esm-cjs: link:../packages/esm-cjs
-      param-case: 1.1.2
-    devDependencies:
-      '@types/node': 14.18.36
-      '@types/react': 17.0.52
-      ava: 5.1.0
-      ncp: 2.0.0
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
-
-  node16-es:
-    specifiers:
-      '@types/node': ^14
-      '@types/react': ^17
-      assertron: ^7
-      ava: ^5.1.0
-      cjs: workspace:*
-      color-map: ^1
-      es-cjs: workspace:*
-      esm: workspace:*
-      esm-cjs: workspace:*
-      ncp: ^2.0.0
-      npm-run-all: ^4.1.5
-      param-case: '1'
-      rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
-    dependencies:
-      assertron: 7.1.3
-      cjs: link:../packages/cjs
-      color-map: 1.1.4
-      es-cjs: link:../packages/es-cjs
-      esm: link:../packages/esm
-      esm-cjs: link:../packages/esm-cjs
-      param-case: 1.1.2
-    devDependencies:
-      '@types/node': 14.18.36
-      '@types/react': 17.0.52
-      ava: 5.1.0
-      ncp: 2.0.0
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
-
-  nodenext:
-    specifiers:
-      '@types/node': ^14
-      '@types/react': ^17
-      assertron: ^7
-      ava: ^5.1.0
-      cjs: workspace:*
-      color-map: ^1
-      es-cjs: workspace:*
-      esm: workspace:*
-      esm-cjs: workspace:*
-      ncp: ^2.0.0
-      npm-run-all: ^4.1.5
-      param-case: '1'
-      rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
-    dependencies:
-      assertron: 7.1.3
-      cjs: link:../packages/cjs
-      color-map: 1.1.4
-      es-cjs: link:../packages/es-cjs
-      esm: link:../packages/esm
-      esm-cjs: link:../packages/esm-cjs
-      param-case: 1.1.2
-    devDependencies:
-      '@types/node': 14.18.36
-      '@types/react': 17.0.52
-      ava: 5.1.0
-      ncp: 2.0.0
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
-
-  nodenext-allow:
-    specifiers:
-      '@types/node': ^14
-      '@types/react': ^17
-      assertron: ^7
-      ava: ^5.1.0
-      cjs: workspace:*
-      color-map: ^1
-      es-cjs: workspace:*
-      esm: workspace:*
-      esm-cjs: workspace:*
-      ncp: ^2.0.0
-      npm-run-all: ^4.1.5
-      param-case: '1'
-      rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
-    dependencies:
-      assertron: 7.1.3
-      cjs: link:../packages/cjs
-      color-map: 1.1.4
-      es-cjs: link:../packages/es-cjs
-      esm: link:../packages/esm
-      esm-cjs: link:../packages/esm-cjs
-      param-case: 1.1.2
-    devDependencies:
-      '@types/node': 14.18.36
-      '@types/react': 17.0.52
-      ava: 5.1.0
-      ncp: 2.0.0
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
-
-  nodenext-es:
-    specifiers:
-      '@types/node': ^14
-      '@types/react': ^17
-      assertron: ^7
-      ava: ^5.1.0
-      cjs: workspace:*
-      color-map: ^1
-      es-cjs: workspace:*
-      esm: workspace:*
-      esm-cjs: workspace:*
-      ncp: ^2.0.0
-      npm-run-all: ^4.1.5
-      param-case: '1'
-      rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
-    dependencies:
-      assertron: 7.1.3
-      cjs: link:../packages/cjs
-      color-map: 1.1.4
-      es-cjs: link:../packages/es-cjs
-      esm: link:../packages/esm
-      esm-cjs: link:../packages/esm-cjs
-      param-case: 1.1.2
-    devDependencies:
-      '@types/node': 14.18.36
-      '@types/react': 17.0.52
-      ava: 5.1.0
-      ncp: 2.0.0
-      npm-run-all: 4.1.5
-      rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
-
   packages/cjs:
     specifiers:
       ncp: ^2.0.0
@@ -356,6 +53,309 @@ importers:
       rimraf: ^3.0.2
       typescript: 5.0.0-dev.20230103
     devDependencies:
+      ncp: 2.0.0
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 5.0.0-dev.20230103
+
+  tests/node:
+    specifiers:
+      '@types/node': ^14
+      '@types/react': ^17
+      assertron: ^7
+      ava: ^5.1.0
+      cjs: workspace:*
+      color-map: ^1
+      es-cjs: workspace:*
+      esm: workspace:*
+      esm-cjs: workspace:*
+      ncp: ^2.0.0
+      npm-run-all: ^4.1.5
+      param-case: '1'
+      rimraf: ^3.0.2
+      tap-min: ^2.0.0
+      tap-simple: ^0.3.1
+      tap-summary: ^4.0.0
+      typescript: 5.0.0-dev.20230103
+    dependencies:
+      assertron: 7.1.3
+      cjs: link:../../packages/cjs
+      color-map: 1.1.4
+      es-cjs: link:../../packages/es-cjs
+      esm: link:../../packages/esm
+      esm-cjs: link:../../packages/esm-cjs
+      param-case: 1.1.2
+    devDependencies:
+      '@types/node': 14.18.36
+      '@types/react': 17.0.52
+      ava: 5.1.0
+      ncp: 2.0.0
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      tap-min: 2.0.0
+      tap-simple: 0.3.1
+      tap-summary: 4.0.0
+      typescript: 5.0.0-dev.20230103
+
+  tests/node-allow:
+    specifiers:
+      '@types/node': ^14
+      '@types/react': ^17
+      assertron: ^7
+      ava: ^5.1.0
+      cjs: workspace:*
+      color-map: ^1
+      es-cjs: workspace:*
+      esm: workspace:*
+      esm-cjs: workspace:*
+      ncp: ^2.0.0
+      npm-run-all: ^4.1.5
+      param-case: '1'
+      rimraf: ^3.0.2
+      typescript: 5.0.0-dev.20230103
+    dependencies:
+      assertron: 7.1.3
+      cjs: link:../../packages/cjs
+      color-map: 1.1.4
+      es-cjs: link:../../packages/es-cjs
+      esm: link:../../packages/esm
+      esm-cjs: link:../../packages/esm-cjs
+      param-case: 1.1.2
+    devDependencies:
+      '@types/node': 14.18.36
+      '@types/react': 17.0.52
+      ava: 5.1.0
+      ncp: 2.0.0
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 5.0.0-dev.20230103
+
+  tests/node-es:
+    specifiers:
+      '@types/node': ^14
+      '@types/react': ^17
+      assertron: ^7
+      ava: ^5.1.0
+      cjs: workspace:*
+      color-map: ^1
+      es-cjs: workspace:*
+      esm: workspace:*
+      esm-cjs: workspace:*
+      ncp: ^2.0.0
+      npm-run-all: ^4.1.5
+      param-case: '1'
+      rimraf: ^3.0.2
+      typescript: 5.0.0-dev.20230103
+    dependencies:
+      assertron: 7.1.3
+      cjs: link:../../packages/cjs
+      color-map: 1.1.4
+      es-cjs: link:../../packages/es-cjs
+      esm: link:../../packages/esm
+      esm-cjs: link:../../packages/esm-cjs
+      param-case: 1.1.2
+    devDependencies:
+      '@types/node': 14.18.36
+      '@types/react': 17.0.52
+      ava: 5.1.0
+      ncp: 2.0.0
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 5.0.0-dev.20230103
+
+  tests/node16:
+    specifiers:
+      '@types/node': ^14
+      '@types/react': ^17
+      assertron: ^7
+      ava: ^5.1.0
+      cjs: workspace:*
+      color-map: ^1
+      es-cjs: workspace:*
+      esm: workspace:*
+      esm-cjs: workspace:*
+      ncp: ^2.0.0
+      npm-run-all: ^4.1.5
+      param-case: '1'
+      rimraf: ^3.0.2
+      typescript: 5.0.0-dev.20230103
+    dependencies:
+      assertron: 7.1.3
+      cjs: link:../../packages/cjs
+      color-map: 1.1.4
+      es-cjs: link:../../packages/es-cjs
+      esm: link:../../packages/esm
+      esm-cjs: link:../../packages/esm-cjs
+      param-case: 1.1.2
+    devDependencies:
+      '@types/node': 14.18.36
+      '@types/react': 17.0.52
+      ava: 5.1.0
+      ncp: 2.0.0
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 5.0.0-dev.20230103
+
+  tests/node16-allow:
+    specifiers:
+      '@types/node': ^14
+      '@types/react': ^17
+      assertron: ^7
+      ava: ^5.1.0
+      cjs: workspace:*
+      color-map: ^1
+      es-cjs: workspace:*
+      esm: workspace:*
+      esm-cjs: workspace:*
+      ncp: ^2.0.0
+      npm-run-all: ^4.1.5
+      param-case: '1'
+      rimraf: ^3.0.2
+      typescript: 5.0.0-dev.20230103
+    dependencies:
+      assertron: 7.1.3
+      cjs: link:../../packages/cjs
+      color-map: 1.1.4
+      es-cjs: link:../../packages/es-cjs
+      esm: link:../../packages/esm
+      esm-cjs: link:../../packages/esm-cjs
+      param-case: 1.1.2
+    devDependencies:
+      '@types/node': 14.18.36
+      '@types/react': 17.0.52
+      ava: 5.1.0
+      ncp: 2.0.0
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 5.0.0-dev.20230103
+
+  tests/node16-es:
+    specifiers:
+      '@types/node': ^14
+      '@types/react': ^17
+      assertron: ^7
+      ava: ^5.1.0
+      cjs: workspace:*
+      color-map: ^1
+      es-cjs: workspace:*
+      esm: workspace:*
+      esm-cjs: workspace:*
+      ncp: ^2.0.0
+      npm-run-all: ^4.1.5
+      param-case: '1'
+      rimraf: ^3.0.2
+      typescript: 5.0.0-dev.20230103
+    dependencies:
+      assertron: 7.1.3
+      cjs: link:../../packages/cjs
+      color-map: 1.1.4
+      es-cjs: link:../../packages/es-cjs
+      esm: link:../../packages/esm
+      esm-cjs: link:../../packages/esm-cjs
+      param-case: 1.1.2
+    devDependencies:
+      '@types/node': 14.18.36
+      '@types/react': 17.0.52
+      ava: 5.1.0
+      ncp: 2.0.0
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 5.0.0-dev.20230103
+
+  tests/nodenext:
+    specifiers:
+      '@types/node': ^14
+      '@types/react': ^17
+      assertron: ^7
+      ava: ^5.1.0
+      cjs: workspace:*
+      color-map: ^1
+      es-cjs: workspace:*
+      esm: workspace:*
+      esm-cjs: workspace:*
+      ncp: ^2.0.0
+      npm-run-all: ^4.1.5
+      param-case: '1'
+      rimraf: ^3.0.2
+      typescript: 5.0.0-dev.20230103
+    dependencies:
+      assertron: 7.1.3
+      cjs: link:../../packages/cjs
+      color-map: 1.1.4
+      es-cjs: link:../../packages/es-cjs
+      esm: link:../../packages/esm
+      esm-cjs: link:../../packages/esm-cjs
+      param-case: 1.1.2
+    devDependencies:
+      '@types/node': 14.18.36
+      '@types/react': 17.0.52
+      ava: 5.1.0
+      ncp: 2.0.0
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 5.0.0-dev.20230103
+
+  tests/nodenext-allow:
+    specifiers:
+      '@types/node': ^14
+      '@types/react': ^17
+      assertron: ^7
+      ava: ^5.1.0
+      cjs: workspace:*
+      color-map: ^1
+      es-cjs: workspace:*
+      esm: workspace:*
+      esm-cjs: workspace:*
+      ncp: ^2.0.0
+      npm-run-all: ^4.1.5
+      param-case: '1'
+      rimraf: ^3.0.2
+      typescript: 5.0.0-dev.20230103
+    dependencies:
+      assertron: 7.1.3
+      cjs: link:../../packages/cjs
+      color-map: 1.1.4
+      es-cjs: link:../../packages/es-cjs
+      esm: link:../../packages/esm
+      esm-cjs: link:../../packages/esm-cjs
+      param-case: 1.1.2
+    devDependencies:
+      '@types/node': 14.18.36
+      '@types/react': 17.0.52
+      ava: 5.1.0
+      ncp: 2.0.0
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 5.0.0-dev.20230103
+
+  tests/nodenext-es:
+    specifiers:
+      '@types/node': ^14
+      '@types/react': ^17
+      assertron: ^7
+      ava: ^5.1.0
+      cjs: workspace:*
+      color-map: ^1
+      es-cjs: workspace:*
+      esm: workspace:*
+      esm-cjs: workspace:*
+      ncp: ^2.0.0
+      npm-run-all: ^4.1.5
+      param-case: '1'
+      rimraf: ^3.0.2
+      typescript: 5.0.0-dev.20230103
+    dependencies:
+      assertron: 7.1.3
+      cjs: link:../../packages/cjs
+      color-map: 1.1.4
+      es-cjs: link:../../packages/es-cjs
+      esm: link:../../packages/esm
+      esm-cjs: link:../../packages/esm-cjs
+      param-case: 1.1.2
+    devDependencies:
+      '@types/node': 14.18.36
+      '@types/react': 17.0.52
+      ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
@@ -2686,7 +2686,7 @@ packages:
   /minipass/2.9.0:
     resolution: {integrity: sha512-wxfUjg9WebH+CUDX/CdbRlh5SmfZiy/hpkxaRI16Y9W56Pa75sWgd/rvFilSgrauD9NyFymP/+JFV3KwzIsJeg==}
     dependencies:
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
       yallist: 3.1.1
     dev: true
 
