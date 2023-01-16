@@ -26,9 +26,12 @@
     "test:es2022": "turbo run test:es2022",
     "test:esnext": "turbo run test:esnext",
     "test:node16": "turbo run test:node16",
-    "test:nodenext": "turbo run test:nodenext"
+    "test:nodenext": "turbo run test:nodenext",
+    "tester": "pnpm --filter tester",
+    "gen": "tester"
   },
   "devDependencies": {
+    "tester": "workspace:*",
     "turbo": "^1.6.3",
     "typescript": "5.0.0-dev.20230103"
   },

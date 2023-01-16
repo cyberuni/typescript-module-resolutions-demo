@@ -89,7 +89,7 @@ m.default(1)
 ```
 
 ## Legends
-
+:green
 - 🟢: both compile and runtime are working correctly
 - 🟡: for compile, it means there is an error, but can be suppressed (e.g. with `skipLibCheck`)\
   for runtime, it means the compile fails, but runtime is working

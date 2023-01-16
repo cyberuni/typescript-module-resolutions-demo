@@ -7,6 +7,8 @@ There are may issues about the module system in TypeScript:
 - <https://github.com/microsoft/TypeScript/issues/50501>
 - <https://github.com/microsoft/TypeScript/issues/50152>
 - <https://github.com/microsoft/TypeScript/issues/50058>
+- <https://github.com/microsoft/TypeScript/issues/50647>
+- <https://github.com/microsoft/TypeScript/issues/48854>
 - and so on...
 
 ## Objectives

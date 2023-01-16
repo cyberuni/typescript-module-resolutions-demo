@@ -2,5 +2,8 @@
   "markdownlint.config": {
     "first-line-heading": false
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": [
+    "clibuilder"
+  ]
 }

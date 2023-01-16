@@ -11,8 +11,6 @@
 ```
 
 This is the configuration for creating ESM package.
-The problem is, the support on CommonJS is broken.
-Meaning you can't really create dual packages.
 
 Note that the package must supply the `require` field when exposing dual ESM/CommonJS.
 i.e.:

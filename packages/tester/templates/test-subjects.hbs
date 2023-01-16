@@ -1,0 +1,21 @@
+## Test Subjects
+
+Depends on the test configuration, the way to consume a module are different.
+
+In this section we describe each module and how they are consumed within this configuration.
+{{#each testSubjects}}
+{{#with this}}
+
+### [{{name}}](../../README.md#{{name}})
+{{#each files}}
+{{#with this}}
+{{files}}
+[{{filename}}](./ts/{{filename}}):
+
+```ts
+{{filecontent}}
+```
+{{/with}}
+{{/each}}
+{{/with}}
+{{/each}}
