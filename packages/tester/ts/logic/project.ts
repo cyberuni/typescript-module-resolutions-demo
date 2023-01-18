@@ -15,8 +15,12 @@ export function copyCommonJSPackageJson(project: string) {
   writeFileSync(path.join(projectPath, 'commonjs', 'package.json'), `{"type":"commonjs"}`)
 }
 
-export function getTestSubjects(projectPath: string) {
-  const packageJson = readPackageJson(projectPath)
+export function getTestSubjects({
+  packageJson, projectPath
+}: {
+  packageJson: any,
+  projectPath: string
+}) {
   const dependencies = getDependencies(packageJson)
   return dependencies.map(name => ({
     packageJson,
@@ -25,10 +29,12 @@ export function getTestSubjects(projectPath: string) {
   }))
 }
 
-function readPackageJson(projectPath: string) {
+export function readPackageJson(projectPath: string) {
   const packageJsonPath = path.join(projectPath, 'package.json')
   return parse(readFileSync(packageJsonPath, 'utf8'))
 }
+
+
 
 function getTestFiles(projectPath: string, dependencyName: string) {
   const base = path.join(projectPath, 'ts')

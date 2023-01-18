@@ -12,9 +12,13 @@ export type RuntimeResult = {
   }[]
 }
 
-export async function runProject(project: string, moduleType: string) {
-  const projectPath = getProjectPath(project)
-  const testSubjects = getTestSubjects(projectPath)
+export async function runProject(ctx: {
+  project: string,
+  projectPath: string
+  packageJson: any,
+}, moduleType: string) {
+  const projectPath = getProjectPath(ctx.project)
+  const testSubjects = getTestSubjects(ctx)
   const base = path.join(projectPath, moduleType)
   const files = fileSync(base)
   return Promise.all(testSubjects.map(async testSubject => {

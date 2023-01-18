@@ -22,10 +22,11 @@ export async function compileProject(project: string) {
     cp.exec(`pnpm ${project} build`, (_err, stdout) => {
       a(extractCompileResults(stdout))
     })
-  }).then((results) => {
-    copyCommonJSPackageJson(project)
-    return results
   })
+    .then((results) => {
+      copyCommonJSPackageJson(project)
+      return results
+    })
 }
 
 function extractCompileResults(stdout: string) {

@@ -1,10 +1,28 @@
-import { inspect, record, reduceByKey } from 'type-plus'
-import { CompileResult, PackageCompileResults } from './logic/compile'
+import { record } from 'type-plus'
+import { CompileResult, PackageCompileResults, compileProject } from './logic/compile'
 import { toImportMap } from './logic/project'
-import { RuntimeResult } from './logic/runtime'
+import { RuntimeResult, runProject } from './logic/runtime'
 import { reduceFlatMessage } from './logic/utils'
 
-export function collectTestResults(results: Array<{
+export async function getTestResults(ctx: {
+  project: string,
+  moduleTypes: string[],
+  projectPath: string,
+  packageJson: any
+}) {
+  const compileResults = await compileProject(ctx.project)
+  return Promise.all(
+    ctx.moduleTypes.map(
+      moduleType => runProject(ctx, moduleType)
+        .then(runtimeResults => ({
+          moduleType,
+          compileResults: compileResults[moduleType],
+          runtimeResults
+        })))
+  ).then(collectTestResults)
+}
+
+function collectTestResults(results: Array<{
   moduleType: string
   compileResults: PackageCompileResults,
   runtimeResults: Array<RuntimeResult>
