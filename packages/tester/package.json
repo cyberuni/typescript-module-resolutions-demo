@@ -14,7 +14,7 @@
     "find": "^0.3.0",
     "handlebars": "^4.7.7",
     "json5": "^2.2.3",
-    "type-plus": "^5.4.0"
+    "type-plus": "^5.4.1"
   },
   "devDependencies": {
     "@types/find": "^0.2.1",

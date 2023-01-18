@@ -11,20 +11,19 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
   .default({
     arguments: [{ name: 'project', description: 'project name', required: true }],
     async run({ project }) {
-      const projectPath = getProjectPath(project)
       const ctx = context({
         project,
         moduleTypes: ['commonjs', 'es2015', 'es2020', 'es2022', 'esnext', 'node16', 'nodenext']
       })
-        .extend(({ project }) => ({ projectPath: getProjectPath(project) }))
-        .extend(({ projectPath }) => ({ tsconfig: getTSConfig(projectPath) }))
-        .extend(({ projectPath }) => ({ packageJson: readPackageJson(projectPath) }))
-        .extend(({ packageJson, projectPath }) => ({ subjects: getTestSubjects({ packageJson, projectPath }) }))
-        .extend((ctx) => ({ results: getTestResults(ctx) }))
+        .extend(getProjectPath)
+        .extend(getTSConfig)
+        .extend(readPackageJson)
+        .extend(getTestSubjects)
+        .extend(getTestResults)
         .build()
 
       fs.writeFileSync(
-        path.join(projectPath, 'test-result.md'),
+        path.join(ctx.projectPath, 'test-result.md'),
         await render(ctx)
       )
     }
@@ -37,13 +36,11 @@ async function render(ctx: any) {
   genTestResults(await ctx.results)].join('\n')
 }
 
-function getTSConfig(projectPath: string) {
-  const tsconfigPath = path.join(projectPath, 'tsconfig.base.json')
-  return readTSConfig(tsconfigPath)
-}
-
-function readTSConfig(tsconfigPath: string) {
-  return parse(fs.readFileSync(tsconfigPath, 'utf8'))
+function getTSConfig(ctx: { projectPath: string }) {
+  const tsconfigPath = path.join(ctx.projectPath, 'tsconfig.base.json')
+  return {
+    tsconfig: parse(fs.readFileSync(tsconfigPath, 'utf8'))
+  }
 }
 
 function genTestConfiguration({ tsconfig }: { tsconfig: any }) {

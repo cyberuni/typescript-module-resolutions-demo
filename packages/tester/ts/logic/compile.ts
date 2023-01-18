@@ -17,14 +17,14 @@ export type CompileResult = ResultEntry & {
   messageText: string
 }
 
-export async function compileProject(project: string) {
+export async function compileProject(ctx: { project: string, projectPath: string }) {
   return new Promise<CompileResults>(a => {
-    cp.exec(`pnpm ${project} build`, (_err, stdout) => {
+    cp.exec(`pnpm ${ctx.project} build`, (_err, stdout) => {
       a(extractCompileResults(stdout))
     })
   })
     .then((results) => {
-      copyCommonJSPackageJson(project)
+      copyCommonJSPackageJson(ctx)
       return results
     })
 }

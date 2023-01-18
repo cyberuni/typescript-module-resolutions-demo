@@ -1,25 +1,26 @@
 import { record } from 'type-plus'
 import { CompileResult, PackageCompileResults, compileProject } from './logic/compile'
-import { toImportMap } from './logic/project'
+import { getTestSubjects, toImportMap } from './logic/project'
 import { RuntimeResult, runProject } from './logic/runtime'
 import { reduceFlatMessage } from './logic/utils'
 
-export async function getTestResults(ctx: {
+export function getTestResults(ctx: {
   project: string,
   moduleTypes: string[],
   projectPath: string,
   packageJson: any
-}) {
-  const compileResults = await compileProject(ctx.project)
-  return Promise.all(
-    ctx.moduleTypes.map(
-      moduleType => runProject(ctx, moduleType)
-        .then(runtimeResults => ({
-          moduleType,
-          compileResults: compileResults[moduleType],
-          runtimeResults
-        })))
-  ).then(collectTestResults)
+} & ReturnType<typeof getTestSubjects>) {
+  return {
+    results: compileProject(ctx)
+      .then(compileResults => Promise.all(
+        ctx.moduleTypes.map(moduleType =>
+          runProject(ctx, moduleType).then(runtimeResults => ({
+            moduleType,
+            compileResults: compileResults[moduleType],
+            runtimeResults
+          }))))
+      ).then(collectTestResults)
+  }
 }
 
 function collectTestResults(results: Array<{

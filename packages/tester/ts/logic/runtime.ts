@@ -1,7 +1,7 @@
 import { fileSync } from 'find'
 import { exec } from 'node:child_process'
 import path from 'node:path'
-import { getProjectPath, getTestSubjects } from './project'
+import { getTestSubjects } from './project'
 
 export type RuntimeResult = {
   package: string
@@ -16,12 +16,10 @@ export async function runProject(ctx: {
   project: string,
   projectPath: string
   packageJson: any,
-}, moduleType: string) {
-  const projectPath = getProjectPath(ctx.project)
-  const testSubjects = getTestSubjects(ctx)
-  const base = path.join(projectPath, moduleType)
+} & ReturnType<typeof getTestSubjects>, moduleType: string) {
+  const base = path.join(ctx.projectPath, moduleType)
   const files = fileSync(base)
-  return Promise.all(testSubjects.map(async testSubject => {
+  return Promise.all(ctx.subjects.map(async testSubject => {
     const filePrefix = path.join(base, `${testSubject.name}`)
     const results = await Promise.all(files.filter(f => f.startsWith(filePrefix) && f.endsWith('.js'))
       .map(file => file.slice(base.length + 1))

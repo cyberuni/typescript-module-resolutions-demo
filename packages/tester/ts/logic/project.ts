@@ -10,9 +10,8 @@ export type ResultEntry = {
   scope: string
 }
 
-export function copyCommonJSPackageJson(project: string) {
-  const projectPath = getProjectPath(project)
-  writeFileSync(path.join(projectPath, 'commonjs', 'package.json'), `{"type":"commonjs"}`)
+export function copyCommonJSPackageJson(ctx: { projectPath: string }) {
+  writeFileSync(path.join(ctx.projectPath, 'commonjs', 'package.json'), `{"type":"commonjs"}`)
 }
 
 export function getTestSubjects({
@@ -22,16 +21,18 @@ export function getTestSubjects({
   projectPath: string
 }) {
   const dependencies = getDependencies(packageJson)
-  return dependencies.map(name => ({
-    packageJson,
-    name,
-    files: getTestFiles(projectPath, name)
-  }))
+  return {
+    subjects: dependencies.map(name => ({
+      packageJson,
+      name,
+      files: getTestFiles(projectPath, name)
+    }))
+  }
 }
 
-export function readPackageJson(projectPath: string) {
-  const packageJsonPath = path.join(projectPath, 'package.json')
-  return parse(readFileSync(packageJsonPath, 'utf8'))
+export function readPackageJson(ctx: { projectPath: string }) {
+  const packageJsonPath = path.join(ctx.projectPath, 'package.json')
+  return { packageJson: parse(readFileSync(packageJsonPath, 'utf8')) }
 }
 
 
@@ -57,8 +58,8 @@ function getDependencies(packageJson: any) {
 }
 
 
-export function getProjectPath(project: string) {
-  return path.join(`tests`, project)
+export function getProjectPath(ctx: { project: string }) {
+  return { projectPath: path.join(`tests`, ctx.project) }
 }
 
 export function getResultEntry(filename: string): ResultEntry {
