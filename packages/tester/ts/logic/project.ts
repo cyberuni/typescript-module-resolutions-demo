@@ -23,7 +23,6 @@ export function getTestSubjects({
   const dependencies = getDependencies(packageJson)
   return {
     subjects: dependencies.map(name => ({
-      packageJson,
       name,
       files: getTestFiles(projectPath, name)
     }))
@@ -39,7 +38,8 @@ export function readPackageJson(ctx: { projectPath: string }) {
 
 function getTestFiles(projectPath: string, dependencyName: string) {
   const base = path.join(projectPath, 'ts')
-  const filePrefix = path.join(base, `${dependencyName}`)
+  // the `.` at the end makes sure it match the exact package name.
+  const filePrefix = path.join(base, `${dependencyName}.`)
   return fileSync(base)
     .filter(f => f.startsWith(filePrefix))
     .map(filepath => ({
@@ -82,7 +82,12 @@ function getPackageNameFromTransient(filename: string) {
   return undefined
 }
 
-export function toImportMap(results: Array<{ importType: string, value: string, transient: boolean }> | undefined) {
+export function toImportMap(results: Array<{
+  importType: string,
+  notApply?: boolean,
+  transient?: boolean
+  value?: string,
+}> | undefined) {
   return {
     'importDefault': toImportMapEntry(results, 'default'),
     'importDefaultAs': toImportMapEntry(results, 'default-as'),
@@ -90,9 +95,19 @@ export function toImportMap(results: Array<{ importType: string, value: string, 
   }
 }
 
-function toImportMapEntry(results: Array<{ importType: string, value: string, transient: boolean }> | undefined, importType: string) {
+function toImportMapEntry(results: Array<{
+  importType: string,
+  notApply?: boolean,
+  value?: string,
+  transient?: boolean
+}> | undefined, importType: string) {
   const entry = results?.find(r => r.importType === importType)
   if (entry) {
+    if (entry.notApply) {
+      return {
+        icon: '➖'
+      }
+    }
     return {
       icon: entry.value ? entry.transient ? '🟡' : '🔴' : '🟢',
       value: entry.value

@@ -4,7 +4,7 @@ import path from 'node:path'
 import { getTestSubjects } from './project'
 
 export type RuntimeResult = {
-  package: string
+  name: string
   results: {
     filename: string
     importType: string
@@ -20,7 +20,7 @@ export async function runProject(ctx: {
   const base = path.join(ctx.projectPath, moduleType)
   const files = fileSync(base)
   return Promise.all(ctx.subjects.map(async testSubject => {
-    const filePrefix = path.join(base, `${testSubject.name}`)
+    const filePrefix = path.join(base, `${testSubject.name}.`)
     const results = await Promise.all(files.filter(f => f.startsWith(filePrefix) && f.endsWith('.js'))
       .map(file => file.slice(base.length + 1))
       .map(filename => new Promise<{
@@ -35,11 +35,10 @@ export async function runProject(ctx: {
             error: error ? error : undefined
           })
         })
-      })
-      ))
+      })))
     return {
-      package: testSubject.name,
+      name: testSubject.name,
       results
     }
-  }))
+  })).then(r => r.filter(r => r.results.length > 0))
 }

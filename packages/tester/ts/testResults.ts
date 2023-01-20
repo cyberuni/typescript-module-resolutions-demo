@@ -1,4 +1,7 @@
-import { record } from 'type-plus'
+import { compile } from 'handlebars'
+import fs from 'node:fs'
+import path from 'node:path'
+import { AwaitedProp, record } from 'type-plus'
 import { CompileResult, PackageCompileResults, compileProject } from './logic/compile'
 import { getTestSubjects, toImportMap } from './logic/project'
 import { RuntimeResult, runProject } from './logic/runtime'
@@ -19,45 +22,94 @@ export function getTestResults(ctx: {
             compileResults: compileResults[moduleType],
             runtimeResults
           }))))
-      ).then(collectTestResults)
+      )
   }
 }
 
-function collectTestResults(results: Array<{
-  moduleType: string
-  compileResults: PackageCompileResults,
-  runtimeResults: Array<RuntimeResult>
-}>) {
+type TestSubjectsContext = ReturnType<typeof getTestSubjects>
+type TestResultsContext = AwaitedProp<ReturnType<typeof getTestResults>, 'results'>
+
+export function genTestResults(
+  ctx: TestSubjectsContext & TestResultsContext) {
+  const results = collectTestResults(ctx)
+  const template = compile(fs.readFileSync(path.join(__dirname, '../templates/test-results.hbs'), 'utf8'))
+  return template(results)
+}
+
+function collectTestResults({ subjects, results }: TestSubjectsContext & TestResultsContext) {
   const errors = toErrorRecord(results)
   return {
     results: results.flatMap(({ moduleType, compileResults, runtimeResults }) => {
-      return runtimeResults.flatMap((r, i) => {
+      return subjects.flatMap((s, i) => {
+        const compileResult = compileResults[s.name]
+        const runtimeResult = runtimeResults.find(r => r.name === s.name)
         return [{
           moduleType: i === 0 ? moduleType : undefined,
-          package: r.package,
+          package: s.name,
           type: '💻 compile',
-          ...toImportMap(compileResults[r.package]?.map(c => {
+          ...toImportMap(compileResult ? compileResult.map(c => {
             const error = errors.compile.find(e => e.message === c.messageText)
             return {
               importType: c.importType,
               transient: c.transient,
               value: error?.key ?? ''
             }
-          }))
+          }) : (s.files.length === 0 ? [
+            { importType: 'default', notApply: true },
+            { importType: 'default-as', notApply: true },
+            { importType: 'star', notApply: true },
+          ] : [
+            { importType: 'default', },
+            { importType: 'default-as' },
+            { importType: 'star' },
+          ]))
         }, {
-          moduleType: undefined,
-          package: r.package,
           type: '🏃 runtime',
-          ...toImportMap(r.results.map(r => {
+          ...toImportMap(runtimeResult ? runtimeResult.results.map(r => {
             const error = errors.runtime.find(e => e.message === extractRuntimeErrorMessage(r.error))
             return {
               importType: r.importType,
               transient: false,
               value: error?.key ?? ''
             }
-          }))
+          }) : (s.files.length === 0 ? [
+            { importType: 'default', notApply: true },
+            { importType: 'default-as', notApply: true },
+            { importType: 'star', notApply: true },
+          ] : [
+            { importType: 'default', },
+            { importType: 'default-as' },
+            { importType: 'star' },
+          ]))
         }]
       })
+      // return runtimeResults.flatMap((r, i) => {
+      //   return [{
+      //     moduleType: i === 0 ? moduleType : undefined,
+      //     package: r.name,
+      //     type: '💻 compile',
+      //     ...toImportMap(compileResults[r.name]?.map(c => {
+      //       const error = errors.compile.find(e => e.message === c.messageText)
+      //       return {
+      //         importType: c.importType,
+      //         transient: c.transient,
+      //         value: error?.key ?? ''
+      //       }
+      //     }))
+      //   }, {
+      //     moduleType: undefined,
+      //     package: r.name,
+      //     type: '🏃 runtime',
+      //     ...toImportMap(r.results.map(r => {
+      //       const error = errors.runtime.find(e => e.message === extractRuntimeErrorMessage(r.error))
+      //       return {
+      //         importType: r.importType,
+      //         transient: false,
+      //         value: error?.key ?? ''
+      //       }
+      //     }))
+      //   }]
+      // })
     }),
     errors: [...errors.compile, ...errors.runtime]
   }

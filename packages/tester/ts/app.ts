@@ -5,7 +5,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { context } from 'type-plus'
 import { getProjectPath, getTestSubjects, readPackageJson } from './logic/project'
-import { getTestResults } from './testResults'
+import { genTestResults, getTestResults } from './testResults'
 
 export const app = cli({ name: 'tester', version: '0.0.1' })
   .default({
@@ -24,17 +24,13 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
 
       fs.writeFileSync(
         path.join(ctx.projectPath, 'test-result.md'),
-        await render(ctx)
+        [genTestConfiguration(ctx),
+        genTestSubjects(ctx),
+        genLegends(),
+        genTestResults({ ...ctx, results: await ctx.results })].join('\n')
       )
     }
   })
-
-async function render(ctx: any) {
-  return [genTestConfiguration(ctx),
-  genTestSubjects(ctx),
-  genLegends(),
-  genTestResults(await ctx.results)].join('\n')
-}
 
 function getTSConfig(ctx: { projectPath: string }) {
   const tsconfigPath = path.join(ctx.projectPath, 'tsconfig.base.json')
@@ -48,7 +44,7 @@ function genTestConfiguration({ tsconfig }: { tsconfig: any }) {
   return template(tsconfig.compilerOptions)
 }
 
-function genTestSubjects({ subjects }: { subjects: ReturnType<typeof getTestSubjects> }) {
+function genTestSubjects({ subjects }: ReturnType<typeof getTestSubjects>) {
   const template = compile(fs.readFileSync(path.join(__dirname, '../templates/test-subjects.hbs'), 'utf8'), { noEscape: true })
   return template({ subjects })
 }
@@ -56,9 +52,4 @@ function genTestSubjects({ subjects }: { subjects: ReturnType<typeof getTestSubj
 function genLegends() {
   const template = compile(fs.readFileSync(path.join(__dirname, '../templates/legends.hbs'), 'utf8'))
   return template({})
-}
-
-function genTestResults(ctx: { results: Awaited<ReturnType<typeof getTestResults>> }) {
-  const template = compile(fs.readFileSync(path.join(__dirname, '../templates/test-results.hbs'), 'utf8'))
-  return template(ctx)
 }
