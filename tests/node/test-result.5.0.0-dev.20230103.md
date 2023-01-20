@@ -214,7 +214,7 @@ Import Syntax:
 | -------- | ---------- | --------- | ------------------ | ----------------- | ----------------- |
 | commonjs | assert     | 💻 compile | 🔴 TS1259-e         | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🔴 type-not-fn      | 🔴 type-not-fn     | 🟢                 |
-|          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2339          |
+|          | assertron  | 💻 compile | 🟡 TS1259-e-t       | 🟡 TS1259-e-t      | 🟡 TS1259-e-t      |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🔴 type-not-fn-1   |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
@@ -228,7 +228,7 @@ Import Syntax:
 |          |            | 🏃 runtime | 🔴 type-not-fn-2    | 🔴 type-not-fn-2   | 🔴 type-not-fn-3   |
 | es2015   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🔴 type-not-fn-4   |
-|          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2339          |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
 |          |            | 🏃 runtime | 🔴 type-not-fn-1    | 🔴 type-not-fn-1   | 🔴 type-not-fn-1   |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🔴 type-not-fn-5    | 🔴 type-not-fn-5   | 🔴 type-not-fn-6   |
@@ -242,7 +242,7 @@ Import Syntax:
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 | es2020   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🔴 type-not-fn-4   |
-|          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2339          |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
 |          |            | 🏃 runtime | 🔴 type-not-fn-1    | 🔴 type-not-fn-1   | 🔴 type-not-fn-1   |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🔴 type-not-fn-5    | 🔴 type-not-fn-5   | 🔴 type-not-fn-6   |
@@ -256,7 +256,7 @@ Import Syntax:
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 | es2022   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🔴 type-not-fn-4   |
-|          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2339          |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
 |          |            | 🏃 runtime | 🔴 type-not-fn-1    | 🔴 type-not-fn-1   | 🔴 type-not-fn-1   |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🔴 type-not-fn-5    | 🔴 type-not-fn-5   | 🔴 type-not-fn-6   |
@@ -270,7 +270,7 @@ Import Syntax:
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 | esnext   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🔴 type-not-fn-4   |
-|          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2339          |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
 |          |            | 🏃 runtime | 🔴 type-not-fn-1    | 🔴 type-not-fn-1   | 🔴 type-not-fn-1   |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🔴 type-not-fn-5    | 🔴 type-not-fn-5   | 🔴 type-not-fn-6   |
@@ -284,7 +284,7 @@ Import Syntax:
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 | node16   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |
-|          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2339          |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
 |          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |
@@ -298,7 +298,7 @@ Import Syntax:
 |          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |
 | nodenext | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |
-|          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2339          |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
 |          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |

@@ -3,9 +3,9 @@ import { compile } from 'handlebars'
 import { parse } from 'json5'
 import fs from 'node:fs'
 import path from 'node:path'
-import { context } from 'type-plus'
+import { context, forEachKey } from 'type-plus'
 import { getProjectPath, getTestSubjects, readPackageJson } from './logic/project'
-import { genTestResults, getTestResults } from './testResults'
+import { genTestResults, runCompile, runCompileAndRuntimeTests } from './testResults'
 
 export const app = cli({ name: 'tester', version: '0.0.1' })
   .default({
@@ -19,7 +19,7 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
         .extend(readPackageJson)
         .extend(getTypeScriptInfo)
         .extend(getTestSubjects)
-        .extend(getTestResults)
+        .extend(runCompileAndRuntimeTests)
         .build()
 
       fs.writeFileSync(
@@ -29,6 +29,37 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
         genLegends(),
         genTestResults({ ...ctx, results: await ctx.results })].join('\n')
       )
+    }
+  })
+  .command({
+    name: 'compile',
+    arguments: [{ name: 'project', description: 'project name', required: true }],
+    async run({ project }) {
+      const ctx = context({
+        project,
+        moduleTypes: ['commonjs', 'es2015', 'es2020', 'es2022', 'esnext', 'node16', 'nodenext']
+      })
+        .extend(getProjectPath)
+        .extend(readPackageJson)
+        .extend(getTypeScriptInfo)
+        .extend(getTestSubjects)
+        .extend(runCompile)
+        .build()
+
+      const result = await ctx.compile
+
+      const lines: string[][] = []
+      forEachKey(result, (moduleType) => {
+        const moduleResults = result[moduleType]
+        forEachKey(moduleResults, (subject) => {
+          const compileResults = moduleResults[subject]
+          compileResults.forEach(result => {
+            lines.push([moduleType.padEnd(8), subject.padEnd(10), result.importType.padEnd(10), result.transient ? 'transient' : 'direct   ', `TS${result.code}`, result.messageText])
+          })
+        })
+      })
+      lines.sort((a, b) => a[0] > b[0] ? 1 : (a[0] < b[0] ? -1 : (a[1] > b[1] ? 1 : -1)))
+      lines.map(l => this.ui.error(l.join(' | ')))
     }
   })
 

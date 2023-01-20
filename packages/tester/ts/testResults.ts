@@ -7,7 +7,16 @@ import { getTestSubjects, toImportMap } from './logic/project'
 import { RuntimeResult, runProject } from './logic/runtime'
 import { reduceFlatMessage } from './logic/utils'
 
-export function getTestResults(ctx: {
+export function runCompile(ctx: {
+  project: string,
+  projectPath: string,
+}) {
+  return {
+    compile: compileProject(ctx)
+  }
+}
+
+export function runCompileAndRuntimeTests(ctx: {
   project: string,
   moduleTypes: string[],
   projectPath: string,
@@ -27,7 +36,7 @@ export function getTestResults(ctx: {
 }
 
 type TestSubjectsContext = ReturnType<typeof getTestSubjects>
-type TestResultsContext = AwaitedProp<ReturnType<typeof getTestResults>, 'results'>
+type TestResultsContext = AwaitedProp<ReturnType<typeof runCompileAndRuntimeTests>, 'results'>
 
 export function genTestResults(
   ctx: TestSubjectsContext & TestResultsContext) {

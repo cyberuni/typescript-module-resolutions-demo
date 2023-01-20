@@ -103,7 +103,7 @@ function toImportMapEntry(results: Array<{
   value?: string,
   transient?: boolean
 }> | undefined, importType: string) {
-  const entry = results?.find(r => r.importType === importType)
+  const entry = results?.find(r => r.importType === importType || r.importType === 'all')
   if (entry) {
     if (entry.notApply) {
       return {

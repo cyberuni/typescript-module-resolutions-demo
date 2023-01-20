@@ -89,7 +89,7 @@ m.default(1)
 ```
 
 ## Legends
-:green
+
 - 🟢: both compile and runtime are working correctly
 - 🟡: for compile, it means there is an error, but can be suppressed (e.g. with `skipLibCheck`)\
   for runtime, it means the compile fails, but runtime is working
@@ -111,8 +111,6 @@ Import Syntax:
 |          |            | 🏃 Runtime | 🔴 not-fn           | 🔴 not-fn          | 🟢                 |
 |          | assertron  | 💻 Compile | 🟡 TS1259-t         | 🟡 TS1259-t        | 🟡 TS1259-t        |
 |          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🟡                 |
-|          | param-case | 💻 Compile | 🔴 TS1259-e         | 🔴 TS1259-e        | 🔴 TS2497-e TS2339 |
-|          |            | 🏃 Runtime | 🔴 not-fn           | 🔴 not-fn          | 🔴 not-fn          |
 |          | cjs        | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
 |          | es-cjs     | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
@@ -121,12 +119,12 @@ Import Syntax:
 |          |            | 🏃 Runtime | ➖                  | ➖                 | ➖                 |
 |          | esm-cjs    | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
+|          | param-case | 💻 Compile | 🔴 TS1259-e         | 🔴 TS1259-e        | 🔴 TS2497-e TS2339 |
+|          |            | 🏃 Runtime | 🔴 not-fn           | 🔴 not-fn          | 🔴 not-fn          |
 | ES*      | assert     | 💻 Compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🟢                 |
 |          |            | 🏃 Runtime | 🟡                  | 🟡                 | ❌ not-fn          |
 |          | assertron  | 💻 Compile | 🟡 TS1259-t         | 🟡 TS1259-t        | 🟡 TS1259-t        |
 |          |            | 🏃 Runtime | ❌ not-fn           | ❌ not-fn          | ❌ not-fn          |
-|          | param-case | 💻 Compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🔴 TS2497-a TS2339 |
-|          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🟡                 |
 |          | cjs        | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 Runtime | ❌ not-fn           | ❌ not-fn          | ❌ not-fn          |
 |          | es-cjs     | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
@@ -135,11 +133,11 @@ Import Syntax:
 |          |            | 🏃 Runtime | ➖                  | ➖                 | ➖                 |
 |          | esm-cjs    | 💻 Compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 Runtime | 🟢                  | 🟢                 | 🟢                 |
+|          | param-case | 💻 Compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🔴 TS2497-a TS2339 |
+|          |            | 🏃 Runtime | 🟡                  | 🟡                 | 🟡                 |
 | Node*    | assert     | 💻 Compile | ❌ to-cjs           | ❌ to-cjs          | ❌ to-cjs          |
 |          |            | 🏃 Runtime | ❌ ref-err          | ❌ ref-err         | ❌ ref-err         |
 |          | assertron  | 💻 Compile | ❌ to-cjs TS1259-t  | ❌ to-cjs TS1259-t | ❌ to-cjs TS1259-t |
-|          |            | 🏃 Runtime | ❌ ref-err          | ❌ ref-err         | ❌ ref-err         |
-|          | param-case | 💻 Compile | ❌ to-cjs           | ❌ to-cjs          | ❌ to-cjs          |
 |          |            | 🏃 Runtime | ❌ ref-err          | ❌ ref-err         | ❌ ref-err         |
 |          | cjs        | 💻 Compile | ❌ to-cjs           | ❌ to-cjs          | ❌ to-cjs          |
 |          |            | 🏃 Runtime | ❌ ref-err          | ❌ ref-err         | ❌ ref-err         |
@@ -148,6 +146,8 @@ Import Syntax:
 |          | esm        | 💻 Compile | ➖                  | ➖                 | ➖                 |
 |          |            | 🏃 Runtime | ➖                  | ➖                 | ➖                 |
 |          | esm-cjs    | 💻 Compile | ❌ to-cjs           | ❌ to-cjs          | ❌ to-cjs          |
+|          |            | 🏃 Runtime | ❌ ref-err          | ❌ ref-err         | ❌ ref-err         |
+|          | param-case | 💻 Compile | ❌ to-cjs           | ❌ to-cjs          | ❌ to-cjs          |
 |          |            | 🏃 Runtime | ❌ ref-err          | ❌ ref-err         | ❌ ref-err         |
 
 - to-cjs: Code are compiled to CJS incorrectly
