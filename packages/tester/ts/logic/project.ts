@@ -21,6 +21,8 @@ export function getTestSubjects({
   projectPath: string
 }) {
   const dependencies = getDependencies(packageJson)
+  // `assert` is not a package
+  dependencies.unshift('assert')
   return {
     subjects: dependencies.map(name => ({
       name,
