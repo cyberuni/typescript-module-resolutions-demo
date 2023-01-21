@@ -53,10 +53,8 @@ async function collectTestResults({ moduleTypes, subjects, compile, runtime }: {
     runtimeResults: runtimeResults.find(r => r.moduleType === moduleType)!.results
   }))
   const errors = toErrorRecord(results)
-  // console.log('runtime errors', errors.runtime)
   return {
     results: results.flatMap(({ moduleType, compileResults, runtimeResults }) => {
-      // console.log(moduleType, runtimeResults.map(r => ([r.subject, ...r.results.map(r => ([r.importType, extractRuntimeErrorMessage(r.error)]))])))
       return subjects.flatMap((s, i) => {
         const compileResult: Array<CompileResult> = compileResults[s.name]
         const runtimeResult = runtimeResults.find(r => r.subject === s.name)
@@ -75,7 +73,7 @@ async function collectTestResults({ moduleTypes, subjects, compile, runtime }: {
           { importType: 'default', },
           { importType: 'default-as' },
           { importType: 'star' },
-        ]))// TypeError: m.default is not a function
+        ]))
         const runtimeImportMap = toImportMap(runtimeResult ? runtimeResult.results.map((r, i) => {
           const error = errors.runtime.find(e => e.message === extractRuntimeErrorMessage(r.error))
           return {
@@ -95,6 +93,9 @@ async function collectTestResults({ moduleTypes, subjects, compile, runtime }: {
         forEachKey(runtimeImportMap, (k) => {
           if (!compileImportMap[k].value && runtimeImportMap[k].value) {
             runtimeImportMap[k].icon = '❌'
+          }
+          if (compileImportMap[k].value && !runtimeImportMap[k].value) {
+            runtimeImportMap[k].icon = '🟡'
           }
         })
         return [{
