@@ -129,29 +129,25 @@ It does not contain a `main` field.
 
 This package does not apply to test configurations that uses `moduleResolution: Node`.
 
-## Running the tests
+## Running the demo
 
-Each project will be compiled with `tsc` (`build`), and tested with `ava` (`test`).
+The project comes with a `tester` cil tool to build the results.
 
-- `pnpm build`: build all projects (you need to do this first to build all projects)
-- `pnpm test`: test all projects (after build)
-- `pnpm clean`: delete all build results
-- `pnpm build:<module>`: build all project with specific `module` setting.\
-  e.g. `pnpm build:cjs` to build all projects with `CommonJS`
-- `pnpm test:<module>`: test all project with specific `module` setting.\
-  e.g. `pnpm test:node16` to build all projects with `Node16`
-- `pnpm <project> <command>`: run command in specific project.\
-  e.g. `pnpm node16-syn build` to build the `node16-syn` project.
-- `pnpm <project> test:<package>`: test specific project for specific `package`.\
-  e.g. `pnpm node test:assert` test `node` project for the `assert` package.
+To run everything, run `pnpm demo`.
 
-Tips: to make it a bit easier to extract the test result:
+After running demo, a `test-result.<typescript-version>.md` will be created in each test project.
+You can format the file in VSCode to make it easier to read directly.
+
+If you want to run the demo against a new version,
+update the typescript with `pnpm up -r typescript@<version>`
+
+Furthermore, you can:
 
 ```sh
-pnpm node test > test.txt
+pnpm demo [project] --moduleTypes [...]
+pnpm demo compile [project] --moduleTypes [...]
+pnpm demo runtime [project] --moduleTypes [...]
 ```
-
-Then edit the `test.txt` to first organize the lines.
 
 ## Other test cases to cover
 
