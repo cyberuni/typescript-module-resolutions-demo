@@ -1,12 +1,12 @@
 import { cli, z } from 'clibuilder'
+import { dirSync } from 'find'
 import { compile } from 'handlebars'
 import { parse } from 'json5'
 import fs from 'node:fs'
 import path from 'node:path'
 import { context, forEachKey } from 'type-plus'
 import { getProjectPath, getTestSubjects, readPackageJson } from './logic/project'
-import { extractRuntimeErrorMessage, genTestResults, runCompile, runCompileAndRuntimeTests, runRuntime } from './testResults'
-import { dirSync } from 'find'
+import { extractRuntimeErrorMessage, genTestResults, runCompile, runRuntime } from './testResults'
 
 const projectArg = { name: 'project' as const, description: 'project name', type: z.optional(z.string()) }
 const moduleTypesOption = {
@@ -22,12 +22,14 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
     async run({ project, moduleTypes }) {
       const projects = project ? [project] : getProjects()
       await Promise.all(projects.map(async project => {
+        this.ui.info(`building demo: ${project}`)
         const ctx = context({ project, moduleTypes })
           .extend(getProjectPath)
           .extend(readPackageJson)
           .extend(getTypeScriptInfo)
           .extend(getTestSubjects)
-          .extend(runCompileAndRuntimeTests)
+          .extend(runCompile)
+          .extend(runRuntime)
           .build()
 
         fs.writeFileSync(
@@ -35,7 +37,7 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
           [genTestConfiguration(ctx),
           genTestSubjects(ctx),
           genLegends(),
-          genTestResults({ ...ctx, results: await ctx.results })].join('\n')
+          await genTestResults(ctx)].join('\n')
         )
       }))
     }
@@ -47,6 +49,7 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
     async run({ project, moduleTypes }) {
       const projects = project ? [project] : getProjects()
       await Promise.all(projects.map(async project => {
+        this.ui.info(`compile: ${project}`)
         const ctx = context({ project, moduleTypes })
           .extend(getProjectPath)
           .extend(runCompile)
@@ -76,6 +79,7 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
     async run({ project, moduleTypes }) {
       const projects = project ? [project] : getProjects()
       await Promise.all(projects.map(async project => {
+        this.ui.info(`runtime: ${project}`)
         const ctx = context({ project, moduleTypes })
           .extend(getProjectPath)
           .extend(readPackageJson)
@@ -90,7 +94,7 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
           const moduleType = moduleResult.moduleType
           const results = await moduleResult.results
           results.forEach(subjectResult => {
-            const subject = subjectResult.name
+            const subject = subjectResult.subject
             subjectResult.results.forEach(result => {
               lines.push([moduleType.padEnd(8), subject.padEnd(10), result.importType.padEnd(10), extractRuntimeErrorMessage(result.error)])
             })
@@ -103,7 +107,7 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
   })
 
 function getProjects() {
-  return dirSync('tests')
+  return fs.readdirSync('tests')
 }
 
 function getTypeScriptInfo(ctx: { packageJson: any, projectPath: string }) {

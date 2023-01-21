@@ -4,7 +4,7 @@ import path from 'node:path'
 import { getTestSubjects } from './project'
 
 export type RuntimeResult = {
-  name: string
+  subject: string
   results: {
     filename: string
     importType: string
@@ -37,7 +37,7 @@ export async function runProject(ctx: {
         })
       })))
     return {
-      name: testSubject.name,
+      subject: testSubject.name,
       results
     }
   })).then(r => r.filter(r => r.results.length > 0))

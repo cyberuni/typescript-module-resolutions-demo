@@ -31,12 +31,12 @@ export function getTestSubjects({
   }
 }
 
+export type TestSubjectsContext = ReturnType<typeof getTestSubjects>
+
 export function readPackageJson(ctx: { projectPath: string }) {
   const packageJsonPath = path.join(ctx.projectPath, 'package.json')
   return { packageJson: parse(readFileSync(packageJsonPath, 'utf8')) }
 }
-
-
 
 function getTestFiles(projectPath: string, dependencyName: string) {
   const base = path.join(projectPath, 'ts')
