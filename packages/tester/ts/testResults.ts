@@ -16,6 +16,20 @@ export function runCompile(ctx: {
   }
 }
 
+export function runRuntime(ctx: {
+  project: string,
+  moduleTypes: string[],
+  projectPath: string,
+  packageJson: any
+} & ReturnType<typeof getTestSubjects>) {
+  return {
+    runtime: Promise.all(ctx.moduleTypes.map(moduleType => ({
+      moduleType,
+      results: runProject(ctx, moduleType)
+    })))
+  }
+}
+
 export function runCompileAndRuntimeTests(ctx: {
   project: string,
   moduleTypes: string[],
@@ -194,7 +208,7 @@ function extractRuntimeErrorKey(error: Error) {
   return error.name
 }
 
-function extractRuntimeErrorMessage(error?: Error) {
+export function extractRuntimeErrorMessage(error?: Error) {
   if (!error) return ''
   const match = /\n\n([^\n]*)/.exec(error.message)
   return match ? match[1] : error.message

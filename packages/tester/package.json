@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "clibuilder": "^8.0.4",
+    "clibuilder": "^8.0.6",
     "find": "^0.3.0",
     "handlebars": "^4.7.7",
     "json5": "^2.2.3",

@@ -28,7 +28,7 @@
     "test:node16": "turbo run test:node16",
     "test:nodenext": "turbo run test:nodenext",
     "tester": "pnpm --filter tester",
-    "gen": "tester"
+    "demo": "tester"
   },
   "devDependencies": {
     "tester": "workspace:*",

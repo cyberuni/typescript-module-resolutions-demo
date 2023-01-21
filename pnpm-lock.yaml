@@ -64,14 +64,14 @@ importers:
     specifiers:
       '@types/find': ^0.2.1
       '@types/node': ^14
-      clibuilder: ^8.0.4
+      clibuilder: ^8.0.6
       find: ^0.3.0
       handlebars: ^4.7.7
       json5: ^2.2.3
       type-plus: ^5.5.1
       typescript: 5.0.0-dev.20230103
     dependencies:
-      clibuilder: 8.0.4
+      clibuilder: 8.0.6
       find: 0.3.0
       handlebars: 4.7.7
       json5: 2.2.3
@@ -418,10 +418,6 @@ packages:
   /@types/node/14.18.36:
     resolution: {integrity: sha512-FXKWbsJ6a1hIrRxv+FoukuHnGTgEzKYGi7kilfMae96AL9UNkPFNWJEEYWzdRI9ooIkbr4AKldyuSTLql06vLQ==}
     dev: true
-
-  /@types/node/18.11.18:
-    resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
-    dev: false
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
@@ -1123,11 +1119,10 @@ packages:
       string-width: 5.1.2
     dev: true
 
-  /clibuilder/8.0.4:
-    resolution: {integrity: sha512-BbWVQr+gDPvdpT1JmFTzgsv/d1yOUqE2T/qpQJdANoZ8O/y4jPxrhy1oesUm467siJA74LcFldtYHQzhkHvzpg==}
+  /clibuilder/8.0.6:
+    resolution: {integrity: sha512-Hs48PzkMh+lKhkAs9D55VZdzxrYdMd538bY0FxTRzfwV84nzD9SOK7vIf+F+Xe+6d0/7UjGqX8p0k6Q+UTwsyQ==}
     engines: {node: '>= 8'}
     dependencies:
-      '@types/node': 18.11.18
       find-installed-packages: 3.0.1
       find-up: 6.3.0
       js-yaml: 4.1.0
@@ -1137,7 +1132,7 @@ packages:
       standard-log-color: 11.5.1_standard-log@11.5.1
       tmp: 0.2.1
       tslib: 2.4.1
-      type-plus: 4.18.1
+      type-plus: 5.5.1
       wordwrap: 1.0.0
       zod: 3.20.2
     dev: false
@@ -4236,13 +4231,6 @@ packages:
     resolution: {integrity: sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==}
     engines: {node: '>=10'}
     dev: true
-
-  /type-plus/4.18.1:
-    resolution: {integrity: sha512-/Dq0K/TUedajerhr2JuXhw44V2tiAniGvyZJL23PqxjUzxrXeASWvfi01Bo8o6mudRXJL/sfBD+KZiHSzrhZ9g==}
-    dependencies:
-      tersify: 3.11.1
-      unpartial: 1.0.4
-    dev: false
 
   /type-plus/5.5.1:
     resolution: {integrity: sha512-7EqsshPxldDvM7oW5HqoCuA6Tjw+KCmdnBfokT9sA2Trx28i55lnIWnCa/1RoQnhiRML6+j5NZVVMwiussv9ig==}
