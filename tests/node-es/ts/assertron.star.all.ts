@@ -1,3 +1,3 @@
 import * as assertron from 'assertron'
 
-assertron.truthy(true)
+assertron.default.truthy(true)
