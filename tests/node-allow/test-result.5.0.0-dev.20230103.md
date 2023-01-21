@@ -217,7 +217,7 @@ Import Syntax:
 | commonjs | assert     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | ❌ type-not-fn      | ❌ type-not-fn     | 🟢                 |
 |          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | ❌ type-not-fn-1   |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 |          | color-map  | 💻 compile | ➖                  | ➖                 | ➖                 |
@@ -229,11 +229,11 @@ Import Syntax:
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 |          | param-case | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2497-e        |
-|          |            | 🏃 runtime | ❌ type-not-fn-2    | ❌ type-not-fn-2   | 🔴 type-not-fn-3   |
+|          |            | 🏃 runtime | ❌ type-not-fn-1    | ❌ type-not-fn-1   | 🟡                 |
 | es2015   | assert     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | ❌ type-not-fn-4   |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | ❌ type-not-fn-2   |
 |          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-1    | ❌ type-not-fn-1   | ❌ type-not-fn-1   |
+|          |            | 🏃 runtime | ❌ type-not-fn-3    | ❌ type-not-fn-3   | ❌ type-not-fn-4   |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
 |          | color-map  | 💻 compile | ➖                  | ➖                 | ➖                 |
@@ -245,11 +245,11 @@ Import Syntax:
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 |          | param-case | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2497-a        |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟡                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🔴 type-not-fn-7   |
 | es2020   | assert     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | ❌ type-not-fn-4   |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | ❌ type-not-fn-2   |
 |          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-1    | ❌ type-not-fn-1   | ❌ type-not-fn-1   |
+|          |            | 🏃 runtime | ❌ type-not-fn-3    | ❌ type-not-fn-3   | ❌ type-not-fn-4   |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
 |          | color-map  | 💻 compile | ➖                  | ➖                 | ➖                 |
@@ -261,11 +261,11 @@ Import Syntax:
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 |          | param-case | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2497-a        |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟡                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🔴 type-not-fn-7   |
 | es2022   | assert     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | ❌ type-not-fn-4   |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | ❌ type-not-fn-2   |
 |          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-1    | ❌ type-not-fn-1   | ❌ type-not-fn-1   |
+|          |            | 🏃 runtime | ❌ type-not-fn-3    | ❌ type-not-fn-3   | ❌ type-not-fn-4   |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
 |          | color-map  | 💻 compile | ➖                  | ➖                 | ➖                 |
@@ -277,11 +277,11 @@ Import Syntax:
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 |          | param-case | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2497-a        |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟡                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🔴 type-not-fn-7   |
 | esnext   | assert     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | ❌ type-not-fn-4   |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | ❌ type-not-fn-2   |
 |          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-1    | ❌ type-not-fn-1   | ❌ type-not-fn-1   |
+|          |            | 🏃 runtime | ❌ type-not-fn-3    | ❌ type-not-fn-3   | ❌ type-not-fn-4   |
 |          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
 |          | color-map  | 💻 compile | ➖                  | ➖                 | ➖                 |
@@ -293,7 +293,7 @@ Import Syntax:
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
 |          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
 |          | param-case | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2497-a        |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟡                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🔴 type-not-fn-7   |
 | node16   | assert     | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2349          |
 |          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | 🔴 ref-not-defined |
 |          | assertron  | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
@@ -327,14 +327,15 @@ Import Syntax:
 |          | param-case | 💻 compile | 🟢                  | 🟢                 | 🔴 TS2497-a        |
 |          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | 🔴 ref-not-defined |
 
-- `TS2349`: This expression is not callable.
-- `TS2497-a`: This module can only be referenced with ECMAScript imports/exports by turning on the 'allowSyntheticDefaultImports' flag and referencing its default export.
-- `TS2497-e`: This module can only be referenced with ECMAScript imports/exports by turning on the 'esModuleInterop' flag and referencing its default export.
-- `ref-not-defined`: ReferenceError: exports is not defined in ES module scope
-- `type-not-fn`: TypeError: (0 , assert_1.default) is not a function
-- `type-not-fn-1`: TypeError: assertron.truthy is not a function
-- `type-not-fn-2`: TypeError: (0 , param_case_1.default) is not a function
-- `type-not-fn-3`: TypeError: paramCase.default is not a function
-- `type-not-fn-4`: TypeError: assert is not a function
-- `type-not-fn-5`: TypeError: m is not a function
-- `type-not-fn-6`: TypeError: m.default is not a function
+- `TS2349`: `This expression is not callable.`
+- `TS2497-a`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'allowSyntheticDefaultImports' flag and referencing its default export.`
+- `TS2497-e`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'esModuleInterop' flag and referencing its default export.`
+- `ref-not-defined`: `ReferenceError: exports is not defined in ES module scope`
+- `type-not-fn`: `TypeError: (0 , assert_1.default) is not a function`
+- `type-not-fn-1`: `TypeError: (0 , param_case_1.default) is not a function`
+- `type-not-fn-2`: `TypeError: assert is not a function`
+- `type-not-fn-3`: `TypeError: assertron.truthy is not a function`
+- `type-not-fn-4`: `TypeError: assertron.default.truthy is not a function`
+- `type-not-fn-5`: `TypeError: m is not a function`
+- `type-not-fn-6`: `TypeError: m.default is not a function`
+- `type-not-fn-7`: `TypeError: paramCase is not a function`

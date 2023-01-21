@@ -239,121 +239,126 @@ Import Syntax:
 
 ## Test Results
 
-| module   | Package    | Type      | import: default as | import: default | import: * as |
-| -------- | ---------- | --------- | ------------------ | --------------- | ------------ |
-| commonjs | assert     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | color-map  | 💻 compile | ➖                  | ➖               | ➖            |
-|          |            | 🏃 runtime | ➖                  | ➖               | ➖            |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-e   |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡            |
-| es2015   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | color-map  | 💻 compile | ➖                  | ➖               | ➖            |
-|          |            | 🏃 runtime | ➖                  | ➖               | ➖            |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a   |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡            |
-| es2020   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | color-map  | 💻 compile | ➖                  | ➖               | ➖            |
-|          |            | 🏃 runtime | ➖                  | ➖               | ➖            |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a   |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡            |
-| es2022   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | color-map  | 💻 compile | ➖                  | ➖               | ➖            |
-|          |            | 🏃 runtime | ➖                  | ➖               | ➖            |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a   |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡            |
-| esnext   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | color-map  | 💻 compile | ➖                  | ➖               | ➖            |
-|          |            | 🏃 runtime | ➖                  | ➖               | ➖            |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a   |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡            |
-| node16   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | color-map  | 💻 compile | ➖                  | ➖               | ➖            |
-|          |            | 🏃 runtime | ➖                  | ➖               | ➖            |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a   |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡            |
-| nodenext | assert     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | color-map  | 💻 compile | ➖                  | ➖               | ➖            |
-|          |            | 🏃 runtime | ➖                  | ➖               | ➖            |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢            |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢            |
-|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a   |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡            |
+| module   | Package    | Type      | import: default as | import: default | import: * as    |
+| -------- | ---------- | --------- | ------------------ | --------------- | --------------- |
+| commonjs | assert     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | ❌ type             | ❌ type          | ❌ type          |
+|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | ❌ type-not-fn      | ❌ type-not-fn   | ❌ type-not-fn-1 |
+|          | color-map  | 💻 compile | ➖                  | ➖               | ➖               |
+|          |            | 🏃 runtime | ➖                  | ➖               | ➖               |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | ❌ type-not-fn-2    | ❌ type-not-fn-2 | ❌ type-not-fn-1 |
+|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-e      |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-3 |
+| es2015   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | color-map  | 💻 compile | ➖                  | ➖               | ➖               |
+|          |            | 🏃 runtime | ➖                  | ➖               | ➖               |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-3 |
+| es2020   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | color-map  | 💻 compile | ➖                  | ➖               | ➖               |
+|          |            | 🏃 runtime | ➖                  | ➖               | ➖               |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-3 |
+| es2022   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | color-map  | 💻 compile | ➖                  | ➖               | ➖               |
+|          |            | 🏃 runtime | ➖                  | ➖               | ➖               |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-3 |
+| esnext   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | color-map  | 💻 compile | ➖                  | ➖               | ➖               |
+|          |            | 🏃 runtime | ➖                  | ➖               | ➖               |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-3 |
+| node16   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | color-map  | 💻 compile | ➖                  | ➖               | ➖               |
+|          |            | 🏃 runtime | ➖                  | ➖               | ➖               |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-3 |
+| nodenext | assert     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | cjs        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | color-map  | 💻 compile | ➖                  | ➖               | ➖               |
+|          |            | 🏃 runtime | ➖                  | ➖               | ➖               |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
+|          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-3 |
 
-- `TS1479-t`: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("tersify")' call instead.
-- `TS2497-a`: This module can only be referenced with ECMAScript imports/exports by turning on the 'allowSyntheticDefaultImports' flag and referencing its default export.
-- `TS2497-e`: This module can only be referenced with ECMAScript imports/exports by turning on the 'esModuleInterop' flag and referencing its default export.
+- `TS1479-t`: `The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("tersify")' call instead.`
+- `TS2497-a`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'allowSyntheticDefaultImports' flag and referencing its default export.`
+- `TS2497-e`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'esModuleInterop' flag and referencing its default export.`
+- `type`: `TypeError: Cannot read properties of undefined (reading 'truthy')`
+- `type-not-fn`: `TypeError: cjs_1.default.default is not a function`
+- `type-not-fn-1`: `TypeError: m.default.default is not a function`
+- `type-not-fn-2`: `TypeError: es_cjs_1.default.default is not a function`
+- `type-not-fn-3`: `TypeError: paramCase is not a function`

@@ -252,11 +252,11 @@ Import Syntax:
 |          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-2      |
 |          |            | 🏃 runtime | ❌ type-not-fn-4    | ❌ type-not-fn-4 | 🔴 type-not-fn-3 |
 |          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
-|          |            | 🏃 runtime | ❌ Error            | ❌ Error-1       | ❌ Error-2       |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-e      |
-|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5 | 🔴 type-not-fn-6 |
+|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5 | 🟡               |
 | es2015   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢               | 🔴 TS2339-1      |
 |          |            | 🏃 runtime | 🟡                  | 🟢               | 🟡               |
 |          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    |
@@ -268,11 +268,11 @@ Import Syntax:
 |          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-2      |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡               |
 |          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
-|          |            | 🏃 runtime | ❌ Error            | ❌ Error-1       | ❌ Error-2       |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 |
 | es2020   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢               | 🔴 TS2339-1      |
 |          |            | 🏃 runtime | 🟡                  | 🟢               | 🟡               |
 |          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    |
@@ -284,11 +284,11 @@ Import Syntax:
 |          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-2      |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡               |
 |          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
-|          |            | 🏃 runtime | ❌ Error            | ❌ Error-1       | ❌ Error-2       |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 |
 | es2022   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢               | 🔴 TS2339-1      |
 |          |            | 🏃 runtime | 🟡                  | 🟢               | 🟡               |
 |          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    |
@@ -300,11 +300,11 @@ Import Syntax:
 |          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-2      |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡               |
 |          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
-|          |            | 🏃 runtime | ❌ Error            | ❌ Error-1       | ❌ Error-2       |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 |
 | esnext   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢               | 🔴 TS2339-1      |
 |          |            | 🏃 runtime | 🟡                  | 🟢               | 🟡               |
 |          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    |
@@ -316,11 +316,11 @@ Import Syntax:
 |          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-2      |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡               |
 |          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
-|          |            | 🏃 runtime | ❌ Error            | ❌ Error-1       | ❌ Error-2       |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 |
 | node16   | assert     | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢               |
@@ -332,11 +332,11 @@ Import Syntax:
 |          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
-|          |            | 🏃 runtime | ❌ Error            | ❌ Error-1       | ❌ Error-2       |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 |
 | nodenext | assert     | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | assertron  | 💻 compile | 🟢                  | 🟢               | 🟢               |
@@ -348,30 +348,27 @@ Import Syntax:
 |          | es-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | esm        | 💻 compile | 🟢                  | 🟢               | 🟢               |
-|          |            | 🏃 runtime | ❌ Error            | ❌ Error-1       | ❌ Error-2       |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | esm-cjs    | 💻 compile | 🟢                  | 🟢               | 🟢               |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
-|          |            | 🏃 runtime | 🟢                  | 🟢               | 🟡               |
+|          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 |
 
-- `TS1259-a`: Module '"assert"' can only be default-imported using the 'allowSyntheticDefaultImports' flag
-- `TS1259-a-t`: Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/assertion-error@1.1.0/node_modules/assertion-error/index"' can only be default-imported using the 'allowSyntheticDefaultImports' flag
-- `TS1259-e`: Module '"assert"' can only be default-imported using the 'esModuleInterop' flag
-- `TS1259-e-t`: Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/assertion-error@1.1.0/node_modules/assertion-error/index"' can only be default-imported using the 'esModuleInterop' flag
-- `TS1479-t`: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("tersify")' call instead.
-- `TS2339`: Property 'default' does not exist on type '{ false(value: any): void; falsy: (value: any) => void; pathEqual: (actual: string, expected: string) => void; rejects: (promise: Promise<any>) => Promise<void>; ... 5 more ...; truthy: (value: any) => void; }'.
-- `TS2339-1`: Property 'default' does not exist on type 'typeof assert'.
-- `TS2339-2`: Property 'default' does not exist on type '(v: number) => number'.
-- `TS2497-a`: This module can only be referenced with ECMAScript imports/exports by turning on the 'allowSyntheticDefaultImports' flag and referencing its default export.
-- `TS2497-e`: This module can only be referenced with ECMAScript imports/exports by turning on the 'esModuleInterop' flag and referencing its default export.
-- `Error`:     $ ava esm.default-as.all.js
-- `Error-1`:     $ ava esm.default.all.js
-- `Error-2`:     $ ava esm.star.all.js
-- `type`: TypeError: Cannot read properties of undefined (reading 'truthy')
-- `type-not-fn`: TypeError: (0 , assert_1.default) is not a function
-- `type-not-fn-1`: TypeError: assert.default is not a function
-- `type-not-fn-2`: TypeError: cjs_1.default.default is not a function
-- `type-not-fn-3`: TypeError: m.default.default is not a function
-- `type-not-fn-4`: TypeError: es_cjs_1.default.default is not a function
-- `type-not-fn-5`: TypeError: (0 , param_case_1.default) is not a function
-- `type-not-fn-6`: TypeError: paramCase.default is not a function
+- `TS1259-a`: `Module '"assert"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
+- `TS1259-a-t`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/assertion-error@1.1.0/node_modules/assertion-error/index"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
+- `TS1259-e`: `Module '"assert"' can only be default-imported using the 'esModuleInterop' flag`
+- `TS1259-e-t`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/assertion-error@1.1.0/node_modules/assertion-error/index"' can only be default-imported using the 'esModuleInterop' flag`
+- `TS1479-t`: `The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("tersify")' call instead.`
+- `TS2339`: `Property 'default' does not exist on type '{ false(value: any): void; falsy: (value: any) => void; pathEqual: (actual: string, expected: string) => void; rejects: (promise: Promise<any>) => Promise<void>; ... 5 more ...; truthy: (value: any) => void; }'.`
+- `TS2339-1`: `Property 'default' does not exist on type 'typeof assert'.`
+- `TS2339-2`: `Property 'default' does not exist on type '(v: number) => number'.`
+- `TS2497-a`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'allowSyntheticDefaultImports' flag and referencing its default export.`
+- `TS2497-e`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'esModuleInterop' flag and referencing its default export.`
+- `type`: `TypeError: Cannot read properties of undefined (reading 'truthy')`
+- `type-not-fn`: `TypeError: (0 , assert_1.default) is not a function`
+- `type-not-fn-1`: `TypeError: assert.default is not a function`
+- `type-not-fn-2`: `TypeError: cjs_1.default.default is not a function`
+- `type-not-fn-3`: `TypeError: m.default.default is not a function`
+- `type-not-fn-4`: `TypeError: es_cjs_1.default.default is not a function`
+- `type-not-fn-5`: `TypeError: (0 , param_case_1.default) is not a function`
+- `type-not-fn-6`: `TypeError: paramCase is not a function`
