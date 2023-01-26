@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { forEachKey, record } from 'type-plus'
 import { CompileResult, PackageCompileResults, ProcessCompileContext } from './logic/compile'
-import { TestSubjectsContext, toImportMap } from './logic/project'
+import { TestSubjectsContext } from './logic/project'
 import { RunRuntimeContext, RuntimeResult } from './logic/runtime'
 import { reduceFlatMessage } from './logic/utils'
 
@@ -162,4 +162,43 @@ export function extractRuntimeErrorMessage(error?: Error) {
   if (!error) return ''
   const match = /\n\n([^\n]*)/.exec(error.message)
   return match ? match[1] : error.message
+}
+
+function toImportMap(results: Array<{
+  importType: string,
+  notApply?: boolean,
+  transient?: boolean
+  value?: string,
+}> | undefined) {
+  return {
+    'importDefault': toImportMapEntry(results, 'default'),
+    'importDefaultAs': toImportMapEntry(results, 'default-as'),
+    'importStarAs': toImportMapEntry(results, 'star'),
+  }
+}
+
+function toImportMapEntry(results: Array<{
+  importType: string,
+  notApply?: boolean,
+  value?: string,
+  transient?: boolean
+}> | undefined, importType: string) {
+  const entry = results?.find(r => r.importType === importType || r.importType === 'all')
+  if (entry) {
+    if (entry.notApply) {
+      return {
+        icon: '➖'
+      }
+    }
+    return {
+      icon: entry.value ? entry.transient ? '🟡' : '🔴' : '🟢',
+      value: entry.value
+    }
+  }
+  else {
+    return {
+      icon: '🟢',
+      value: ''
+    }
+  }
 }

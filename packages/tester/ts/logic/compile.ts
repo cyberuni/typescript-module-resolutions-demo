@@ -1,6 +1,6 @@
 import cp from 'child_process'
 import { EOL } from 'node:os'
-import { ResultEntry, copyCommonJSPackageJson, getResultEntry } from './project'
+import { ResultEntry, copyCommonJSPackageJson } from './project'
 
 /**
  * { [moduleType]: { [package]: CompileResult[] } }
@@ -17,7 +17,6 @@ export type CompileResult = ResultEntry & {
   messageText: string
 }
 
-
 export function runCompile(ctx: {
   project: string,
   projectPath: string,
@@ -29,7 +28,7 @@ export function runCompile(ctx: {
 
 export type RunCompileContext = ReturnType<typeof runCompile>
 
-export async function compileProject(ctx: { project: string, projectPath: string }) {
+async function compileProject(ctx: { project: string, projectPath: string }) {
   return new Promise<string>(a => {
     cp.exec(`pnpm ${ctx.project} build`, (_err, stdout) => {
       a(stdout)
@@ -67,4 +66,24 @@ function extractCompileResults(stdout: string) {
       })
     return p
   }, {} as CompileResults)
+}
+
+function getResultEntry(filename: string): ResultEntry {
+  const match = /ts\/([^\.]*)\.([^\.]*)\.([^\.]*).ts/.exec(filename)
+  return match ? {
+    transient: false,
+    packageName: match[1],
+    importType: match[2],
+    scope: match[3]
+  } : {
+    transient: true,
+    packageName: getPackageNameFromTransient(filename) ?? 'unknown',
+    importType: 'all',
+    scope: 'all'
+  }
+}
+
+function getPackageNameFromTransient(filename: string) {
+  if (/assertron/.test(filename)) return 'assertron'
+  return undefined
 }

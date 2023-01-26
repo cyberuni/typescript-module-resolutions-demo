@@ -1,7 +1,7 @@
 import { fileSync } from 'find'
 import { exec } from 'node:child_process'
 import path from 'node:path'
-import { getTestSubjects } from './project'
+import type { TestSubjectsContext } from './project'
 
 export type RuntimeResult = {
   subject: string
@@ -17,7 +17,7 @@ export function runRuntime(ctx: {
   moduleTypes: string[],
   projectPath: string,
   packageJson: any
-} & ReturnType<typeof getTestSubjects>) {
+} & TestSubjectsContext) {
   return {
     runtime: ctx.moduleTypes.map(moduleType => ({
       moduleType,
@@ -28,11 +28,11 @@ export function runRuntime(ctx: {
 
 export type RunRuntimeContext = ReturnType<typeof runRuntime>
 
-export async function runProject(ctx: {
+async function runProject(ctx: {
   project: string,
   projectPath: string
   packageJson: any,
-} & ReturnType<typeof getTestSubjects>, moduleType: string) {
+} & TestSubjectsContext, moduleType: string) {
   const base = path.join(ctx.projectPath, moduleType)
   const files = fileSync(base)
   return Promise.all(ctx.subjects.map(async testSubject => {
@@ -48,7 +48,7 @@ export async function runProject(ctx: {
           a({
             filename,
             importType: /.+\.(.*)\.(.*).js/.exec(filename)?.[1]!,
-            error: error ? error : undefined
+            error: error ?? undefined
           })
         })
       })))

@@ -14,11 +14,8 @@ export function copyCommonJSPackageJson(ctx: { projectPath: string }) {
   writeFileSync(path.join(ctx.projectPath, 'commonjs', 'package.json'), `{"type":"commonjs"}`)
 }
 
-export function getTestSubjects({
-  packageJson, projectPath
-}: {
-  packageJson: any,
-  projectPath: string
+export function getTestSubjects({ packageJson, projectPath }: {
+  packageJson: any, projectPath: string
 }) {
   const dependencies = getDependencies(packageJson)
   // `assert` is not a package
@@ -62,63 +59,4 @@ function getDependencies(packageJson: any) {
 
 export function getProjectPath(ctx: { project: string }) {
   return { projectPath: path.join(`tests`, ctx.project) }
-}
-
-export function getResultEntry(filename: string): ResultEntry {
-  const match = /ts\/([^\.]*)\.([^\.]*)\.([^\.]*).ts/.exec(filename)
-  return match ? {
-    transient: false,
-    packageName: match[1],
-    importType: match[2],
-    scope: match[3]
-  } : {
-    transient: true,
-    packageName: getPackageNameFromTransient(filename) ?? 'unknown',
-    importType: 'all',
-    scope: 'all'
-  }
-}
-
-function getPackageNameFromTransient(filename: string) {
-  if (/assertron/.test(filename)) return 'assertron'
-  return undefined
-}
-
-export function toImportMap(results: Array<{
-  importType: string,
-  notApply?: boolean,
-  transient?: boolean
-  value?: string,
-}> | undefined) {
-  return {
-    'importDefault': toImportMapEntry(results, 'default'),
-    'importDefaultAs': toImportMapEntry(results, 'default-as'),
-    'importStarAs': toImportMapEntry(results, 'star'),
-  }
-}
-
-function toImportMapEntry(results: Array<{
-  importType: string,
-  notApply?: boolean,
-  value?: string,
-  transient?: boolean
-}> | undefined, importType: string) {
-  const entry = results?.find(r => r.importType === importType || r.importType === 'all')
-  if (entry) {
-    if (entry.notApply) {
-      return {
-        icon: '➖'
-      }
-    }
-    return {
-      icon: entry.value ? entry.transient ? '🟡' : '🔴' : '🟢',
-      value: entry.value
-    }
-  }
-  else {
-    return {
-      icon: '🟢',
-      value: ''
-    }
-  }
 }
