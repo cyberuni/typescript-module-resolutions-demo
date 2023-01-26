@@ -35,9 +35,10 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
         fs.writeFileSync(
           path.join(ctx.projectPath, `test-result.${ctx.tsVersion}.md`),
           [genTestConfiguration(ctx),
-          genTestSubjects(ctx),
           genLegends(),
-          await genTestResults(ctx)].join('\n')
+          await genTestResults(ctx),
+          genTestSubjects(ctx),
+          ].join('\n')
         )
       }))
     }

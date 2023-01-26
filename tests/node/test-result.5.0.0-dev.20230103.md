@@ -10,6 +10,142 @@
 }
 ```
 
+## Legends
+
+- 🟢: both compile and runtime are working correctly
+- 🟡: for compile, it means there is an error, but can be suppressed (e.g. with `skipLibCheck`)\
+  for runtime, it means the compile fails, but runtime is working
+- 🔴: compile and/or runtime fails
+- ❌: compile success, but runtime fails. Potentially a TypeScript bug.
+- ➖: invalid usage in this test configuration
+
+Import Syntax:
+
+- `default as`: `import { default as m } from 'm'`
+- `default`: `import m from 'm'`
+- `* as`: `import * as m from 'm'`
+
+## Test Results
+
+| module   | Package    | Type      | import: default as | import: default   | import: * as      |
+| -------- | ---------- | --------- | ------------------ | ----------------- | ----------------- |
+| commonjs | assert     | 💻 compile | 🔴 TS1259-e         | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🔴 type-not-fn      | ❌ type-not-fn     | 🟢                 |
+|          | assertron  | 💻 compile | 🟡 TS1259-e-t       | 🟡 TS1259-e-t      | 🟡 TS1259-e-t      |
+|          |            | 🏃 runtime | 🟡                  | 🟡                 | 🟡                 |
+|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
+|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
+|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
+|          | param-case | 💻 compile | 🔴 TS1259-e-1       | 🟢                 | 🔴 TS2497-e        |
+|          |            | 🏃 runtime | 🔴 type-not-fn-1    | ❌ type-not-fn-1   | 🟡                 |
+| es2015   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟡                  | 🟢                 | ❌ type-not-fn-2   |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
+|          |            | 🏃 runtime | 🔴 type-not-fn-3    | 🔴 type-not-fn-3   | 🔴 type-not-fn-4   |
+|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
+|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
+|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
+|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
+|          |            | 🏃 runtime | 🟡                  | 🟢                 | 🔴 type-not-fn-7   |
+| es2020   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟡                  | 🟢                 | ❌ type-not-fn-2   |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
+|          |            | 🏃 runtime | 🔴 type-not-fn-3    | 🔴 type-not-fn-3   | 🔴 type-not-fn-4   |
+|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
+|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
+|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
+|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
+|          |            | 🏃 runtime | 🟡                  | 🟢                 | 🔴 type-not-fn-7   |
+| es2022   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟡                  | 🟢                 | ❌ type-not-fn-2   |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
+|          |            | 🏃 runtime | 🔴 type-not-fn-3    | 🔴 type-not-fn-3   | 🔴 type-not-fn-4   |
+|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
+|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
+|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
+|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
+|          |            | 🏃 runtime | 🟡                  | 🟢                 | 🔴 type-not-fn-7   |
+| esnext   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟡                  | 🟢                 | ❌ type-not-fn-2   |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
+|          |            | 🏃 runtime | 🔴 type-not-fn-3    | 🔴 type-not-fn-3   | 🔴 type-not-fn-4   |
+|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
+|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
+|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
+|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
+|          |            | 🏃 runtime | 🟡                  | 🟢                 | 🔴 type-not-fn-7   |
+| node16   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🔴 ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
+|          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |
+|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
+|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
+|          |            | 🏃 runtime | 🔴 ref-not-defined  | ❌ ref-not-defined | 🔴 ref-not-defined |
+| nodenext | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | 🔴 ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
+|          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |
+|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
+|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
+|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
+|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
+|          |            | 🏃 runtime | 🔴 ref-not-defined  | ❌ ref-not-defined | 🔴 ref-not-defined |
+
+- `TS1259-a`: `Module '"assert"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
+- `TS1259-a-1`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/param-case@1.1.2/node_modules/param-case/param-case"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
+- `TS1259-a-t`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/assertion-error@1.1.0/node_modules/assertion-error/index"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
+- `TS1259-e`: `Module '"assert"' can only be default-imported using the 'esModuleInterop' flag`
+- `TS1259-e-1`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/param-case@1.1.2/node_modules/param-case/param-case"' can only be default-imported using the 'esModuleInterop' flag`
+- `TS1259-e-t`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/assertion-error@1.1.0/node_modules/assertion-error/index"' can only be default-imported using the 'esModuleInterop' flag`
+- `TS2497-a`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'allowSyntheticDefaultImports' flag and referencing its default export.`
+- `TS2497-e`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'esModuleInterop' flag and referencing its default export.`
+- `ref-not-defined`: `ReferenceError: exports is not defined in ES module scope`
+- `type-not-fn`: `TypeError: (0 , assert_1.default) is not a function`
+- `type-not-fn-1`: `TypeError: (0 , param_case_1.default) is not a function`
+- `type-not-fn-2`: `TypeError: assert is not a function`
+- `type-not-fn-3`: `TypeError: assertron.truthy is not a function`
+- `type-not-fn-4`: `TypeError: assertron.default.truthy is not a function`
+- `type-not-fn-5`: `TypeError: m is not a function`
+- `type-not-fn-6`: `TypeError: m.default is not a function`
+- `type-not-fn-7`: `TypeError: paramCase is not a function`
+
 ## Test Subjects
 
 Depends on the test configuration, the way to consume a module are different.
@@ -192,139 +328,3 @@ import * as paramCase from 'param-case'
 paramCase('hello world')
 
 ```
-
-## Legends
-
-- 🟢: both compile and runtime are working correctly
-- 🟡: for compile, it means there is an error, but can be suppressed (e.g. with `skipLibCheck`)\
-  for runtime, it means the compile fails, but runtime is working
-- 🔴: compile and/or runtime fails
-- ❌: compile success, but runtime fails. Potentially a TypeScript bug.
-- ➖: invalid usage in this test configuration
-
-Import Syntax:
-
-- `default as`: `import { default as m } from 'm'`
-- `default`: `import m from 'm'`
-- `* as`: `import * as m from 'm'`
-
-## Test Results
-
-| module   | Package    | Type      | import: default as | import: default   | import: * as      |
-| -------- | ---------- | --------- | ------------------ | ----------------- | ----------------- |
-| commonjs | assert     | 💻 compile | 🔴 TS1259-e         | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🔴 type-not-fn      | ❌ type-not-fn     | 🟢                 |
-|          | assertron  | 💻 compile | 🟡 TS1259-e-t       | 🟡 TS1259-e-t      | 🟡 TS1259-e-t      |
-|          |            | 🏃 runtime | 🟡                  | 🟡                 | 🟡                 |
-|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
-|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
-|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
-|          | param-case | 💻 compile | 🔴 TS1259-e-1       | 🟢                 | 🔴 TS2497-e        |
-|          |            | 🏃 runtime | 🔴 type-not-fn-1    | ❌ type-not-fn-1   | 🟡                 |
-| es2015   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟡                  | 🟢                 | ❌ type-not-fn-2   |
-|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
-|          |            | 🏃 runtime | 🔴 type-not-fn-3    | 🔴 type-not-fn-3   | 🔴 type-not-fn-4   |
-|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
-|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
-|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
-|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
-|          |            | 🏃 runtime | 🟡                  | 🟢                 | 🔴 type-not-fn-7   |
-| es2020   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟡                  | 🟢                 | ❌ type-not-fn-2   |
-|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
-|          |            | 🏃 runtime | 🔴 type-not-fn-3    | 🔴 type-not-fn-3   | 🔴 type-not-fn-4   |
-|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
-|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
-|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
-|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
-|          |            | 🏃 runtime | 🟡                  | 🟢                 | 🔴 type-not-fn-7   |
-| es2022   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟡                  | 🟢                 | ❌ type-not-fn-2   |
-|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
-|          |            | 🏃 runtime | 🔴 type-not-fn-3    | 🔴 type-not-fn-3   | 🔴 type-not-fn-4   |
-|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
-|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
-|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
-|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
-|          |            | 🏃 runtime | 🟡                  | 🟢                 | 🔴 type-not-fn-7   |
-| esnext   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟡                  | 🟢                 | ❌ type-not-fn-2   |
-|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
-|          |            | 🏃 runtime | 🔴 type-not-fn-3    | 🔴 type-not-fn-3   | 🔴 type-not-fn-4   |
-|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5   | ❌ type-not-fn-6   |
-|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
-|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 |
-|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
-|          |            | 🏃 runtime | 🟡                  | 🟢                 | 🔴 type-not-fn-7   |
-| node16   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🔴 ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
-|          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |
-|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
-|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
-|          |            | 🏃 runtime | 🔴 ref-not-defined  | ❌ ref-not-defined | 🔴 ref-not-defined |
-| nodenext | assert     | 💻 compile | 🔴 TS1259-a         | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | 🔴 ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t      | 🟡 TS1259-a-t      |
-|          |            | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined |
-|          | cjs        | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | es-cjs     | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | esm        | 💻 compile | ➖                  | ➖                 | ➖                 |
-|          |            | 🏃 runtime | ➖                  | ➖                 | ➖                 |
-|          | esm-cjs    | 💻 compile | 🟢                  | 🟢                 | 🟢                 |
-|          |            | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | param-case | 💻 compile | 🔴 TS1259-a-1       | 🟢                 | 🔴 TS2497-a        |
-|          |            | 🏃 runtime | 🔴 ref-not-defined  | ❌ ref-not-defined | 🔴 ref-not-defined |
-
-- `TS1259-a`: `Module '"assert"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
-- `TS1259-a-1`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/param-case@1.1.2/node_modules/param-case/param-case"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
-- `TS1259-a-t`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/assertion-error@1.1.0/node_modules/assertion-error/index"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
-- `TS1259-e`: `Module '"assert"' can only be default-imported using the 'esModuleInterop' flag`
-- `TS1259-e-1`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/param-case@1.1.2/node_modules/param-case/param-case"' can only be default-imported using the 'esModuleInterop' flag`
-- `TS1259-e-t`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/assertion-error@1.1.0/node_modules/assertion-error/index"' can only be default-imported using the 'esModuleInterop' flag`
-- `TS2497-a`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'allowSyntheticDefaultImports' flag and referencing its default export.`
-- `TS2497-e`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'esModuleInterop' flag and referencing its default export.`
-- `ref-not-defined`: `ReferenceError: exports is not defined in ES module scope`
-- `type-not-fn`: `TypeError: (0 , assert_1.default) is not a function`
-- `type-not-fn-1`: `TypeError: (0 , param_case_1.default) is not a function`
-- `type-not-fn-2`: `TypeError: assert is not a function`
-- `type-not-fn-3`: `TypeError: assertron.truthy is not a function`
-- `type-not-fn-4`: `TypeError: assertron.default.truthy is not a function`
-- `type-not-fn-5`: `TypeError: m is not a function`
-- `type-not-fn-6`: `TypeError: m.default is not a function`
-- `type-not-fn-7`: `TypeError: paramCase is not a function`
