@@ -43,7 +43,7 @@ async function compileProject(ctx: { project: string, projectPath: string }) {
 export function processCompileResults({ compileRaw }: RunCompileContext) {
 
   return {
-    compile: compileRaw.then(raw => extractCompileResults(raw))
+    compile: compileRaw.then(extractCompileResults)
   }
 }
 
@@ -58,12 +58,7 @@ function extractCompileResults(stdout: string) {
     const entry = getResultEntry(filename)
     const m = p[moduleType] = p[moduleType] || {}
     const a = m[entry.packageName] = m[entry.packageName] || []
-    if (!a.some(x => x.messageText === messageText))
-      a.push({
-        ...entry,
-        code: Number(code),
-        messageText
-      })
+    a.push({ ...entry, code: Number(code), messageText })
     return p
   }, {} as CompileResults)
 }
