@@ -12,6 +12,22 @@ export type RuntimeResult = {
   }[]
 }
 
+export function runRuntime(ctx: {
+  project: string,
+  moduleTypes: string[],
+  projectPath: string,
+  packageJson: any
+} & ReturnType<typeof getTestSubjects>) {
+  return {
+    runtime: ctx.moduleTypes.map(moduleType => ({
+      moduleType,
+      results: runProject(ctx, moduleType)
+    }))
+  }
+}
+
+export type RunRuntimeContext = ReturnType<typeof runRuntime>
+
 export async function runProject(ctx: {
   project: string,
   projectPath: string

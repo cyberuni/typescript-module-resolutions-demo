@@ -3,25 +3,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { forEachKey, record } from 'type-plus'
 import { CompileResult, PackageCompileResults, ProcessCompileContext } from './logic/compile'
-import { TestSubjectsContext, getTestSubjects, toImportMap } from './logic/project'
-import { RuntimeResult, runProject } from './logic/runtime'
+import { TestSubjectsContext, toImportMap } from './logic/project'
+import { RunRuntimeContext, RuntimeResult } from './logic/runtime'
 import { reduceFlatMessage } from './logic/utils'
 
-export function runRuntime(ctx: {
-  project: string,
-  moduleTypes: string[],
-  projectPath: string,
-  packageJson: any
-} & ReturnType<typeof getTestSubjects>) {
-  return {
-    runtime: ctx.moduleTypes.map(moduleType => ({
-      moduleType,
-      results: runProject(ctx, moduleType)
-    }))
-  }
-}
-
-type RunRuntimeContext = ReturnType<typeof runRuntime>
 
 export async function genTestResults(
   ctx: { moduleTypes: string[] } & TestSubjectsContext & ProcessCompileContext & RunRuntimeContext) {

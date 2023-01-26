@@ -1,13 +1,13 @@
 import { cli, z } from 'clibuilder'
-import { dirSync } from 'find'
 import { compile } from 'handlebars'
 import { parse } from 'json5'
 import fs from 'node:fs'
 import path from 'node:path'
 import { context, forEachKey } from 'type-plus'
-import { getProjectPath, getTestSubjects, readPackageJson } from './logic/project'
-import { extractRuntimeErrorMessage, genTestResults, runRuntime } from './testResults'
 import { processCompileResults, runCompile } from './logic/compile'
+import { getProjectPath, getTestSubjects, readPackageJson } from './logic/project'
+import { runRuntime } from './logic/runtime'
+import { extractRuntimeErrorMessage, genTestResults } from './testResults'
 
 const projectArg = { name: 'project' as const, description: 'project name', type: z.optional(z.string()) }
 const moduleTypesOption = {
