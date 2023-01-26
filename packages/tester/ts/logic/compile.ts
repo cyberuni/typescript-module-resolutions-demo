@@ -17,17 +17,38 @@ export type CompileResult = ResultEntry & {
   messageText: string
 }
 
+
+export function runCompile(ctx: {
+  project: string,
+  projectPath: string,
+}) {
+  return {
+    compileRaw: compileProject(ctx)
+  }
+}
+
+export type RunCompileContext = ReturnType<typeof runCompile>
+
 export async function compileProject(ctx: { project: string, projectPath: string }) {
-  return new Promise<CompileResults>(a => {
+  return new Promise<string>(a => {
     cp.exec(`pnpm ${ctx.project} build`, (_err, stdout) => {
-      a(extractCompileResults(stdout))
+      a(stdout)
     })
   })
-    .then((results) => {
+    .then((raw) => {
       copyCommonJSPackageJson(ctx)
-      return results
+      return raw
     })
 }
+
+export function processCompileResults({ compileRaw }: RunCompileContext) {
+
+  return {
+    compile: compileRaw.then(raw => extractCompileResults(raw))
+  }
+}
+
+export type ProcessCompileContext = ReturnType<typeof processCompileResults>
 
 function extractCompileResults(stdout: string) {
   const lines = stdout.split(EOL)

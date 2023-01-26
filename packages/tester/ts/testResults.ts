@@ -2,21 +2,10 @@ import { compile } from 'handlebars'
 import fs from 'node:fs'
 import path from 'node:path'
 import { forEachKey, record } from 'type-plus'
-import { CompileResult, PackageCompileResults, compileProject } from './logic/compile'
+import { CompileResult, PackageCompileResults, ProcessCompileContext } from './logic/compile'
 import { TestSubjectsContext, getTestSubjects, toImportMap } from './logic/project'
 import { RuntimeResult, runProject } from './logic/runtime'
 import { reduceFlatMessage } from './logic/utils'
-
-export function runCompile(ctx: {
-  project: string,
-  projectPath: string,
-}) {
-  return {
-    compile: compileProject(ctx)
-  }
-}
-
-type RunCompileContext = ReturnType<typeof runCompile>
 
 export function runRuntime(ctx: {
   project: string,
@@ -35,13 +24,14 @@ export function runRuntime(ctx: {
 type RunRuntimeContext = ReturnType<typeof runRuntime>
 
 export async function genTestResults(
-  ctx: { moduleTypes: string[] } & TestSubjectsContext & RunCompileContext & RunRuntimeContext) {
+  ctx: { moduleTypes: string[] } & TestSubjectsContext & ProcessCompileContext & RunRuntimeContext) {
   const results = await collectTestResults(ctx)
   const template = compile(fs.readFileSync(path.join(__dirname, '../templates/test-results.hbs'), 'utf8'))
   return template(results)
 }
 
-async function collectTestResults({ moduleTypes, subjects, compile, runtime }: { moduleTypes: string[] } & TestSubjectsContext & RunCompileContext & RunRuntimeContext) {
+async function collectTestResults({ moduleTypes, subjects, compile, runtime }:
+  { moduleTypes: string[] } & TestSubjectsContext & ProcessCompileContext & RunRuntimeContext) {
   const compileResults = await compile
   const runtimeResults = await Promise.all(runtime.map(async r => ({
     moduleType: r.moduleType,

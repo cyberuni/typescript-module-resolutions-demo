@@ -6,13 +6,19 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { context, forEachKey } from 'type-plus'
 import { getProjectPath, getTestSubjects, readPackageJson } from './logic/project'
-import { extractRuntimeErrorMessage, genTestResults, runCompile, runRuntime } from './testResults'
+import { extractRuntimeErrorMessage, genTestResults, runRuntime } from './testResults'
+import { processCompileResults, runCompile } from './logic/compile'
 
 const projectArg = { name: 'project' as const, description: 'project name', type: z.optional(z.string()) }
 const moduleTypesOption = {
   description: 'module types',
   default: ['commonjs', 'es2015', 'es2020', 'es2022', 'esnext', 'node16', 'nodenext'],
   type: z.array(z.string())
+}
+
+const rawOption = {
+  description: 'emit raw output',
+  type: z.boolean()
 }
 
 export const app = cli({ name: 'tester', version: '0.0.1' })
@@ -29,6 +35,7 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
           .extend(getTypeScriptInfo)
           .extend(getTestSubjects)
           .extend(runCompile)
+          .extend(processCompileResults)
           .extend(runRuntime)
           .build()
 
@@ -46,15 +53,24 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
   .command({
     name: 'compile',
     arguments: [projectArg],
-    options: { moduleTypes: moduleTypesOption },
-    async run({ project, moduleTypes }) {
+    options: {
+      moduleTypes: moduleTypesOption,
+      raw: rawOption
+    },
+    async run({ project, moduleTypes, raw }) {
       const projects = project ? [project] : getProjects()
       await Promise.all(projects.map(async project => {
         this.ui.info(`compile: ${project}`)
         const ctx = context({ project, moduleTypes })
           .extend(getProjectPath)
           .extend(runCompile)
+          .extend(processCompileResults)
           .build()
+
+        if (raw) {
+          this.ui.info(await ctx.compileRaw)
+          return
+        }
 
         const result = await ctx.compile
 
