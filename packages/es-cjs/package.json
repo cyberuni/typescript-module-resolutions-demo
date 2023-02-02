@@ -2,9 +2,12 @@
   "name": "es-cjs",
   "version": "1.0.0",
   "description": "",
-  "module": "./es2015/index.js",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "./commonjs/index.js",
-  "types": "./es2015/index.d.ts",
+  "module": "./es2015/index.js",
+  "types": "./commonjs/index.d.ts",
   "scripts": {
     "build": "run-p --aggregate-output -c --print-label build:commonjs build:es2015 build:es2020 build:es2022 build:node16 build:nodenext",
     "build:commonjs": "run-s -c build:commonjs:tsc build:commonjs:ncp",
@@ -18,13 +21,10 @@
     "build:nodenext": "tsc -p tsconfig.nodenext.json",
     "clean": "rimraf commonjs es* node16 nodenext"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "ncp": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "typescript": "5.0.0-dev.20230103"
+    "typescript": "4.9.4"
   }
 }

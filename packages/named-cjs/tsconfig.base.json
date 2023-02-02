@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "strict": true,
+    "target": "ES2019"
+  },
+  "include": [
+    "ts",
+    "types"
+  ]
+}

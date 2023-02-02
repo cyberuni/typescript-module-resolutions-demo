@@ -1,8 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "tester compile",
+    "build": "turbo run build --filter=./packages/*",
     "clean": "turbo run clean",
+    "compile": "tester compile",
     "node": "pnpm --filter node",
     "node-allow": "pnpm --filter node-allow",
     "node-es": "pnpm --filter node-es",
@@ -19,7 +20,7 @@
   "devDependencies": {
     "tester": "workspace:*",
     "turbo": "^1.6.3",
-    "typescript": "5.0.0-dev.20230103"
+    "typescript": "4.9.4"
   },
   "packageManager": "pnpm@7.22.0"
 }

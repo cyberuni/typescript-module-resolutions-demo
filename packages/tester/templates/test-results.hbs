@@ -1,9 +1,9 @@
 ## Test Results
 
-| module   | Package    | Type      | import: default as | import: default   | import: * as      |
-| -------- | ---------- | --------- | ------------------ | ----------------- | ----------------- |
+| module   | Package    | Type      | import: default as | import: default   | import: * as      | import: { named } |
+| -------- | ---------- | --------- | ------------------ | ----------------- | ----------------- | ----------------- |
 {{#each results}}
-| {{moduleType}} | {{package}} | {{type}} | {{importDefaultAs.icon}} {{importDefaultAs.value}} | {{importDefault.icon}} {{importDefault.value}} | {{importStarAs.icon}} {{importStarAs.value}} |
+| {{moduleType}} | {{package}} | {{type}} | {{importDefaultAs.icon}} {{importDefaultAs.value}} | {{importDefault.icon}} {{importDefault.value}} | {{importStarAs.icon}} {{importStarAs.value}} | {{importNamed.icon}} {{importNamed.value}} |
 {{/each}}
 
 {{#each errors}}

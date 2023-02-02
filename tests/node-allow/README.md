@@ -9,7 +9,7 @@
 }
 ```
 
-`allowSyntheticDefaultImports` tries to fix the `export =` only at the type-level.
+[`allowSyntheticDefaultImports`](https://www.typescriptlang.org/tsconfig/#allowSyntheticDefaultImports) allows
 
 ## Test Results
 

@@ -41,7 +41,7 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
 
         fs.writeFileSync(
           path.join(ctx.projectPath, `test-result.${ctx.tsVersion}.md`),
-          [genTestConfiguration(ctx),
+          [genTitle(ctx),
           genLegends(),
           await genTestResults(ctx),
           genTestSubjects(ctx),
@@ -63,6 +63,8 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
         this.ui.info(`compile: ${project}`)
         const ctx = context({ project, moduleTypes })
           .extend(getProjectPath)
+          .extend(readPackageJson)
+          .extend(getTestSubjects)
           .extend(runCompile)
           .extend(processCompileResults)
           .build()
@@ -72,17 +74,16 @@ export const app = cli({ name: 'tester', version: '0.0.1' })
           return
         }
 
-        const result = await ctx.compile
+        const compileResults = await ctx.compile
 
         const lines: string[][] = []
-        forEachKey(result, (moduleType) => {
-          const moduleResults = result[moduleType]
-          forEachKey(moduleResults, (subject) => {
-            const compileResults = moduleResults[subject]
-            compileResults.forEach(result => {
-              lines.push([moduleType.padEnd(8), subject.padEnd(10), result.importType.padEnd(10), result.transient ? 'transient' : 'direct   ', `TS${result.code}`, result.messageText])
-            })
-          })
+        compileResults.forEach(result => {
+          lines.push([
+            result.moduleType.padEnd(8),
+            result.subject.padEnd(10),
+            result.importType.padEnd(10),
+            result.transient ? 'transient' : 'direct   ',
+            result.code ? `TS${result.code}` : 'success', result.messageText ?? ''])
         })
         lines.sort((a, b) => a[0] > b[0] ? 1 : (a[0] < b[0] ? -1 : (a[1] > b[1] ? 1 : -1)))
         lines.map(l => this.ui.error(l.join(' | ')))
@@ -138,6 +139,11 @@ function getTypeScriptInfo(ctx: { packageJson: any, projectPath: string }) {
 function getTSVersion(packageJson: any) {
   const version = packageJson.devDependencies['typescript']
   return /^[0-9]/.test(version) ? version : version.slice(1)
+}
+
+function genTitle(ctx: { tsVersion: string }) {
+  const template = compile(fs.readFileSync(path.join(__dirname, '../templates/title.hbs'), 'utf8'))
+  return template(ctx)
 }
 
 function genTestConfiguration({ tsconfig }: { tsconfig: any }) {

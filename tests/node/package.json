@@ -55,6 +55,10 @@
     "es-cjs": "workspace:*",
     "esm": "workspace:*",
     "esm-cjs": "workspace:*",
+    "named-cjs": "workspace:*",
+    "named-es-cjs": "workspace:*",
+    "named-esm": "workspace:*",
+    "named-esm-cjs": "workspace:*",
     "param-case": "1"
   },
   "devDependencies": {
@@ -67,6 +71,6 @@
     "tap-min": "^2.0.0",
     "tap-simple": "^0.3.1",
     "tap-summary": "^4.0.0",
-    "typescript": "5.0.0-dev.20230103"
+    "typescript": "4.9.4"
   }
 }

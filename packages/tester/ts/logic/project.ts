@@ -3,13 +3,6 @@ import { parse } from 'json5'
 import { readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 
-export type ResultEntry = {
-  packageName: string,
-  transient: boolean,
-  importType: string,
-  scope: string
-}
-
 export function copyCommonJSPackageJson(ctx: { projectPath: string }) {
   writeFileSync(path.join(ctx.projectPath, 'commonjs', 'package.json'), `{"type":"commonjs"}`)
 }
@@ -41,11 +34,24 @@ function getTestFiles(projectPath: string, dependencyName: string) {
   const filePrefix = path.join(base, `${dependencyName}.`)
   return fileSync(base)
     .filter(f => f.startsWith(filePrefix))
-    .map(filepath => ({
-      filename: filepath.slice(base.length + 1),
-      filepath,
-      filecontent: readFileSync(filepath, 'utf8')
-    }))
+    .map(filepath => {
+      const filename = filepath.slice(base.length + 1)
+      const filecontent = readFileSync(filepath, 'utf8')
+      const match = /^([^\.]*)\.([^\.]*)\.([^\.]*).ts$/.exec(filename)
+      if (!match) {
+        throw new Error(`not conforming filename: ${filename}`)
+      }
+      const [, packageName, importType, scope] = match
+
+      return ({
+        filename,
+        filepath,
+        filecontent,
+        packageName,
+        importType,
+        scope
+      })
+    })
 }
 
 function getDependencies(packageJson: any) {

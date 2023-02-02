@@ -1,14 +1,6 @@
-## Test Configuration
+# TypeScript Module System Demo
 
-```js
-{
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": ,
-    "esModuleInterop": ,
-    "moduleResolution": "Node16"
-  }
-}
-```
+TypeScript: 4.9.4
 
 ## Legends
 
@@ -29,8 +21,8 @@ Import Syntax:
 
 | module   | Package    | Type      | import: default as | import: default | import: * as    |
 | -------- | ---------- | --------- | ------------------ | --------------- | --------------- |
-| commonjs | assert     | 💻 compile | 🔴 TS1259-e         | 🟢               | 🔴 TS2339-1      |
-|          |            | 🏃 runtime | 🔴 type-not-fn      | ❌ type-not-fn   | 🔴 type-not-fn-1 |
+| commonjs | assert     | 💻 compile | 🔴 TS1259-e         | 🔴 TS1259-e      | 🔴 TS2339-1      |
+|          |            | 🏃 runtime | 🔴 type-not-fn      | 🔴 type-not-fn   | 🔴 type-not-fn-1 |
 |          | assertron  | 💻 compile | 🟡 TS1259-e-t       | 🟡 TS1259-e-t    | 🟡 TS1259-e-t    |
 |          |            | 🏃 runtime | 🔴 type             | 🔴 type          | 🔴 type          |
 |          | cjs        | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-2      |
@@ -45,8 +37,8 @@ Import Syntax:
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-e      |
 |          |            | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5 | 🟡               |
-| es2015   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢               | 🔴 TS2339-1      |
-|          |            | 🏃 runtime | 🟡                  | 🟢               | 🟡               |
+| es2015   | assert     | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a      | 🔴 TS2339-1      |
+|          |            | 🏃 runtime | 🟡                  | 🟡               | 🟡               |
 |          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    |
 |          |            | 🏃 runtime | 🟡                  | 🟡               | 🟡               |
 |          | cjs        | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-2      |
@@ -61,8 +53,8 @@ Import Syntax:
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 |
-| es2020   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢               | 🔴 TS2339-1      |
-|          |            | 🏃 runtime | 🟡                  | 🟢               | 🟡               |
+| es2020   | assert     | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a      | 🔴 TS2339-1      |
+|          |            | 🏃 runtime | 🟡                  | 🟡               | 🟡               |
 |          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    |
 |          |            | 🏃 runtime | 🟡                  | 🟡               | 🟡               |
 |          | cjs        | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-2      |
@@ -77,8 +69,8 @@ Import Syntax:
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 |
-| es2022   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢               | 🔴 TS2339-1      |
-|          |            | 🏃 runtime | 🟡                  | 🟢               | 🟡               |
+| es2022   | assert     | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a      | 🔴 TS2339-1      |
+|          |            | 🏃 runtime | 🟡                  | 🟡               | 🟡               |
 |          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    |
 |          |            | 🏃 runtime | 🟡                  | 🟡               | 🟡               |
 |          | cjs        | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-2      |
@@ -93,8 +85,8 @@ Import Syntax:
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🟢               |
 |          | param-case | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      |
 |          |            | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 |
-| esnext   | assert     | 💻 compile | 🔴 TS1259-a         | 🟢               | 🔴 TS2339-1      |
-|          |            | 🏃 runtime | 🟡                  | 🟢               | 🟡               |
+| esnext   | assert     | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a      | 🔴 TS2339-1      |
+|          |            | 🏃 runtime | 🟡                  | 🟡               | 🟡               |
 |          | assertron  | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    |
 |          |            | 🏃 runtime | 🟡                  | 🟡               | 🟡               |
 |          | cjs        | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-2      |

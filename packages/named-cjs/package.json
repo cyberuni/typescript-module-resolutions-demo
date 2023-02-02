@@ -1,0 +1,30 @@
+{
+  "name": "named-cjs",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "./commonjs/index.js",
+  "module": "./es2015/index.js",
+  "types": "./commonjs/index.d.ts",
+  "scripts": {
+    "build": "run-p --aggregate-output -c --print-label build:commonjs build:es2015 build:es2020 build:es2022 build:node16 build:nodenext",
+    "build:commonjs": "run-s -c build:commonjs:tsc build:commonjs:ncp",
+    "build:commonjs:tsc": "tsc -p tsconfig.commonjs.json",
+    "build:commonjs:ncp": "ncp ../../package.commonjs.json commonjs/package.json",
+    "build:es2015": "tsc -p tsconfig.es2015.json",
+    "build:es2020": "tsc -p tsconfig.es2020.json",
+    "build:es2022": "tsc -p tsconfig.es2022.json",
+    "build:esnext": "tsc -p tsconfig.esnext.json",
+    "build:node16": "tsc -p tsconfig.node16.json",
+    "build:nodenext": "tsc -p tsconfig.nodenext.json",
+    "clean": "rimraf commonjs es* node16 nodenext"
+  },
+  "devDependencies": {
+    "ncp": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "4.9.4"
+  }
+}

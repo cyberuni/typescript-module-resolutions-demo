@@ -2,7 +2,7 @@ import { compile } from 'handlebars'
 import fs from 'node:fs'
 import path from 'node:path'
 import { forEachKey, record } from 'type-plus'
-import { CompileResult, PackageCompileResults, ProcessCompileContext } from './logic/compile'
+import { CompileResult, ProcessCompileContext } from './logic/compile'
 import { TestSubjectsContext } from './logic/project'
 import { RunRuntimeContext, RuntimeResult } from './logic/runtime'
 import { reduceFlatMessage } from './logic/utils'
@@ -24,47 +24,29 @@ async function collectTestResults({ moduleTypes, subjects, compile, runtime }:
   })))
   const results = moduleTypes.map(moduleType => ({
     moduleType,
-    compileResults: compileResults[moduleType],
+    compileResults: compileResults.filter(c => c.moduleType === moduleType),
     runtimeResults: runtimeResults.find(r => r.moduleType === moduleType)!.results
   }))
   const errors = toErrorRecord(results)
   return {
     results: results.flatMap(({ moduleType, compileResults, runtimeResults }) => {
       return subjects.flatMap((s, i) => {
-        const compileResult: Array<CompileResult> = compileResults[s.name]
+        const compileResult: Array<CompileResult> = compileResults.filter(c => c.subject === s.name)
         const runtimeResult = runtimeResults.find(r => r.subject === s.name)
-        const compileImportMap = toImportMap(compileResult ? compileResult.map(c => {
-          const error = errors.compile.find(e => e.message === c.messageText)
-          return {
+        const compileImportMap = toImportMap(compileResult
+          ? compileResult.map(c => ({
             importType: c.importType,
             transient: c.transient,
-            value: error?.key ?? ''
-          }
-        }) : (s.files.length === 0 ? [
-          { importType: 'default', notApply: true },
-          { importType: 'default-as', notApply: true },
-          { importType: 'star', notApply: true },
-        ] : [
-          { importType: 'default', },
-          { importType: 'default-as' },
-          { importType: 'star' },
-        ]))
-        const runtimeImportMap = toImportMap(runtimeResult ? runtimeResult.results.map((r, i) => {
-          const error = errors.runtime.find(e => e.message === extractRuntimeErrorMessage(r.error))
-          return {
+            value: errors.compile.find(e => e.message === c.messageText)?.key ?? ''
+          }))
+          : s.files.map(f => ({ importType: f.importType })))
+        const runtimeImportMap = toImportMap(runtimeResult
+          ? runtimeResult.results.map((r) => ({
             importType: r.importType,
             transient: false,
-            value: error?.key ?? ''
-          }
-        }) : (s.files.length === 0 ? [
-          { importType: 'default', notApply: true },
-          { importType: 'default-as', notApply: true },
-          { importType: 'star', notApply: true },
-        ] : [
-          { importType: 'default', },
-          { importType: 'default-as' },
-          { importType: 'star' },
-        ]))
+            value: errors.runtime.find(e => e.message === extractRuntimeErrorMessage(r.error))?.key ?? ''
+          }))
+          : s.files.map(f => ({ importType: f.importType })))
         forEachKey(runtimeImportMap, (k) => {
           if (!compileImportMap[k].value && runtimeImportMap[k].value) {
             runtimeImportMap[k].icon = '❌'
@@ -90,7 +72,7 @@ async function collectTestResults({ moduleTypes, subjects, compile, runtime }:
 
 function toErrorRecord(results: Array<{
   moduleType: string
-  compileResults: PackageCompileResults,
+  compileResults: CompileResult[],
   runtimeResults: Array<RuntimeResult>
 }>) {
   return {
@@ -98,27 +80,23 @@ function toErrorRecord(results: Array<{
     runtime: toErrorListForRuntime(results)
   }
 }
-function toErrorListForCompile(results: Array<{ compileResults: PackageCompileResults }>) {
-  return reduceFlatMessage(results.map(r => r.compileResults)
-    .reduce((p, packageCompileResults) => {
-      for (let key in packageCompileResults) {
-        p.push(...packageCompileResults[key])
-      }
-      return p
-    }, [] as CompileResult[])
+function toErrorListForCompile(results: Array<{ compileResults: CompileResult[] }>) {
+  return reduceFlatMessage(results.flatMap(r => r.compileResults)
     .reduce((p, value) => {
-      const key = extractCompileErrorKey(value)
-      const e = p[key] = p[key] ?? []
-      if (e.indexOf(value.messageText) === -1)
-        e.push(value.messageText)
+      if (value.messageText) {
+        const key = extractCompileErrorKey(value)
+        const e = p[key] = p[key] ?? []
+        if (e.indexOf(value.messageText) === -1)
+          e.push(value.messageText)
+      }
       return p
     }, record<string, string[]>()))
     .sort((a, b) => a.key > b.key ? 1 : -1)
 }
 
 function extractCompileErrorKey(result: CompileResult) {
-  const e = result.messageText.includes('esModuleInterop')
-  const a = result.messageText.includes('allowSyntheticDefaultImports')
+  const e = result?.messageText?.includes('esModuleInterop')
+  const a = result?.messageText?.includes('allowSyntheticDefaultImports')
   return `TS${result.code}${e ? '-e' : ''}${a ? '-a' : ''}${result.transient ? '-t' : ''}`
 }
 
@@ -174,6 +152,7 @@ function toImportMap(results: Array<{
     'importDefault': toImportMapEntry(results, 'default'),
     'importDefaultAs': toImportMapEntry(results, 'default-as'),
     'importStarAs': toImportMapEntry(results, 'star'),
+    'importNamed': toImportMapEntry(results, 'named'),
   }
 }
 
@@ -197,7 +176,7 @@ function toImportMapEntry(results: Array<{
   }
   else {
     return {
-      icon: '🟢',
+      icon: '➖', //'🟢',
       value: ''
     }
   }

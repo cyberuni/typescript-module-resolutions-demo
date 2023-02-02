@@ -1,14 +1,6 @@
-## Test Configuration
+# TypeScript Module System Demo
 
-```js
-{
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": ,
-    "moduleResolution": "Node"
-  }
-}
-```
+TypeScript: 4.9.4
 
 ## Legends
 

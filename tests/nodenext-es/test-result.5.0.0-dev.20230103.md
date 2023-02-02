@@ -1,14 +1,6 @@
-## Test Configuration
+# TypeScript Module System Demo
 
-```js
-{
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": ,
-    "esModuleInterop": true,
-    "moduleResolution": "NodeNext"
-  }
-}
-```
+TypeScript: 5.0.0-dev.20230103
 
 ## Legends
 
