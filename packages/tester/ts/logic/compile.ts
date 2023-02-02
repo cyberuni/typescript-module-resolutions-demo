@@ -37,7 +37,7 @@ export function processCompileResults({ compileRaw, subjects, moduleTypes }: {
 
   const results = extractCompileErrors(compileRaw)
   const compileErrors = results.flatMap(result => result.importType === 'all'
-    ? subjects
+    ? (subjects
       .find(s => s.name === result.subject)!.files
       .map(f => ({ ...result, importType: f.importType }))
     : result)
@@ -84,6 +84,7 @@ function getResultEntry(filename: string): ResultEntry {
 
 function getSubjectFromTransient(filename: string) {
   if (/assertron/.test(filename)) return 'assertron'
+  if (/satisfier/.test(filename)) return 'assertron'
   return undefined
 }
 

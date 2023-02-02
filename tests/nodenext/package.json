@@ -58,6 +58,10 @@
     "es-cjs": "workspace:*",
     "esm": "workspace:*",
     "esm-cjs": "workspace:*",
+    "named-cjs": "workspace:*",
+    "named-es-cjs": "workspace:*",
+    "named-esm": "workspace:*",
+    "named-esm-cjs": "workspace:*",
     "param-case": "1"
   },
   "devDependencies": {

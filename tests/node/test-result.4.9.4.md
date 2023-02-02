@@ -34,13 +34,13 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | param-case    | 💻 compile | 🔴 TS1259-e-1       | 🔴 TS1259-e-1      | 🔴 TS2497-e        | ➖                 |
 |          |               | 🏃 runtime | 🔴 type-not-fn-1    | 🔴 type-not-fn-1   | 🟡                 | ➖                 |
@@ -56,13 +56,13 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🟡                  | 🟡                 | 🔴 type-not-fn-7   | ➖                 |
@@ -78,13 +78,13 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🟡                  | 🟡                 | 🔴 type-not-fn-7   | ➖                 |
@@ -100,13 +100,13 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🟡                  | 🟡                 | 🔴 type-not-fn-7   | ➖                 |
@@ -122,13 +122,13 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🟡                  | 🟡                 | 🔴 type-not-fn-7   | ➖                 |
@@ -144,13 +144,13 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined | ➖                 |
@@ -166,13 +166,13 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
 |          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined | ➖                 |
@@ -351,15 +351,6 @@ m.default(1)
 
 ### [named-cjs](../../README.md#named-cjs)
 
-[named-cjs.default-as.all.ts](./ts/named-cjs.default-as.all.ts):
-
-```ts
-import * as m from 'named-cjs'
-
-m.inc(1)
-
-```
-
 [named-cjs.named.all.ts](./ts/named-cjs.named.all.ts):
 
 ```ts
@@ -380,15 +371,6 @@ m.inc(1)
 ```
 
 ### [named-es-cjs](../../README.md#named-es-cjs)
-
-[named-es-cjs.default-as.all.ts](./ts/named-es-cjs.default-as.all.ts):
-
-```ts
-import * as m from 'named-es-cjs'
-
-m.inc(1)
-
-```
 
 [named-es-cjs.named.all.ts](./ts/named-es-cjs.named.all.ts):
 
@@ -412,15 +394,6 @@ m.inc(1)
 ### [named-esm](../../README.md#named-esm)
 
 ### [named-esm-cjs](../../README.md#named-esm-cjs)
-
-[named-esm-cjs.default-as.all.ts](./ts/named-esm-cjs.default-as.all.ts):
-
-```ts
-import * as m from 'named-esm-cjs'
-
-m.inc(1)
-
-```
 
 [named-esm-cjs.named.all.ts](./ts/named-esm-cjs.named.all.ts):
 
