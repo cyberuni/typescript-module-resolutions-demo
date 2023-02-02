@@ -23,7 +23,7 @@ export type RunCompileContext = ReturnType<typeof runCompile>
 
 function compileProject(ctx: { project: string, projectPath: string }) {
   try {
-    const raw = cp.execSync(`pnpm ${ctx.project} build`).toString()
+    const raw = cp.execSync(`pnpm ${ctx.project} build`, { stdio: 'pipe'}).toString()
     copyCommonJSPackageJson(ctx)
     return raw
   } catch (e: any) {
@@ -39,7 +39,7 @@ export function processCompileResults({ compileRaw, subjects, moduleTypes }: {
   const compileErrors = results.flatMap(result => result.importType === 'all'
     ? (subjects
       .find(s => s.name === result.subject)!.files
-      .map(f => ({ ...result, importType: f.importType }))
+      .map(f => ({ ...result, importType: f.importType })))
     : result)
 
   return {

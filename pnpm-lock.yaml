@@ -6,107 +6,107 @@ importers:
     specifiers:
       tester: workspace:*
       turbo: ^1.6.3
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     devDependencies:
       tester: link:packages/tester
       turbo: 1.6.3
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   packages/cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   packages/es-cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   packages/esm:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   packages/esm-cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   packages/named-cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   packages/named-es-cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   packages/named-esm:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   packages/named-esm-cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   packages/tester:
     specifiers:
@@ -117,7 +117,7 @@ importers:
       handlebars: ^4.7.7
       json5: ^2.2.3
       type-plus: ^5.6.0
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     dependencies:
       clibuilder: 8.0.6
       find: 0.3.0
@@ -127,7 +127,7 @@ importers:
     devDependencies:
       '@types/find': 0.2.1
       '@types/node': 14.18.36
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   tests/node:
     specifiers:
@@ -150,7 +150,7 @@ importers:
       tap-min: ^2.0.0
       tap-simple: ^0.3.1
       tap-summary: ^4.0.0
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -172,7 +172,7 @@ importers:
       tap-min: 2.0.0
       tap-simple: 0.3.1
       tap-summary: 4.0.0
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   tests/node-allow:
     specifiers:
@@ -193,7 +193,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -213,7 +213,7 @@ importers:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   tests/node-es:
     specifiers:
@@ -234,7 +234,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -254,7 +254,7 @@ importers:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   tests/node16:
     specifiers:
@@ -275,7 +275,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -295,7 +295,7 @@ importers:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   tests/node16-allow:
     specifiers:
@@ -316,7 +316,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -336,7 +336,7 @@ importers:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   tests/node16-es:
     specifiers:
@@ -357,7 +357,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -377,7 +377,7 @@ importers:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   tests/nodenext:
     specifiers:
@@ -398,7 +398,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -418,7 +418,7 @@ importers:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   tests/nodenext-allow:
     specifiers:
@@ -439,7 +439,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -459,7 +459,7 @@ importers:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
   tests/nodenext-es:
     specifiers:
@@ -480,7 +480,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -500,7 +500,7 @@ importers:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 4.9.4
+      typescript: 5.0.0-dev.20230103
 
 packages:
 
@@ -4367,8 +4367,8 @@ packages:
       is-typed-array: 1.1.10
     dev: true
 
-  /typescript/4.9.4:
-    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
+  /typescript/5.0.0-dev.20230103:
+    resolution: {integrity: sha512-vHf8Y8+op6MsFIDgvNmZhAIAUGVmzFzYCUBysMS6hlxlhSWIh1h5AXAW7WKs4GYr325jwTF/L72NKUYZHSD6Mw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
