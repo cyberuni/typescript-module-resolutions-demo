@@ -133,12 +133,15 @@ function extractRuntimeErrorKey(error: Error) {
     }
     return 'ref'
   }
+  if (/SyntaxError: /.test(message)) {
+    return 'syntax'
+  }
   return error.name
 }
 
 export function extractRuntimeErrorMessage(error?: Error) {
   if (!error) return ''
-  const match = /\n\n([^\n]*)/.exec(error.message)
+  const match = error.message.split('\n').map(line => /Error: (.*)$/.exec(line)).find(x => x)
   return match ? match[1] : error.message
 }
 

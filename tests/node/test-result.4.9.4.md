@@ -34,14 +34,14 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 | ➖                 |
-|          | named-cjs     | 💻 compile | ➖                  | 🔴 TS1192          | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🔴 type            | 🟢                 | 🟢                 |
-|          | named-es-cjs  | 💻 compile | ➖                  | 🔴 TS1192-1        | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🔴 type            | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | param-case    | 💻 compile | 🔴 TS1259-e-1       | 🔴 TS1259-e-1      | 🔴 TS2497-e        | ➖                 |
 |          |               | 🏃 runtime | 🔴 type-not-fn-1    | 🔴 type-not-fn-1   | 🟡                 | ➖                 |
 | es2015   | assert        | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🟢                 | ➖                 |
@@ -56,14 +56,14 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 | ➖                 |
-|          | named-cjs     | 💻 compile | ➖                  | 🔴 TS1192          | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🟡                 | 🟢                 | 🟢                 |
-|          | named-es-cjs  | 💻 compile | ➖                  | 🔴 TS1192-1        | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🟡                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🟡                  | 🟡                 | 🔴 type-not-fn-7   | ➖                 |
 | es2020   | assert        | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🟢                 | ➖                 |
@@ -78,14 +78,14 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 | ➖                 |
-|          | named-cjs     | 💻 compile | ➖                  | 🔴 TS1192          | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🟡                 | 🟢                 | 🟢                 |
-|          | named-es-cjs  | 💻 compile | ➖                  | 🔴 TS1192-1        | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🟡                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🟡                  | 🟡                 | 🔴 type-not-fn-7   | ➖                 |
 | es2022   | assert        | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🟢                 | ➖                 |
@@ -100,14 +100,14 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 | ➖                 |
-|          | named-cjs     | 💻 compile | ➖                  | 🔴 TS1192          | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🟡                 | 🟢                 | 🟢                 |
-|          | named-es-cjs  | 💻 compile | ➖                  | 🔴 TS1192-1        | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🟡                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🟡                  | 🟡                 | 🔴 type-not-fn-7   | ➖                 |
 | esnext   | assert        | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🟢                 | ➖                 |
@@ -122,14 +122,14 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | 🟢                  | 🟢                 | 🟢                 | ➖                 |
-|          | named-cjs     | 💻 compile | ➖                  | 🔴 TS1192          | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🟡                 | 🟢                 | 🟢                 |
-|          | named-es-cjs  | 💻 compile | ➖                  | 🔴 TS1192-1        | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🟡                 | 🟢                 | 🟢                 |
+|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | ➖                 | 🟢                 | 🟢                 |
+|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | 🟢                  | ➖                 | 🟢                 | 🟢                 |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🟡                  | 🟡                 | 🔴 type-not-fn-7   | ➖                 |
 | node16   | assert        | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🟢                 | ➖                 |
@@ -144,14 +144,14 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined | ➖                 |
-|          | named-cjs     | 💻 compile | ➖                  | 🔴 TS1192          | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🔴 ref-not-defined | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | named-es-cjs  | 💻 compile | ➖                  | 🔴 TS1192-1        | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🔴 ref-not-defined | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined | ➖                 |
 | nodenext | assert        | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a        | 🟢                 | ➖                 |
@@ -166,19 +166,17 @@ Import Syntax:
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
 |          | esm-cjs       | 💻 compile | 🟢                  | 🟢                 | 🟢                 | ➖                 |
 |          |               | 🏃 runtime | ❌ ref-not-defined  | ❌ ref-not-defined | ❌ ref-not-defined | ➖                 |
-|          | named-cjs     | 💻 compile | ➖                  | 🔴 TS1192          | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🔴 ref-not-defined | ❌ ref-not-defined | ❌ ref-not-defined |
-|          | named-es-cjs  | 💻 compile | ➖                  | 🔴 TS1192-1        | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | 🔴 ref-not-defined | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | named-cjs     | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | named-es-cjs  | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
 |          | named-esm     | 💻 compile | ➖                  | ➖                 | ➖                 | ➖                 |
 |          |               | 🏃 runtime | ➖                  | ➖                 | ➖                 | ➖                 |
-|          | named-esm-cjs | 💻 compile | ➖                  | ➖                 | 🟢                 | 🟢                 |
-|          |               | 🏃 runtime | ➖                  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
+|          | named-esm-cjs | 💻 compile | 🟢                  | ➖                 | 🟢                 | 🟢                 |
+|          |               | 🏃 runtime | ❌ ref-not-defined  | ➖                 | ❌ ref-not-defined | ❌ ref-not-defined |
 |          | param-case    | 💻 compile | 🔴 TS1259-a-1       | 🔴 TS1259-a-1      | 🔴 TS2497-a        | ➖                 |
 |          |               | 🏃 runtime | 🔴 ref-not-defined  | 🔴 ref-not-defined | 🔴 ref-not-defined | ➖                 |
 
-- `TS1192`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/packages/named-cjs/commonjs/index"' has no default export.`
-- `TS1192-1`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/packages/named-es-cjs/commonjs/index"' has no default export.`
 - `TS1259-a`: `Module '"assert"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
 - `TS1259-a-1`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/param-case@1.1.2/node_modules/param-case/param-case"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
 - `TS1259-a-t`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/assertion-error@1.1.0/node_modules/assertion-error/index"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
@@ -187,16 +185,15 @@ Import Syntax:
 - `TS1259-e-t`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/node_modules/.pnpm/assertion-error@1.1.0/node_modules/assertion-error/index"' can only be default-imported using the 'esModuleInterop' flag`
 - `TS2497-a`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'allowSyntheticDefaultImports' flag and referencing its default export.`
 - `TS2497-e`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'esModuleInterop' flag and referencing its default export.`
-- `ref-not-defined`: `ReferenceError: exports is not defined in ES module scope`
-- `type`: `TypeError: Cannot read properties of undefined (reading 'inc')`
-- `type-not-fn`: `TypeError: (0 , assert_1.default) is not a function`
-- `type-not-fn-1`: `TypeError: (0 , param_case_1.default) is not a function`
-- `type-not-fn-2`: `TypeError: assert is not a function`
-- `type-not-fn-3`: `TypeError: assertron.truthy is not a function`
-- `type-not-fn-4`: `TypeError: assertron.default.truthy is not a function`
-- `type-not-fn-5`: `TypeError: m is not a function`
-- `type-not-fn-6`: `TypeError: m.default is not a function`
-- `type-not-fn-7`: `TypeError: paramCase is not a function`
+- `ref-not-defined`: `exports is not defined in ES module scope`
+- `type-not-fn`: `(0 , assert_1.default) is not a function`
+- `type-not-fn-1`: `(0 , param_case_1.default) is not a function`
+- `type-not-fn-2`: `assert is not a function`
+- `type-not-fn-3`: `assertron.truthy is not a function`
+- `type-not-fn-4`: `assertron.default.truthy is not a function`
+- `type-not-fn-5`: `m is not a function`
+- `type-not-fn-6`: `m.default is not a function`
+- `type-not-fn-7`: `paramCase is not a function`
 
 ## Test Subjects
 
@@ -354,10 +351,10 @@ m.default(1)
 
 ### [named-cjs](../../README.md#named-cjs)
 
-[named-cjs.default.all.ts](./ts/named-cjs.default.all.ts):
+[named-cjs.default-as.all.ts](./ts/named-cjs.default-as.all.ts):
 
 ```ts
-import m from 'named-cjs'
+import * as m from 'named-cjs'
 
 m.inc(1)
 
@@ -384,10 +381,10 @@ m.inc(1)
 
 ### [named-es-cjs](../../README.md#named-es-cjs)
 
-[named-es-cjs.default.all.ts](./ts/named-es-cjs.default.all.ts):
+[named-es-cjs.default-as.all.ts](./ts/named-es-cjs.default-as.all.ts):
 
 ```ts
-import m from 'named-es-cjs'
+import * as m from 'named-es-cjs'
 
 m.inc(1)
 
@@ -415,6 +412,15 @@ m.inc(1)
 ### [named-esm](../../README.md#named-esm)
 
 ### [named-esm-cjs](../../README.md#named-esm-cjs)
+
+[named-esm-cjs.default-as.all.ts](./ts/named-esm-cjs.default-as.all.ts):
+
+```ts
+import * as m from 'named-esm-cjs'
+
+m.inc(1)
+
+```
 
 [named-esm-cjs.named.all.ts](./ts/named-esm-cjs.named.all.ts):
 

@@ -15,38 +15,35 @@ export function runCompile(ctx: {
   projectPath: string,
 }) {
   return {
-    compileRaw: compileProject(ctx)
+    compileRaw: compileProject(ctx)!
   }
 }
 
 export type RunCompileContext = ReturnType<typeof runCompile>
 
-async function compileProject(ctx: { project: string, projectPath: string }) {
-  return new Promise<string>(a => {
-    cp.exec(`pnpm ${ctx.project} build`, (_err, stdout) => {
-      a(stdout)
-    })
-  })
-    .then((raw) => {
-      copyCommonJSPackageJson(ctx)
-      return raw
-    })
+function compileProject(ctx: { project: string, projectPath: string }) {
+  try {
+    const raw = cp.execSync(`pnpm ${ctx.project} build`).toString()
+    copyCommonJSPackageJson(ctx)
+    return raw
+  } catch (e: any) {
+    return e.stdout.toString()
+  }
 }
 
 export function processCompileResults({ compileRaw, subjects, moduleTypes }: {
   moduleTypes: string[]
 } & RunCompileContext & TestSubjectsContext) {
 
+  const results = extractCompileErrors(compileRaw)
+  const compileErrors = results.flatMap(result => result.importType === 'all'
+    ? subjects
+      .find(s => s.name === result.subject)!.files
+      .map(f => ({ ...result, importType: f.importType }))
+    : result)
+
   return {
-    compile: compileRaw
-      .then(extractCompileErrors)
-      .then(results => results.flatMap(result => result.importType === 'all'
-        ? subjects
-          .find(s => s.name === result.subject)!.files
-          .map(f => ({ ...result, importType: f.importType }))
-        : result
-      ))
-      .then(compileErrors => buildCompileResults({ compileErrors, moduleTypes, subjects }))
+    compile: buildCompileResults({ compileErrors, moduleTypes, subjects })
   }
 }
 
