@@ -1,5 +1,5 @@
-function inc(v: number): number {
-  return v + 1
+function greet() {
+  console.log('greeting from esm')
 }
 
-export default inc
+export default greet

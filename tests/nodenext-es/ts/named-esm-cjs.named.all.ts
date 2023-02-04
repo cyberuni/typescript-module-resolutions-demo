@@ -1,3 +1,3 @@
-import { inc } from 'named-esm-cjs'
+import { greet } from 'named-esm-cjs'
 
-inc(1)
+greet()

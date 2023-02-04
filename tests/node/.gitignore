@@ -1,4 +1,5 @@
 .turbo
 /commonjs
+/dist
 /es*
 /node*

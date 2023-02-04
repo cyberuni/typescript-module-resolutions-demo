@@ -284,7 +284,7 @@ assertron.default.default.truthy(true)
 ```ts
 import { default as m } from 'cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -293,7 +293,7 @@ m.default(1)
 ```ts
 import m from 'cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -316,7 +316,7 @@ m.default.default(1)
 ```ts
 import { default as m } from 'es-cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -325,7 +325,7 @@ m.default(1)
 ```ts
 import m from 'es-cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -345,7 +345,7 @@ m.default.default(1)
 ```ts
 import { default as m } from 'esm-cjs'
 
-m(1)
+m()
 
 ```
 
@@ -354,7 +354,7 @@ m(1)
 ```ts
 import m from 'esm-cjs'
 
-m(1)
+m()
 
 ```
 
@@ -363,7 +363,7 @@ m(1)
 ```ts
 import * as m from 'esm-cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -374,7 +374,7 @@ m.default(1)
 ```ts
 import { default as m } from 'esm-cjs'
 
-m(1)
+m()
 
 ```
 
@@ -383,7 +383,7 @@ m(1)
 ```ts
 import m from 'esm-cjs'
 
-m(1)
+m()
 
 ```
 
@@ -392,7 +392,7 @@ m(1)
 ```ts
 import * as m from 'esm-cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -403,7 +403,7 @@ m.default(1)
 ```ts
 import { default as m } from 'named-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
@@ -412,16 +412,16 @@ m.inc(1)
 ```ts
 import m from 'named-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
 [named-cjs.named.all.ts](./ts/named-cjs.named.all.ts):
 
 ```ts
-import { inc } from 'named-cjs'
+import { greet } from 'named-cjs'
 
-inc(1)
+greet()
 
 ```
 
@@ -430,7 +430,7 @@ inc(1)
 ```ts
 import * as m from 'named-cjs'
 
-m.inc(1)
+m.greet()
 
 
 ```
@@ -442,7 +442,7 @@ m.inc(1)
 ```ts
 import { default as m } from 'named-es-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
@@ -451,16 +451,16 @@ m.inc(1)
 ```ts
 import m from 'named-es-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
 [named-es-cjs.named.all.ts](./ts/named-es-cjs.named.all.ts):
 
 ```ts
-import { inc } from 'named-es-cjs'
+import { greet } from 'named-es-cjs'
 
-inc(1)
+greet()
 
 ```
 
@@ -469,7 +469,7 @@ inc(1)
 ```ts
 import * as m from 'named-es-cjs'
 
-m.inc(1)
+m.greet()
 
 
 ```
@@ -483,7 +483,7 @@ m.inc(1)
 ```ts
 import { default as m } from 'named-esm-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
@@ -492,16 +492,16 @@ m.inc(1)
 ```ts
 import m from 'named-esm-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
 [named-esm-cjs.named.all.ts](./ts/named-esm-cjs.named.all.ts):
 
 ```ts
-import { inc } from 'named-esm-cjs'
+import { greet } from 'named-esm-cjs'
 
-inc(1)
+greet()
 
 ```
 
@@ -510,7 +510,7 @@ inc(1)
 ```ts
 import * as m from 'named-esm-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 

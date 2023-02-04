@@ -1,3 +1,3 @@
 import paramCase from 'param-case'
 
-paramCase('hello world')
+console.log(paramCase('hello world'))

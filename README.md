@@ -153,3 +153,10 @@ pnpm demo runtime [project] --moduleTypes [...]
 
 - referencing a `esm` package which depends on `cjs` with `export default`
 - referencing a `esm` package which depends on `cjs` with `export =`
+
+
+## Examples to cover/reference
+
+- <https://github.com/faker-js/faker/blob/next/package.json>
+- <https://github.com/blakeembrey/change-case/blob/master/packages/param-case/package.json>
+

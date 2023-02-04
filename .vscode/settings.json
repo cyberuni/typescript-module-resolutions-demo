@@ -4,7 +4,9 @@
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "cSpell.words": [
-    "clibuilder",
-    "tersify"
-  ]
+		"clibuilder",
+		"iife",
+		"jsnext",
+		"tersify"
+	]
 }

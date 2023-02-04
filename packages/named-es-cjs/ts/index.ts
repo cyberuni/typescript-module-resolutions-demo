@@ -1,3 +1,3 @@
-export function inc(v: number): number {
-  return v + 1
+export function greet() {
+  console.log('greeting from named-es-cjs')
 }

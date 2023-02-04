@@ -1,3 +1,3 @@
 import m from 'named-es-cjs'
 
-m.inc(1)
+m.greet()

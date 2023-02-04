@@ -1,3 +1,3 @@
 import m from 'cjs'
 
-m(1)
+m()

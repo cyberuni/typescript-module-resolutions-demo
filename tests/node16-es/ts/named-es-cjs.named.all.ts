@@ -1,3 +1,3 @@
-import { inc } from 'named-es-cjs'
+import { greet } from 'named-es-cjs'
 
-inc(1)
+greet()

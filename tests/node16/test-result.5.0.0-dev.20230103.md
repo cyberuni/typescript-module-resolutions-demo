@@ -20,176 +20,176 @@ Import Syntax:
 
 ## Test Results
 
-| module   | Package       | Type      | import: default as | import: default | import: * as    | import: { named } |
-| -------- | ------------- | --------- | ------------------ | --------------- | --------------- | ----------------- |
-| commonjs | assert        | 💻 compile | 🔴 TS1259-e         | 🔴 TS1259-e      | 🔴 TS2339        | ➖                 |
-|          |               | 🏃 runtime | 🔴 type-not-fn      | 🔴 type-not-fn   | 🔴 type-not-fn-1 | ➖                 |
-|          | assertron     | 💻 compile | 🟡 TS1259-e-t       | 🟡 TS1259-e-t    | 🟡 TS1259-e-t    | ➖                 |
-|          |               | 🏃 runtime | 🔴 type             | 🔴 type          | 🔴 type          | ➖                 |
-|          | cjs           | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-1      | ➖                 |
-|          |               | 🏃 runtime | ❌ type-not-fn-2    | ❌ type-not-fn-2 | 🔴 type-not-fn-3 | ➖                 |
-|          | color-map     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | es-cjs        | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-1      | ➖                 |
-|          |               | 🏃 runtime | ❌ type-not-fn-4    | ❌ type-not-fn-4 | 🔴 type-not-fn-3 | ➖                 |
-|          | esm           | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | esm-cjs       | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | ❌ type-1           | ❌ type-1        | 🟢               | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | ❌ type-1           | ❌ type-1        | 🟢               | 🟢                 |
-|          | named-esm     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🔴 TS2305           | 🔴 TS1192        | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🔴 type-1           | 🔴 type-1        | 🟢               | 🟢                 |
-|          | param-case    | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-e      | ➖                 |
-|          |               | 🏃 runtime | ❌ type-not-fn-5    | ❌ type-not-fn-5 | 🟡               | ➖                 |
-| es2015   | assert        | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a      | 🔴 TS2339        | ➖                 |
-|          |               | 🏃 runtime | 🟡                  | 🟡               | 🟡               | ➖                 |
-|          | assertron     | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    | ➖                 |
-|          |               | 🏃 runtime | 🟡                  | 🟡               | 🟡               | ➖                 |
-|          | cjs           | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-1      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟡               | ➖                 |
-|          | color-map     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | es-cjs        | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-1      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟡               | ➖                 |
-|          | esm           | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | esm-cjs       | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-esm     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🔴 TS2305           | 🔴 TS1192        | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🔴 syntax           | 🔴 syntax        | 🟢               | 🟢                 |
-|          | param-case    | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 | ➖                 |
-| es2020   | assert        | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a      | 🔴 TS2339        | ➖                 |
-|          |               | 🏃 runtime | 🟡                  | 🟡               | 🟡               | ➖                 |
-|          | assertron     | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    | ➖                 |
-|          |               | 🏃 runtime | 🟡                  | 🟡               | 🟡               | ➖                 |
-|          | cjs           | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-1      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟡               | ➖                 |
-|          | color-map     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | es-cjs        | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-1      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟡               | ➖                 |
-|          | esm           | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | esm-cjs       | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-esm     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🔴 TS2305           | 🔴 TS1192        | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🔴 syntax           | 🔴 syntax        | 🟢               | 🟢                 |
-|          | param-case    | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 | ➖                 |
-| es2022   | assert        | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a      | 🔴 TS2339        | ➖                 |
-|          |               | 🏃 runtime | 🟡                  | 🟡               | 🟡               | ➖                 |
-|          | assertron     | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    | ➖                 |
-|          |               | 🏃 runtime | 🟡                  | 🟡               | 🟡               | ➖                 |
-|          | cjs           | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-1      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟡               | ➖                 |
-|          | color-map     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | es-cjs        | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-1      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟡               | ➖                 |
-|          | esm           | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | esm-cjs       | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-esm     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🔴 TS2305           | 🔴 TS1192        | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🔴 syntax           | 🔴 syntax        | 🟢               | 🟢                 |
-|          | param-case    | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 | ➖                 |
-| esnext   | assert        | 💻 compile | 🔴 TS1259-a         | 🔴 TS1259-a      | 🔴 TS2339        | ➖                 |
-|          |               | 🏃 runtime | 🟡                  | 🟡               | 🟡               | ➖                 |
-|          | assertron     | 💻 compile | 🟡 TS1259-a-t       | 🟡 TS1259-a-t    | 🟡 TS1259-a-t    | ➖                 |
-|          |               | 🏃 runtime | 🟡                  | 🟡               | 🟡               | ➖                 |
-|          | cjs           | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-1      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟡               | ➖                 |
-|          | color-map     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | es-cjs        | 💻 compile | 🟢                  | 🟢               | 🔴 TS2339-1      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟡               | ➖                 |
-|          | esm           | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | esm-cjs       | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-esm     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🔴 TS2305           | 🔴 TS1192        | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🔴 syntax           | 🔴 syntax        | 🟢               | 🟢                 |
-|          | param-case    | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 | ➖                 |
-| node16   | assert        | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | assertron     | 💻 compile | 🟡 TS1479-t         | 🟡 TS1479-t      | 🟡 TS1479-t      | ➖                 |
-|          |               | 🏃 runtime | 🟡                  | 🟡               | 🟡               | ➖                 |
-|          | cjs           | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | color-map     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | es-cjs        | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | esm           | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | esm-cjs       | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-esm     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🔴 TS2305           | 🔴 TS1192        | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🔴 syntax           | 🔴 syntax        | 🟢               | 🟢                 |
-|          | param-case    | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 | ➖                 |
-| nodenext | assert        | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | assertron     | 💻 compile | 🟡 TS1479-t         | 🟡 TS1479-t      | 🟡 TS1479-t      | ➖                 |
-|          |               | 🏃 runtime | 🟡                  | 🟡               | 🟡               | ➖                 |
-|          | cjs           | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | color-map     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | es-cjs        | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | esm           | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | esm-cjs       | 💻 compile | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | ➖                 |
-|          | named-cjs     | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-es-cjs  | 💻 compile | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🟢               | 🟢                 |
-|          | named-esm     | 💻 compile | ➖                  | ➖               | ➖               | ➖                 |
-|          |               | 🏃 runtime | ➖                  | ➖               | ➖               | ➖                 |
-|          | named-esm-cjs | 💻 compile | 🔴 TS2305           | 🔴 TS1192        | 🟢               | 🟢                 |
-|          |               | 🏃 runtime | 🔴 syntax           | 🔴 syntax        | 🟢               | 🟢                 |
-|          | param-case    | 💻 compile | 🟢                  | 🟢               | 🔴 TS2497-a      | ➖                 |
-|          |               | 🏃 runtime | 🟢                  | 🟢               | 🔴 type-not-fn-6 | ➖                 |
+| module   | Package    | Type      | import: default as | import: default   | import: * as      | import: { named } |
+| -------- | ---------- | --------- | ------------------ | ----------------- | ----------------- | ----------------- |
+| commonjs | assert | 💻 compile | 🔴 TS1259-e | 🔴 TS1259-e | 🔴 TS2339 | ➖  |
+|  |  | 🏃 runtime | 🔴 type-not-fn | 🔴 type-not-fn | 🔴 type-not-fn-1 | ➖  |
+|  | assertron | 💻 compile | 🟡 TS1259-e-t | 🟡 TS1259-e-t | 🟡 TS1259-e-t | ➖  |
+|  |  | 🏃 runtime | 🔴 type | 🔴 type | 🔴 type | ➖  |
+|  | cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2339-1 | ➖  |
+|  |  | 🏃 runtime | ❌ type-not-fn-2 | ❌ type-not-fn-2 | 🔴 type-not-fn-3 | ➖  |
+|  | color-map | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | es-cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2339-1 | ➖  |
+|  |  | 🏃 runtime | ❌ type-not-fn-4 | ❌ type-not-fn-4 | 🔴 type-not-fn-3 | ➖  |
+|  | esm | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | ❌ Error | ❌ Error-1 | ❌ Error-2 | ➖  |
+|  | esm-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | ❌ Error-3 | ❌ Error-4 | ❌ Error-5 | ➖  |
+|  | named-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | ❌ type-1 | ❌ type-1 | 🟢  | 🟢  |
+|  | named-es-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | ❌ type-1 | ❌ type-1 | 🟢  | 🟢  |
+|  | named-esm | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | named-esm-cjs | 💻 compile | 🔴 TS2305 | 🔴 TS1192 | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🔴 type-1 | 🔴 type-1 | 🟢  | 🟢  |
+|  | param-case | 💻 compile | 🟢  | 🟢  | 🔴 TS2497-e | ➖  |
+|  |  | 🏃 runtime | ❌ type-not-fn-5 | ❌ type-not-fn-5 | 🟡  | ➖  |
+| es2015 | assert | 💻 compile | 🔴 TS1259-a | 🔴 TS1259-a | 🔴 TS2339 | ➖  |
+|  |  | 🏃 runtime | 🟡  | 🟡  | 🟡  | ➖  |
+|  | assertron | 💻 compile | 🟡 TS1259-a-t | 🟡 TS1259-a-t | 🟡 TS1259-a-t | ➖  |
+|  |  | 🏃 runtime | 🟡  | 🟡  | 🟡  | ➖  |
+|  | cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2339-1 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | color-map | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | es-cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2339-1 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | esm | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | esm-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | named-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-es-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-esm | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | named-esm-cjs | 💻 compile | 🔴 TS2305 | 🔴 TS1192 | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🔴 syntax | 🔴 syntax | 🟢  | 🟢  |
+|  | param-case | 💻 compile | 🟢  | 🟢  | 🔴 TS2497-a | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🔴 type-not-fn-6 | ➖  |
+| es2020 | assert | 💻 compile | 🔴 TS1259-a | 🔴 TS1259-a | 🔴 TS2339 | ➖  |
+|  |  | 🏃 runtime | 🟡  | 🟡  | 🟡  | ➖  |
+|  | assertron | 💻 compile | 🟡 TS1259-a-t | 🟡 TS1259-a-t | 🟡 TS1259-a-t | ➖  |
+|  |  | 🏃 runtime | 🟡  | 🟡  | 🟡  | ➖  |
+|  | cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2339-1 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | color-map | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | es-cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2339-1 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | esm | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | esm-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | named-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-es-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-esm | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | named-esm-cjs | 💻 compile | 🔴 TS2305 | 🔴 TS1192 | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🔴 syntax | 🔴 syntax | 🟢  | 🟢  |
+|  | param-case | 💻 compile | 🟢  | 🟢  | 🔴 TS2497-a | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🔴 type-not-fn-6 | ➖  |
+| es2022 | assert | 💻 compile | 🔴 TS1259-a | 🔴 TS1259-a | 🔴 TS2339 | ➖  |
+|  |  | 🏃 runtime | 🟡  | 🟡  | 🟡  | ➖  |
+|  | assertron | 💻 compile | 🟡 TS1259-a-t | 🟡 TS1259-a-t | 🟡 TS1259-a-t | ➖  |
+|  |  | 🏃 runtime | 🟡  | 🟡  | 🟡  | ➖  |
+|  | cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2339-1 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | color-map | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | es-cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2339-1 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | esm | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | esm-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | named-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-es-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-esm | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | named-esm-cjs | 💻 compile | 🔴 TS2305 | 🔴 TS1192 | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🔴 syntax | 🔴 syntax | 🟢  | 🟢  |
+|  | param-case | 💻 compile | 🟢  | 🟢  | 🔴 TS2497-a | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🔴 type-not-fn-6 | ➖  |
+| esnext | assert | 💻 compile | 🔴 TS1259-a | 🔴 TS1259-a | 🔴 TS2339 | ➖  |
+|  |  | 🏃 runtime | 🟡  | 🟡  | 🟡  | ➖  |
+|  | assertron | 💻 compile | 🟡 TS1259-a-t | 🟡 TS1259-a-t | 🟡 TS1259-a-t | ➖  |
+|  |  | 🏃 runtime | 🟡  | 🟡  | 🟡  | ➖  |
+|  | cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2339-1 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | color-map | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | es-cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2339-1 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | esm | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | esm-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | named-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-es-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-esm | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | named-esm-cjs | 💻 compile | 🔴 TS2305 | 🔴 TS1192 | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🔴 syntax | 🔴 syntax | 🟢  | 🟢  |
+|  | param-case | 💻 compile | 🟢  | 🟢  | 🔴 TS2497-a | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🔴 type-not-fn-6 | ➖  |
+| node16 | assert | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | assertron | 💻 compile | 🟡 TS1479-t | 🟡 TS1479-t | 🟡 TS1479-t | ➖  |
+|  |  | 🏃 runtime | 🟡  | 🟡  | 🟡  | ➖  |
+|  | cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2554 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | color-map | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | es-cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2554 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | esm | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | esm-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | named-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-es-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-esm | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | named-esm-cjs | 💻 compile | 🔴 TS2305 | 🔴 TS1192 | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🔴 syntax | 🔴 syntax | 🟢  | 🟢  |
+|  | param-case | 💻 compile | 🟢  | 🟢  | 🔴 TS2497-a | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🔴 type-not-fn-6 | ➖  |
+| nodenext | assert | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | assertron | 💻 compile | 🟡 TS1479-t | 🟡 TS1479-t | 🟡 TS1479-t | ➖  |
+|  |  | 🏃 runtime | 🟡  | 🟡  | 🟡  | ➖  |
+|  | cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2554 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | color-map | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | es-cjs | 💻 compile | 🟢  | 🟢  | 🔴 TS2554 | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟡  | ➖  |
+|  | esm | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | esm-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | ➖  |
+|  | named-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-es-cjs | 💻 compile | 🟢  | 🟢  | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🟢  | 🟢  |
+|  | named-esm | 💻 compile | ➖  | ➖  | ➖  | ➖  |
+|  |  | 🏃 runtime | ➖  | ➖  | ➖  | ➖  |
+|  | named-esm-cjs | 💻 compile | 🔴 TS2305 | 🔴 TS1192 | 🟢  | 🟢  |
+|  |  | 🏃 runtime | 🔴 syntax | 🔴 syntax | 🟢  | 🟢  |
+|  | param-case | 💻 compile | 🟢  | 🟢  | 🔴 TS2497-a | ➖  |
+|  |  | 🏃 runtime | 🟢  | 🟢  | 🔴 type-not-fn-6 | ➖  |
 
 - `TS1192`: `Module '"/home/homa/code/cyberuni/ts-esm-interop/packages/named-esm-cjs/node16/index"' has no default export.`
 - `TS1259-a`: `Module '"assert"' can only be default-imported using the 'allowSyntheticDefaultImports' flag`
@@ -199,12 +199,139 @@ Import Syntax:
 - `TS1479-t`: `The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("tersify")' call instead.`
 - `TS2305`: `Module '"named-esm-cjs"' has no exported member 'default'.`
 - `TS2339`: `Property 'default' does not exist on type 'typeof assert'.`
-- `TS2339-1`: `Property 'default' does not exist on type '(v: number) => number'.`
+- `TS2339-1`: `Property 'default' does not exist on type '() => void'.`
 - `TS2497-a`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'allowSyntheticDefaultImports' flag and referencing its default export.`
 - `TS2497-e`: `This module can only be referenced with ECMAScript imports/exports by turning on the 'esModuleInterop' flag and referencing its default export.`
+- `TS2554`: `Expected 0 arguments, but got 1.`
+- `Error`: `Command failed: node esm.default-as.all.js
+node:internal/modules/cjs/loader:535
+      throw e;
+      ^
+
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /home/homa/code/cyberuni/ts-esm-interop/tests/node16/node_modules/esm-cjs/package.json
+    at new NodeError (node:internal/errors:393:5)
+    at throwExportsNotFound (node:internal/modules/esm/resolve:358:9)
+    at packageExportsResolve (node:internal/modules/esm/resolve:612:7)
+    at resolveExports (node:internal/modules/cjs/loader:529:36)
+    at Module._findPath (node:internal/modules/cjs/loader:569:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:981:27)
+    at Module._load (node:internal/modules/cjs/loader:841:27)
+    at Module.require (node:internal/modules/cjs/loader:1061:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (/home/homa/code/cyberuni/ts-esm-interop/tests/node16/commonjs/esm.default-as.all.js:3:19) {
+  code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'
+}
+
+Node.js v18.12.1
+`
+- `Error-1`: `Command failed: node esm.default.all.js
+node:internal/modules/cjs/loader:535
+      throw e;
+      ^
+
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /home/homa/code/cyberuni/ts-esm-interop/tests/node16/node_modules/esm-cjs/package.json
+    at new NodeError (node:internal/errors:393:5)
+    at throwExportsNotFound (node:internal/modules/esm/resolve:358:9)
+    at packageExportsResolve (node:internal/modules/esm/resolve:612:7)
+    at resolveExports (node:internal/modules/cjs/loader:529:36)
+    at Module._findPath (node:internal/modules/cjs/loader:569:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:981:27)
+    at Module._load (node:internal/modules/cjs/loader:841:27)
+    at Module.require (node:internal/modules/cjs/loader:1061:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (/home/homa/code/cyberuni/ts-esm-interop/tests/node16/commonjs/esm.default.all.js:3:19) {
+  code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'
+}
+
+Node.js v18.12.1
+`
+- `Error-2`: `Command failed: node esm.star.all.js
+node:internal/modules/cjs/loader:535
+      throw e;
+      ^
+
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /home/homa/code/cyberuni/ts-esm-interop/tests/node16/node_modules/esm-cjs/package.json
+    at new NodeError (node:internal/errors:393:5)
+    at throwExportsNotFound (node:internal/modules/esm/resolve:358:9)
+    at packageExportsResolve (node:internal/modules/esm/resolve:612:7)
+    at resolveExports (node:internal/modules/cjs/loader:529:36)
+    at Module._findPath (node:internal/modules/cjs/loader:569:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:981:27)
+    at Module._load (node:internal/modules/cjs/loader:841:27)
+    at Module.require (node:internal/modules/cjs/loader:1061:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (/home/homa/code/cyberuni/ts-esm-interop/tests/node16/commonjs/esm.star.all.js:3:11) {
+  code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'
+}
+
+Node.js v18.12.1
+`
+- `Error-3`: `Command failed: node esm-cjs.default-as.all.js
+node:internal/modules/cjs/loader:535
+      throw e;
+      ^
+
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /home/homa/code/cyberuni/ts-esm-interop/tests/node16/node_modules/esm-cjs/package.json
+    at new NodeError (node:internal/errors:393:5)
+    at throwExportsNotFound (node:internal/modules/esm/resolve:358:9)
+    at packageExportsResolve (node:internal/modules/esm/resolve:612:7)
+    at resolveExports (node:internal/modules/cjs/loader:529:36)
+    at Module._findPath (node:internal/modules/cjs/loader:569:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:981:27)
+    at Module._load (node:internal/modules/cjs/loader:841:27)
+    at Module.require (node:internal/modules/cjs/loader:1061:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (/home/homa/code/cyberuni/ts-esm-interop/tests/node16/commonjs/esm-cjs.default-as.all.js:3:19) {
+  code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'
+}
+
+Node.js v18.12.1
+`
+- `Error-4`: `Command failed: node esm-cjs.default.all.js
+node:internal/modules/cjs/loader:535
+      throw e;
+      ^
+
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /home/homa/code/cyberuni/ts-esm-interop/tests/node16/node_modules/esm-cjs/package.json
+    at new NodeError (node:internal/errors:393:5)
+    at throwExportsNotFound (node:internal/modules/esm/resolve:358:9)
+    at packageExportsResolve (node:internal/modules/esm/resolve:612:7)
+    at resolveExports (node:internal/modules/cjs/loader:529:36)
+    at Module._findPath (node:internal/modules/cjs/loader:569:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:981:27)
+    at Module._load (node:internal/modules/cjs/loader:841:27)
+    at Module.require (node:internal/modules/cjs/loader:1061:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (/home/homa/code/cyberuni/ts-esm-interop/tests/node16/commonjs/esm-cjs.default.all.js:3:19) {
+  code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'
+}
+
+Node.js v18.12.1
+`
+- `Error-5`: `Command failed: node esm-cjs.star.all.js
+node:internal/modules/cjs/loader:535
+      throw e;
+      ^
+
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /home/homa/code/cyberuni/ts-esm-interop/tests/node16/node_modules/esm-cjs/package.json
+    at new NodeError (node:internal/errors:393:5)
+    at throwExportsNotFound (node:internal/modules/esm/resolve:358:9)
+    at packageExportsResolve (node:internal/modules/esm/resolve:612:7)
+    at resolveExports (node:internal/modules/cjs/loader:529:36)
+    at Module._findPath (node:internal/modules/cjs/loader:569:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:981:27)
+    at Module._load (node:internal/modules/cjs/loader:841:27)
+    at Module.require (node:internal/modules/cjs/loader:1061:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (/home/homa/code/cyberuni/ts-esm-interop/tests/node16/commonjs/esm-cjs.star.all.js:3:11) {
+  code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'
+}
+
+Node.js v18.12.1
+`
 - `syntax`: `The requested module 'named-esm-cjs' does not provide an export named 'default'`
 - `type`: `Cannot read properties of undefined (reading 'truthy')`
-- `type-1`: `Cannot read properties of undefined (reading 'inc')`
+- `type-1`: `Cannot read properties of undefined (reading 'greet')`
 - `type-not-fn`: `(0 , assert_1.default) is not a function`
 - `type-not-fn-1`: `assert.default is not a function`
 - `type-not-fn-2`: `cjs_1.default.default is not a function`
@@ -284,7 +411,7 @@ assertron.default.default.truthy(true)
 ```ts
 import { default as m } from 'cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -293,7 +420,7 @@ m.default(1)
 ```ts
 import m from 'cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -316,7 +443,7 @@ m.default.default(1)
 ```ts
 import { default as m } from 'es-cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -325,7 +452,7 @@ m.default(1)
 ```ts
 import m from 'es-cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -345,7 +472,7 @@ m.default.default(1)
 ```ts
 import { default as m } from 'esm-cjs'
 
-m(1)
+m()
 
 ```
 
@@ -354,7 +481,7 @@ m(1)
 ```ts
 import m from 'esm-cjs'
 
-m(1)
+m()
 
 ```
 
@@ -363,7 +490,7 @@ m(1)
 ```ts
 import * as m from 'esm-cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -374,7 +501,7 @@ m.default(1)
 ```ts
 import { default as m } from 'esm-cjs'
 
-m(1)
+m()
 
 ```
 
@@ -383,7 +510,7 @@ m(1)
 ```ts
 import m from 'esm-cjs'
 
-m(1)
+m()
 
 ```
 
@@ -392,7 +519,7 @@ m(1)
 ```ts
 import * as m from 'esm-cjs'
 
-m.default(1)
+m.default()
 
 ```
 
@@ -403,7 +530,7 @@ m.default(1)
 ```ts
 import { default as m } from 'named-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
@@ -412,16 +539,16 @@ m.inc(1)
 ```ts
 import m from 'named-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
 [named-cjs.named.all.ts](./ts/named-cjs.named.all.ts):
 
 ```ts
-import { inc } from 'named-cjs'
+import { greet } from 'named-cjs'
 
-inc(1)
+greet()
 
 ```
 
@@ -430,7 +557,7 @@ inc(1)
 ```ts
 import * as m from 'named-cjs'
 
-m.inc(1)
+m.greet()
 
 
 ```
@@ -442,7 +569,7 @@ m.inc(1)
 ```ts
 import { default as m } from 'named-es-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
@@ -451,16 +578,16 @@ m.inc(1)
 ```ts
 import m from 'named-es-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
 [named-es-cjs.named.all.ts](./ts/named-es-cjs.named.all.ts):
 
 ```ts
-import { inc } from 'named-es-cjs'
+import { greet } from 'named-es-cjs'
 
-inc(1)
+greet()
 
 ```
 
@@ -469,7 +596,7 @@ inc(1)
 ```ts
 import * as m from 'named-es-cjs'
 
-m.inc(1)
+m.greet()
 
 
 ```
@@ -483,7 +610,7 @@ m.inc(1)
 ```ts
 import { default as m } from 'named-esm-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
@@ -492,16 +619,16 @@ m.inc(1)
 ```ts
 import m from 'named-esm-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
 [named-esm-cjs.named.all.ts](./ts/named-esm-cjs.named.all.ts):
 
 ```ts
-import { inc } from 'named-esm-cjs'
+import { greet } from 'named-esm-cjs'
 
-inc(1)
+greet()
 
 ```
 
@@ -510,7 +637,7 @@ inc(1)
 ```ts
 import * as m from 'named-esm-cjs'
 
-m.inc(1)
+m.greet()
 
 ```
 
