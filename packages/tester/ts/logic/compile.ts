@@ -36,11 +36,15 @@ export function processCompileResults({ compileRaw, subjects, moduleTypes }: {
 } & RunCompileContext & TestSubjectsContext) {
 
   const results = extractCompileErrors(compileRaw)
-  const compileErrors = results.flatMap(result => result.importType === 'all'
-    ? (subjects
-      .find(s => s.name === result.subject)!.files
-      .map(f => ({ ...result, importType: f.importType })))
-    : result)
+  const compileErrors = results.flatMap(result => {
+    if (result.importType !== 'all') return result
+    // Some tsc diagnostics (e.g. TS5110, a config-level error TypeScript added
+    // for `moduleResolution: NodeNext` paired with a non-NodeNext `module`) are
+    // not tied to any subject file at all. Report those as-is instead of
+    // crashing when they can't be matched to a known subject.
+    const subject = subjects.find(s => s.name === result.subject)
+    return subject ? subject.files.map(f => ({ ...result, importType: f.importType })) : result
+  })
 
   return {
     compile: buildCompileResults({ compileErrors, moduleTypes, subjects })
