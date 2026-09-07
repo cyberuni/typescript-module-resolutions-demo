@@ -6,59 +6,59 @@ importers:
     specifiers:
       tester: workspace:*
       turbo: ^1.6.3
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     devDependencies:
       tester: link:packages/tester
       turbo: 1.6.3
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   packages/cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   packages/es-cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   packages/esm:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   packages/esm-cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   packages/named-cjs:
     specifiers:
@@ -66,74 +66,74 @@ importers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     devDependencies:
       make-error-cause: 2.3.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   packages/named-es-cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   packages/named-esm:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   packages/named-esm-cjs:
     specifiers:
       ncp: ^2.0.0
       npm-run-all: ^4.1.5
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     devDependencies:
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   packages/tester:
     specifiers:
       '@types/find': ^0.2.1
-      '@types/node': ^14
+      '@types/node': ^18
       clibuilder: ^8.0.6
       find: ^0.3.0
       handlebars: ^4.7.7
       json5: ^2.2.3
-      type-plus: ^5.6.0
-      typescript: 5.0.0-dev.20230103
+      type-plus: 8.0.0-beta.10
+      typescript: 5.6.3
     dependencies:
       clibuilder: 8.0.6
       find: 0.3.0
       handlebars: 4.7.7
       json5: 2.2.3
-      type-plus: 5.6.0
+      type-plus: 8.0.0-beta.10_typescript@5.6.3
     devDependencies:
       '@types/find': 0.2.1
-      '@types/node': 14.18.36
-      typescript: 5.0.0-dev.20230103
+      '@types/node': 18.19.130
+      typescript: 5.6.3
 
   tests/node:
     specifiers:
-      '@types/node': ^14
+      '@types/node': ^18
       assertron: ^7
       cjs: workspace:*
       es-cjs: workspace:*
@@ -148,7 +148,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
       webpack: ^5.75.0
       webpack-cli: ^5.0.1
     dependencies:
@@ -163,18 +163,18 @@ importers:
       named-esm-cjs: link:../../packages/named-esm-cjs
       param-case: 1.1.2
     devDependencies:
-      '@types/node': 14.18.36
+      '@types/node': 18.19.130
       jsdom: 21.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
       webpack: 5.75.0_webpack-cli@5.0.1
       webpack-cli: 5.0.1_webpack@5.75.0
 
   tests/node-allow:
     specifiers:
-      '@types/node': ^14
+      '@types/node': ^18
       '@types/react': ^17
       assertron: ^7
       ava: ^5.1.0
@@ -191,7 +191,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -205,18 +205,18 @@ importers:
       named-esm-cjs: link:../../packages/named-esm-cjs
       param-case: 1.1.2
     devDependencies:
-      '@types/node': 14.18.36
+      '@types/node': 18.19.130
       '@types/react': 17.0.52
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   tests/node-es:
     specifiers:
       '@rollup/plugin-node-resolve': ^15.0.1
-      '@types/node': ^14
+      '@types/node': ^18
       assertron: ^7
       cjs: workspace:*
       es-cjs: workspace:*
@@ -230,7 +230,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
       webpack: ^5.75.0
       webpack-cli: ^5.0.1
     dependencies:
@@ -246,17 +246,17 @@ importers:
       param-case: 1.1.2
     devDependencies:
       '@rollup/plugin-node-resolve': 15.0.1
-      '@types/node': 14.18.36
+      '@types/node': 18.19.130
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
       webpack: 5.75.0_webpack-cli@5.0.1
       webpack-cli: 5.0.1_webpack@5.75.0
 
   tests/node16:
     specifiers:
-      '@types/node': ^14
+      '@types/node': ^18
       '@types/react': ^17
       assertron: ^7
       ava: ^5.1.0
@@ -273,7 +273,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -287,17 +287,17 @@ importers:
       named-esm-cjs: link:../../packages/named-esm-cjs
       param-case: 1.1.2
     devDependencies:
-      '@types/node': 14.18.36
+      '@types/node': 18.19.130
       '@types/react': 17.0.52
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   tests/node16-allow:
     specifiers:
-      '@types/node': ^14
+      '@types/node': ^18
       '@types/react': ^17
       assertron: ^7
       ava: ^5.1.0
@@ -314,7 +314,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -328,17 +328,17 @@ importers:
       named-esm-cjs: link:../../packages/named-esm-cjs
       param-case: 1.1.2
     devDependencies:
-      '@types/node': 14.18.36
+      '@types/node': 18.19.130
       '@types/react': 17.0.52
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   tests/node16-es:
     specifiers:
-      '@types/node': ^14
+      '@types/node': ^18
       '@types/react': ^17
       assertron: ^7
       ava: ^5.1.0
@@ -355,7 +355,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -369,17 +369,17 @@ importers:
       named-esm-cjs: link:../../packages/named-esm-cjs
       param-case: 1.1.2
     devDependencies:
-      '@types/node': 14.18.36
+      '@types/node': 18.19.130
       '@types/react': 17.0.52
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   tests/nodenext:
     specifiers:
-      '@types/node': ^14
+      '@types/node': ^18
       '@types/react': ^17
       assertron: ^7
       ava: ^5.1.0
@@ -396,7 +396,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -410,17 +410,17 @@ importers:
       named-esm-cjs: link:../../packages/named-esm-cjs
       param-case: 1.1.2
     devDependencies:
-      '@types/node': 14.18.36
+      '@types/node': 18.19.130
       '@types/react': 17.0.52
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   tests/nodenext-allow:
     specifiers:
-      '@types/node': ^14
+      '@types/node': ^18
       '@types/react': ^17
       assertron: ^7
       ava: ^5.1.0
@@ -437,7 +437,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -451,17 +451,17 @@ importers:
       named-esm-cjs: link:../../packages/named-esm-cjs
       param-case: 1.1.2
     devDependencies:
-      '@types/node': 14.18.36
+      '@types/node': 18.19.130
       '@types/react': 17.0.52
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
   tests/nodenext-es:
     specifiers:
-      '@types/node': ^14
+      '@types/node': ^18
       '@types/react': ^17
       assertron: ^7
       ava: ^5.1.0
@@ -478,7 +478,7 @@ importers:
       npm-run-all: ^4.1.5
       param-case: '1'
       rimraf: ^3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
     dependencies:
       assertron: 7.1.3
       cjs: link:../../packages/cjs
@@ -492,13 +492,13 @@ importers:
       named-esm-cjs: link:../../packages/named-esm-cjs
       param-case: 1.1.2
     devDependencies:
-      '@types/node': 14.18.36
+      '@types/node': 18.19.130
       '@types/react': 17.0.52
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
       rimraf: 3.0.2
-      typescript: 5.0.0-dev.20230103
+      typescript: 5.6.3
 
 packages:
 
@@ -637,8 +637,10 @@ packages:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
 
-  /@types/node/14.18.36:
-    resolution: {integrity: sha512-FXKWbsJ6a1hIrRxv+FoukuHnGTgEzKYGi7kilfMae96AL9UNkPFNWJEEYWzdRI9ooIkbr4AKldyuSTLql06vLQ==}
+  /@types/node/18.19.130:
+    resolution: {integrity: sha512-GRaXQx6jGfL8sKfaIDD6OupbIHBr9jv7Jnaml9tB7l4v068PAOXqfcujMMo5PhbIs6ggR1XODELqahT2R8v0fg==}
+    dependencies:
+      undici-types: 5.26.5
     dev: true
 
   /@types/prop-types/15.7.5:
@@ -835,6 +837,12 @@ packages:
     resolution: {integrity: sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==}
     engines: {node: '>=0.4.0'}
     dev: true
+
+  /acorn/8.18.0:
+    resolution: {integrity: sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+    dev: false
 
   /acorn/8.8.1:
     resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
@@ -2149,7 +2157,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 14.18.36
+      '@types/node': 18.19.130
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -3143,6 +3151,13 @@ packages:
       unpartial: 1.0.4
     dev: false
 
+  /tersify/4.0.6:
+    resolution: {integrity: sha512-+z2dTeRvbPyI7qiAmBY+VgWnhhN9IuaGjgrPfeF33hI4A/Yd9KT11tbc4l8vfIA3L/5EWiE0swvxOfAckGRuzA==}
+    dependencies:
+      acorn: 8.18.0
+      unpartial: 1.0.7
+    dev: false
+
   /time-zone/1.0.0:
     resolution: {integrity: sha512-TIsDdtKo6+XrPtiTm1ssmMngN1sAhyKnTO2kunQWqNPWIVvCm15Wmw4SWInwTVgJ5u/Tr04+8Ei9TNcw4x4ONA==}
     engines: {node: '>=4'}
@@ -3271,6 +3286,16 @@ packages:
       unpartial: 1.0.4
     dev: false
 
+  /type-plus/8.0.0-beta.10_typescript@5.6.3:
+    resolution: {integrity: sha512-ZdhzmQg7f8oxt5Cbivslk8o3zef8L3ibpKIeGH1ESf73y8ZEY1z9fe4Z3fTxcjmFOb8ESE1TbW/MCgEvpeLC4w==}
+    peerDependencies:
+      typescript: '>= 5.6.0'
+    dependencies:
+      tersify: 4.0.6
+      typescript: 5.6.3
+      unpartial: 1.0.7
+    dev: false
+
   /typed-array-length/1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
     dependencies:
@@ -3279,11 +3304,10 @@ packages:
       is-typed-array: 1.1.10
     dev: true
 
-  /typescript/5.0.0-dev.20230103:
-    resolution: {integrity: sha512-vHf8Y8+op6MsFIDgvNmZhAIAUGVmzFzYCUBysMS6hlxlhSWIh1h5AXAW7WKs4GYr325jwTF/L72NKUYZHSD6Mw==}
-    engines: {node: '>=4.2.0'}
+  /typescript/5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+    engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /uglify-js/3.17.4:
     resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
@@ -3302,6 +3326,10 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
+  /undici-types/5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+    dev: true
+
   /universalify/0.2.0:
     resolution: {integrity: sha512-CJ1QgKmNg3CwvAv/kOFmtnEN05f0D/cn9QntgNOQlQF9dgvVTHj3t+8JPdjqawCHk7V/KA+fbUqzZ9XWhcqPUg==}
     engines: {node: '>= 4.0.0'}
@@ -3310,6 +3338,11 @@ packages:
   /unpartial/1.0.4:
     resolution: {integrity: sha512-xY8319WOQcRDRVFWvTty2YJXKvM8XRPehqWZUd7k/BatpbuitI4Jd+2xlwjTZbZScSvT75TnUsUmy5uwFa3o0g==}
     engines: {node: '>=6'}
+    dev: false
+
+  /unpartial/1.0.7:
+    resolution: {integrity: sha512-DeyxEI3KSlmDihGAk3Js/p/Ca886ymIz39pWH3VVV/LZ36MsRETylFS37fdzWBWDjMlzB63Rdy2KLCdetOMPig==}
+    engines: {node: '>= 20'}
     dev: false
 
   /update-browserslist-db/1.0.10_browserslist@4.21.5:
