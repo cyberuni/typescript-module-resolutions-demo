@@ -175,7 +175,7 @@ importers:
   tests/node-allow:
     specifiers:
       '@types/node': ^18
-      '@types/react': ^17
+      '@types/react': ^19.0.0
       assertron: ^7
       ava: ^5.1.0
       cjs: workspace:*
@@ -206,7 +206,7 @@ importers:
       param-case: 1.1.2
     devDependencies:
       '@types/node': 18.19.130
-      '@types/react': 17.0.52
+      '@types/react': 19.3.0
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
@@ -257,7 +257,7 @@ importers:
   tests/node16:
     specifiers:
       '@types/node': ^18
-      '@types/react': ^17
+      '@types/react': ^19.0.0
       assertron: ^7
       ava: ^5.1.0
       cjs: workspace:*
@@ -288,7 +288,7 @@ importers:
       param-case: 1.1.2
     devDependencies:
       '@types/node': 18.19.130
-      '@types/react': 17.0.52
+      '@types/react': 19.3.0
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
@@ -298,7 +298,7 @@ importers:
   tests/node16-allow:
     specifiers:
       '@types/node': ^18
-      '@types/react': ^17
+      '@types/react': ^19.0.0
       assertron: ^7
       ava: ^5.1.0
       cjs: workspace:*
@@ -329,7 +329,7 @@ importers:
       param-case: 1.1.2
     devDependencies:
       '@types/node': 18.19.130
-      '@types/react': 17.0.52
+      '@types/react': 19.3.0
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
@@ -339,7 +339,7 @@ importers:
   tests/node16-es:
     specifiers:
       '@types/node': ^18
-      '@types/react': ^17
+      '@types/react': ^19.0.0
       assertron: ^7
       ava: ^5.1.0
       cjs: workspace:*
@@ -370,7 +370,7 @@ importers:
       param-case: 1.1.2
     devDependencies:
       '@types/node': 18.19.130
-      '@types/react': 17.0.52
+      '@types/react': 19.3.0
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
@@ -380,7 +380,7 @@ importers:
   tests/nodenext:
     specifiers:
       '@types/node': ^18
-      '@types/react': ^17
+      '@types/react': ^19.0.0
       assertron: ^7
       ava: ^5.1.0
       cjs: workspace:*
@@ -411,7 +411,7 @@ importers:
       param-case: 1.1.2
     devDependencies:
       '@types/node': 18.19.130
-      '@types/react': 17.0.52
+      '@types/react': 19.3.0
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
@@ -421,7 +421,7 @@ importers:
   tests/nodenext-allow:
     specifiers:
       '@types/node': ^18
-      '@types/react': ^17
+      '@types/react': ^19.0.0
       assertron: ^7
       ava: ^5.1.0
       cjs: workspace:*
@@ -452,7 +452,7 @@ importers:
       param-case: 1.1.2
     devDependencies:
       '@types/node': 18.19.130
-      '@types/react': 17.0.52
+      '@types/react': 19.3.0
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
@@ -462,7 +462,7 @@ importers:
   tests/nodenext-es:
     specifiers:
       '@types/node': ^18
-      '@types/react': ^17
+      '@types/react': ^19.0.0
       assertron: ^7
       ava: ^5.1.0
       cjs: workspace:*
@@ -493,7 +493,7 @@ importers:
       param-case: 1.1.2
     devDependencies:
       '@types/node': 18.19.130
-      '@types/react': 17.0.52
+      '@types/react': 19.3.0
       ava: 5.1.0
       ncp: 2.0.0
       npm-run-all: 4.1.5
@@ -643,24 +643,14 @@ packages:
       undici-types: 5.26.5
     dev: true
 
-  /@types/prop-types/15.7.5:
-    resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: true
-
-  /@types/react/17.0.52:
-    resolution: {integrity: sha512-vwk8QqVODi0VaZZpDXQCmEmiOuyjEFPY7Ttaw5vjM112LOq37yz1CDJGrRJwA1fYEq4Iitd5rnjd1yWAc/bT+A==}
+  /@types/react/19.3.0:
+    resolution: {integrity: sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==}
     dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
-      csstype: 3.1.1
+      csstype: 3.2.3
     dev: true
 
   /@types/resolve/1.20.2:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
-    dev: true
-
-  /@types/scheduler/0.16.2:
-    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
     dev: true
 
   /@webassemblyjs/ast/1.11.1:
@@ -1317,8 +1307,8 @@ packages:
       cssom: 0.3.8
     dev: true
 
-  /csstype/3.1.1:
-    resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
+  /csstype/3.2.3:
+    resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
     dev: true
 
   /currently-unhandled/0.4.1:
