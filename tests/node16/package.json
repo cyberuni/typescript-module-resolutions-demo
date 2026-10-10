@@ -65,7 +65,7 @@
     "param-case": "1"
   },
   "devDependencies": {
-    "@types/node": "^18",
+    "@types/node": "^26.0.0",
     "@types/react": "^17",
     "ava": "^5.1.0",
     "ncp": "^2.0.0",
