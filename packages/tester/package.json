@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@types/find": "^0.2.1",
-    "@types/node": "^18",
+    "@types/node": "^26.0.0",
     "typescript": "5.6.3"
   }
 }
