@@ -22,7 +22,7 @@
     "clean": "rimraf commonjs es* node16 nodenext"
   },
   "dependencies": {
-    "assertron": "^7",
+    "assertron": "^11.0.0",
     "cjs": "workspace:*",
     "es-cjs": "workspace:*",
     "esm": "workspace:*",

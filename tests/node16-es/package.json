@@ -52,7 +52,7 @@
     ]
   },
   "dependencies": {
-    "assertron": "^7",
+    "assertron": "^11.0.0",
     "cjs": "workspace:*",
     "color-map": "^1",
     "es-cjs": "workspace:*",
